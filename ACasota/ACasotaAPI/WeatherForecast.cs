@@ -10,7 +10,7 @@ namespace ACasotaAPI
 
         public string? Summary { get; set; }
 
-        public string? HALLO { get; set; }
+        public string? ola { get; set; }
 
     }
 }
