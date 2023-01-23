@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACasotaAPI", "ACasotaAPI\ACasotaAPI.csproj", "{67834B38-52FF-41F4-BEB8-6DF9A33658BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACasotaBlazorServer", "ACasotaBlazorServer\ACasotaBlazorServer.csproj", "{0108C2FB-6B3B-4F6B-9397-E76D5E4CC439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACasotaBlazorServer", "ACasotaBlazorServer\ACasotaBlazorServer.csproj", "{0108C2FB-6B3B-4F6B-9397-E76D5E4CC439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67834B38-52FF-41F4-BEB8-6DF9A33658BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67834B38-52FF-41F4-BEB8-6DF9A33658BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67834B38-52FF-41F4-BEB8-6DF9A33658BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67834B38-52FF-41F4-BEB8-6DF9A33658BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0108C2FB-6B3B-4F6B-9397-E76D5E4CC439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0108C2FB-6B3B-4F6B-9397-E76D5E4CC439}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0108C2FB-6B3B-4F6B-9397-E76D5E4CC439}.Release|Any CPU.ActiveCfg = Release|Any CPU
