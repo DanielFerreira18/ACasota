@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CVzYCbbTpTh+S3YNm6RmOexPSoko6RP45T6fOBJF6WI=",
+  "Hash": "Q1hold6ueFXFzu5HvUNBFI11f3/r9QOJkr4rOn7BcQw=",
   "Source": "ACasotaBlazorServer",
   "BasePath": "_content/ACasotaBlazorServer",
   "Mode": "Default",
@@ -2616,6 +2616,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\themesberg-mockup.jpg"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\ACasota.js",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "assets/js/ACasota.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\ACasota.js"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\volt.js",

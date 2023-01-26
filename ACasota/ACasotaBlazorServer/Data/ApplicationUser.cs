@@ -8,8 +8,7 @@ namespace ACasotaBlazorServer.Data
         public string LastName { get; set; }
         public int Nif { get; set; }
         public string CCnumber { get; set; }
-        public string Morada { get; set; }
-        public int NumTelemovel { get; set; }
-        public DateTime Data_Nasc { get; set; }
+        public string Address { get; set; }
+        public DateTime Date_Birth { get; set; }
     }
 }
