@@ -1,7 +1,8 @@
 ﻿@page
-@using Microsoft.ApsNetCore.Identity
-@attribute [IgnoreAntiForgeryToken]
-@inject SignInManager<IdentifyUser> SignInManager
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity
+@attribute [IgnoreAntiforgeryToken]
+@inject SignInManager<ApplicationUser> SignInManager
 @functions {
 	public async Task<IActionResult> onGet() {
 
