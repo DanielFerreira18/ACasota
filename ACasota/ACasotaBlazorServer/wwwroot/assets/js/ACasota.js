@@ -56,9 +56,8 @@ var checkDate = function () {
 var checkEmail = function () {
 	var email = String(document.getElementById('email').value);
 	var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-	alert(email.value.match(validRegex));
 
-	if (email.value.match(validRegex)) {
+	if (validRegex.test(email)) {
 		button = false;
 		document.getElementById('email').classList.remove('is-invalid');
 		document.getElementById('email').classList.add('is-valid');
