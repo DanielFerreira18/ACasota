@@ -1,4 +1,13 @@
 ﻿@page
-@model ACasotaBlazorServer.Areas.Identity.Pages.Account.LogoutModel
-@{
+@using Microsoft.ApsNetCore.Identity
+@attribute [IgnoreAntiForgeryToken]
+@inject SignInManager<IdentifyUser> SignInManager
+@functions {
+	public async Task<IActionResult> onGet() {
+
+		if (SignInManager.IsSignedIn(User)) {
+			await SignInManager.SignOutAsync();
+		}
+		return Redirect("~/");
+	}
 }
