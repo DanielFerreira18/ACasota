@@ -613,6 +613,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\ACasota.js"
     },
     {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\moment.js",
+      "PackagePath": "staticwebassets\\assets\\js\\moment.js"
+    },
+    {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\volt.js",
       "PackagePath": "staticwebassets\\assets\\js\\volt.js"
     },

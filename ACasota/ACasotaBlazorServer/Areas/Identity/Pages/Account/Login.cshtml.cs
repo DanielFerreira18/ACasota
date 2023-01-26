@@ -9,5 +9,7 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
         public void OnGet()
         {
         }
+
+
     }
 }
