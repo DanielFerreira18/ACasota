@@ -23,14 +23,14 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 
         public void OnGet()
         {
-            ReturnUrl = Url.Content("~/");
+            ReturnUrl = Url.Content("/");
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            ReturnUrl = Url.Content("~/");
+			ReturnUrl = Url.Content("/");
 
-            if (ModelState.IsValid)
+			if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
 

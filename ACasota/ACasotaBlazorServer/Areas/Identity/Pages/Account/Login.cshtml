@@ -7,7 +7,7 @@
 <div class="text-center text-md-center mb-4 mt-md-0">
 	<h1 class="mb-0 h3">@ViewData["Title"]</h1>
 </div>
-<form action="#" class="mt-4" runat="server">
+<form class="mt-4" runat="server" method="post">
 	<!-- Form -->
 	<div class="form-group mb-4">
 		<label for="email">Your Email</label>
@@ -48,6 +48,6 @@
 <div class="d-flex justify-content-center align-items-center mt-4">
 	<span class="fw-normal">
 		Not registered?
-		<a href="./sign-up.html" class="fw-bold">Create account</a>
+		<a href="/Identity/Account/Register" class="fw-bold">Create account</a>
 	</span>
 </div>
