@@ -28,7 +28,7 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 		{
 			ReturnUrl = Url.Content("/");
 
-			if (Input.Password.Equals(Input.Password))
+			if (Input.Password.Equals(Input.PasswordConf))
 			{
 				if (ModelState.IsValid)
 				{
@@ -47,9 +47,28 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 						await _signInManager.SignInAsync(identity, isPersistent: false);
 						return LocalRedirect(ReturnUrl);
 					}
+					else
+					{
+						List<IdentityError> errorList = result.Errors.ToList();
+						var str = "";	
+
+						foreach (var error in errorList)
+						{
+							str = error.Description.ToString();
+
+							str = str.Split("'")[1];
+							str = str.Split("'")[0];
+
+							str = "Email '" + str + "' já esta em uso!!";
+						}
+
+						ViewData["Errors"] = str;
+
+						return Page();
+					}
 				}
 			}
-
+				
 			return Page();
 		}
 

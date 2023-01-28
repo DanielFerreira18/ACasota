@@ -32,13 +32,29 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 
 			if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
+				Microsoft.AspNetCore.Identity.SignInResult result;
+
+                if (Input.RememberMe)
+                {
+					result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, true, false);
+                }
+                else
+                {
+                    result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, false);
+				}
 
                 if(result.Succeeded)
                 {
                     return LocalRedirect(ReturnUrl);
                 }
+                else
+                {
+					ViewData["Errors"] = "Email ou password errado!!";
+
+					return Page();
+                }
             }
+
             return Page();
         }
 
@@ -51,6 +67,9 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
+
+            [Required]
+            public bool RememberMe { get; set; }
         }
 
     }

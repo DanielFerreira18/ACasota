@@ -48,9 +48,9 @@ var checkDate = function () {
 
 var checkEmail = function () {
     var email = String(document.getElementById('email').value);
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var validRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (validRegex.test(email)) {
+    if (email.match(validRegex)) {
         document.getElementById('email').classList.remove('is-invalid');
         document.getElementById('email').classList.add('is-valid');
 
@@ -74,18 +74,26 @@ var checkPassword = function () {
         document.getElementById('password').classList.add('is-valid');
     }
 
+    checkConfPassword();
     checkButton();
 }
 
 var checkConfPassword = function () {
-    if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
-        document.getElementById('confirm_password').classList.remove('is-invalid');
-        document.getElementById('confirm_password').classList.add('is-valid');
+    var confPass = String(document.getElementById('confirm_password').value);
 
+    if (String(document.getElementById('password').value).length >= 5) {
+        if (document.getElementById('password').value == confPass && confPass.length >= 5) {
+            document.getElementById('confirm_password').classList.remove('is-invalid');
+            document.getElementById('confirm_password').classList.add('is-valid');
+
+        } else {
+            document.getElementById('confirm_password').classList.remove('is-valid');
+            document.getElementById('confirm_password').classList.add('is-invalid');
+
+        }
     } else {
         document.getElementById('confirm_password').classList.remove('is-valid');
-        document.getElementById('confirm_password').classList.add('is-invalid');
-
+        document.getElementById('confirm_password').classList.remove('is-invalid');
     }
 
     checkButton();
