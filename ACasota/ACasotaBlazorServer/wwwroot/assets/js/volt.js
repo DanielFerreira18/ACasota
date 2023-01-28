@@ -108,13 +108,22 @@ d.addEventListener("DOMContentLoaded", function (event) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 
+    // Datepicker
+    var datepickers = [].slice.call(d.querySelectorAll('[data-datepicker]'))
+    var datepickersList = datepickers.map(function (el) {
+        return new Datepicker(el, {
+            buttonClass: 'btn',
+            format: 'dd/mm/yyyy',
+            language: 'pt',
+            autohide: true
+        });
+    })
 
     // Popovers
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
-
 
     if (d.querySelector('.input-slider-container')) {
         [].slice.call(d.querySelectorAll('.input-slider-container')).map(function (el) {
