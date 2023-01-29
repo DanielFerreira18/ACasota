@@ -10,15 +10,17 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 	{
 		private readonly SignInManager<ApplicationUser> _signInManager;
 		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly RoleManager<IdentityRole> _roleManager;
 
 		[BindProperty]
 		public InputModel Input { get; set; }
 		public string ReturnUrl { get; set; }
 
-		public RegisterModel(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
+		public RegisterModel(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
 		{
 			_signInManager = signInManager;
 			_userManager = userManager;
+			_roleManager = roleManager;
 		}
 
 		public void OnGet() => ReturnUrl = Url.Content("/");
@@ -42,7 +44,19 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 					};
 					var result = await _userManager.CreateAsync(identity, Input.Password);
 
-					if (result.Succeeded)
+
+					var role = new IdentityRole(Input.Role);
+					
+					var resultRole = await _roleManager.RoleExistsAsync(Input.Role);
+
+					if(!resultRole)
+					{
+						await _roleManager.CreateAsync(role);
+					}
+					
+					var addUserRoleResult = await _userManager.AddToRoleAsync(identity, Input.Role);
+
+					if (result.Succeeded && addUserRoleResult.Succeeded)
 					{
 						await _signInManager.SignInAsync(identity, isPersistent: false);
 						return LocalRedirect(ReturnUrl);
@@ -99,6 +113,9 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 			[DataType(DataType.Password)]
 			[StringLength(15, MinimumLength = 5)]
 			public string PasswordConf { get; set; }
+
+			[Required]
+			public string Role { get; set; }
 		}
 	}
 }
