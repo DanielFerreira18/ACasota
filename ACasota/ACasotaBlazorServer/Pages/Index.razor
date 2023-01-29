@@ -1,18 +1,41 @@
 ﻿@page "/"
 @using System.Collections
 @using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject IDbContextFactory<DataContext> contextDb
+@inject UserManager<ApplicationUser> _userManager
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>ACasota</h1>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+Bem vindo ao website da ACasota
 
 <AuthorizeView>
 	<Authorized>
 		<p>Hello , @context.User.Identity.Name!</p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Primeiro Nome</th>
+					<th>Ultimo Nome</th>
+					<th>Email</th>
+					<th>Data de Nascimento</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var userDb in users)
+				{
+					<tr>
+						<td>@userDb.FirstName</td>
+						<td>@userDb.LastName</td>
+						<td>@userDb.Email</td>
+						<td>@userDb.Date_Birth.Date</td>
+					</tr>
+				}
+			</tbody>
+		</table>
 	</Authorized>
 	<NotAuthorized>
 		<p role="status">You are not authorized to see this component</p>
@@ -22,7 +45,8 @@ Welcome to your new app.
 @code{
 	[CascadingParameter]
 	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
-	
+	public List<ApplicationUser> users { get; set; } = new List<ApplicationUser>();
+
 	protected override async Task OnInitializedAsync()
 	{
 		var authState = await AuthenticationStateTask;
@@ -30,7 +54,15 @@ Welcome to your new app.
 
 		if (user.Identity.IsAuthenticated)
 		{
-			//se quiser mandar alguma coisa 
+			using(var ctx = contextDb.CreateDbContext())
+			{
+				var usersCT = await ctx.Users.ToArrayAsync();
+
+				foreach(var userct in usersCT)
+				{
+					users.Add(userct);
+				}
+			}
 		}
 	}
 }

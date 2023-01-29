@@ -29,7 +29,7 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 		public async Task<IActionResult> OnPostAsync()
 		{
 			ReturnUrl = Url.Content("/");
-			string roleStr = "user";
+			string roleStr = "User";
 
 			if (Input.Password.Equals(Input.PasswordConf))
 			{
@@ -45,13 +45,6 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 					};
 
 					var result = await _userManager.CreateAsync(identity, Input.Password);
-					var resultRole = await _roleManager.RoleExistsAsync(roleStr);
-
-					if(!resultRole)
-					{
-						var role = new IdentityRole(roleStr);
-						await _roleManager.CreateAsync(role);
-					}
 					
 					var addUserRoleResult = await _userManager.AddToRoleAsync(identity, roleStr);
 

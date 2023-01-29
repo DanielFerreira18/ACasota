@@ -13,7 +13,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 var conS = builder.Configuration.GetConnectionString("ACasota");
+builder.Services.AddDbContextFactory<DataContext>(options => options.UseSqlServer(conS));
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(conS));
+
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = false;
@@ -27,6 +29,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<DataContext>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityValidationProvider<ApplicationUser>>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
