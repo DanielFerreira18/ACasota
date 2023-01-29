@@ -1,0 +1,19 @@
+﻿@page "/Gestaouser"
+@attribute [Authorize]
+
+<AuthorizeView Roles ="Admin">
+	<Authorized>
+		<p>Olá admin @context.User.Identity.Name!</p> 
+		<h1>Lista de utilizadores</h1>
+
+	</Authorized>
+	<NotAuthorized>
+		<p role="status">Não tem autorização para aceder a esta página</p>
+	</NotAuthorized>
+</AuthorizeView>
+
+<PageTitle>Gestão de Utilizadores</PageTitle>
+
+@code {
+
+}

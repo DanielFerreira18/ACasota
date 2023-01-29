@@ -1,7 +1,7 @@
-﻿@page "/counter"
+﻿@page "/Perfil"
 @attribute [Authorize]
 
-<AuthorizeView Roles ="User">
+<AuthorizeView>
 	<Authorized>
 		<p>Hello , @context.User.Identity.Name!</p> 
 		<h1>Counter</h1>
