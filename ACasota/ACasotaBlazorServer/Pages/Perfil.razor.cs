@@ -1,12 +1,7 @@
 ﻿namespace ACasotaBlazorServer.Pages
 {
-    public partial class Counter
+    public partial class Perfil
     {
-        private int currentCount = 0;
 
-        private void IncrementCount()
-        {
-            currentCount++;
-        }
     }
 }

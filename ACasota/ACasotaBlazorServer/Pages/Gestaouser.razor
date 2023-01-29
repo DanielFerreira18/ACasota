@@ -1,19 +1,66 @@
 ﻿@page "/Gestaouser"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject IDbContextFactory<DataContext> contextDb
+@inject UserManager<ApplicationUser> _userManager
 @attribute [Authorize]
 
+<PageTitle>Gestão de Utilizadores</PageTitle>
 <AuthorizeView Roles ="Admin">
 	<Authorized>
-		<p>Olá admin @context.User.Identity.Name!</p> 
 		<h1>Lista de utilizadores</h1>
-
+		<p>Olá admin @context.User.Identity.Name!</p> 
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Primeiro Nome</th>
+					<th>Ultimo Nome</th>
+					<th>Email</th>
+					<th>Data de Nascimento</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var userDb in users)
+				{
+						<tr>
+							<td>@userDb.FirstName</td>
+							<td>@userDb.LastName</td>
+							<td>@userDb.Email</td>
+							<td>@userDb.Date_Birth.Date</td>
+						</tr>
+				}
+			</tbody>
+		</table>
 	</Authorized>
 	<NotAuthorized>
 		<p role="status">Não tem autorização para aceder a esta página</p>
 	</NotAuthorized>
 </AuthorizeView>
 
-<PageTitle>Gestão de Utilizadores</PageTitle>
-
 @code {
+	[CascadingParameter]
+	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+	public List<ApplicationUser> users { get; set; } = new List<ApplicationUser>();
 
+	protected override async Task OnInitializedAsync()
+	{
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		if (user.Identity.IsAuthenticated)
+		{
+			using (var ctx = contextDb.CreateDbContext())
+			{
+				var usersCT = await ctx.Users.ToArrayAsync();
+
+				foreach (var userct in usersCT)
+				{
+					users.Add(userct);
+				}
+			}
+		}
+	}
 }
