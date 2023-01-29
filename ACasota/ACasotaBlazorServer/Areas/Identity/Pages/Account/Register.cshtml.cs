@@ -29,6 +29,7 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 		public async Task<IActionResult> OnPostAsync()
 		{
 			ReturnUrl = Url.Content("/");
+			string roleStr = "user";
 
 			if (Input.Password.Equals(Input.PasswordConf))
 			{
@@ -42,19 +43,17 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 						UserName = Input.Email, 
 						Email = Input.Email
 					};
+
 					var result = await _userManager.CreateAsync(identity, Input.Password);
-
-
-					var role = new IdentityRole(Input.Role);
-					
-					var resultRole = await _roleManager.RoleExistsAsync(Input.Role);
+					var resultRole = await _roleManager.RoleExistsAsync(roleStr);
 
 					if(!resultRole)
 					{
+						var role = new IdentityRole(roleStr);
 						await _roleManager.CreateAsync(role);
 					}
 					
-					var addUserRoleResult = await _userManager.AddToRoleAsync(identity, Input.Role);
+					var addUserRoleResult = await _userManager.AddToRoleAsync(identity, roleStr);
 
 					if (result.Succeeded && addUserRoleResult.Succeeded)
 					{
@@ -113,9 +112,6 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 			[DataType(DataType.Password)]
 			[StringLength(15, MinimumLength = 5)]
 			public string PasswordConf { get; set; }
-
-			[Required]
-			public string Role { get; set; }
 		}
 	}
 }
