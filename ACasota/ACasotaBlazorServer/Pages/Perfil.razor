@@ -1,12 +1,20 @@
 ﻿@page "/Perfil"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject IDbContextFactory<DataContext> contextDb
+@inject UserManager<ApplicationUser> _userManager
+@attribute [Authorize]
+
+
 @attribute [Authorize]
 <PageTitle>Perfil</PageTitle>
 
 <AuthorizeView>
 	<Authorized>
-		<p>Olá utilizador, @context.User.Identity.Name!</p> 
 		<h1>Perfil</h1>
-		
+
 	</Authorized>
 	<NotAuthorized>
 		<p role="status">You are not authorized to see this component</p>
