@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using ACasotaBlazorServer.Data;
+@using Microsoft.AspNetCore.Identity;
+@inherits LayoutComponentBase
+@inject UserManager<ApplicationUser> _userManager
 
 <PageTitle>ACasota</PageTitle>
 
@@ -10,7 +13,7 @@
          <AuthorizeView>
             <Authorized>
                 <div class="top-row px-4">
-                    <a>Bem-vindo/a @context.User.Identity.Name</a>
+                    <a>Bem-vindo/a @user_auth.FirstName @user_auth.LastName</a>
                     <a class="btn btn-pill btn-outline-danger" href="Identity/Account/Logout">Logout</a>
                     <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
                 </div>
@@ -30,3 +33,20 @@
         </article>
     </main>
 </div>
+
+@code{
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+    public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            user_auth = await _userManager.FindByNameAsync(user.Identity.Name);
+        }
+    }
+}

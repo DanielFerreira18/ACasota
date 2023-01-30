@@ -1,0 +1,147 @@
+﻿@page "/Profile"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject UserManager<ApplicationUser> _userManager
+@attribute [Authorize]
+
+<PageTitle>Perfil</PageTitle>
+
+<AuthorizeView>
+	<Authorized>
+		<h1>Perfil</h1>
+		<section style="background-color: #eee;">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col">
+						<nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+							<ol class="breadcrumb mb-0">
+								<li class="breadcrumb-item"><a href="/">Página Principal</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Perfil</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="card mb-4">
+							<div class="card-body text-center">
+								<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+									 class="rounded-circle img-fluid" style="width: 150px;">
+								<h5 class="my-3">@user_auth.FirstName @user_auth.LastName</h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<div class="card mb-4">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Nome Completo</p>
+									</div>
+									<div class="col-sm-9">
+										<p class="text-muted mb-0">@user_auth.FirstName @user_auth.LastName</p>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Email</p>
+									</div>
+									<div class="col-sm-9">
+										<p class="text-muted mb-0">@user_auth.Email</p>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Telemóvel</p>
+									</div>
+									<div class="col-sm-9">
+										@if (user_auth.PhoneNumber == "" || user_auth.PhoneNumber == null)
+										{
+											<p class="text-muted mb-0">Numero de telemovel não atribuido</p>
+										}
+										else
+										{
+											<p class="text-muted mb-0">@user_auth.PhoneNumber</p>
+										}
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Morada</p>
+									</div>
+									<div class="col-sm-9">
+										@if (user_auth.Address == "" || user_auth.Address == null)
+										{
+												<p class="text-muted mb-0">Morada não atribuido</p>
+										}
+										else
+										{
+												<p class="text-muted mb-0">@user_auth.Address</p>
+										}
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Numero de CC</p>
+									</div>
+									<div class="col-sm-9">
+										@if (user_auth.CCnumber == "" || user_auth.CCnumber == null)
+										{
+												<p class="text-muted mb-0">Numero de cartão de cidadão não atribuido</p>
+										}
+										else
+										{
+												<p class="text-muted mb-0">@user_auth.CCnumber</p>
+										}
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">NIF</p>
+									</div>
+									<div class="col-sm-9">
+										@if (user_auth.Nif == 0 || user_auth.Nif == null)
+										{
+											<p class="text-muted mb-0">Numero de identificação fiscal não atribuido</p>
+										}
+										else
+										{
+											<p class="text-muted mb-0">@user_auth.Nif</p>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</Authorized>
+	<NotAuthorized>
+		<p role="status">You are not authorized to see this component</p>
+	</NotAuthorized>
+</AuthorizeView>
+
+@code {
+	[CascadingParameter]
+	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+
+	protected override async Task OnInitializedAsync()
+	{
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		if (user.Identity.IsAuthenticated)
+		{
+			user_auth = await _userManager.FindByNameAsync(user.Identity.Name);
+		}
+	}
+}
