@@ -141,7 +141,7 @@
 
 		if (user.Identity.IsAuthenticated)
 		{
-			user_auth = await _userManager.FindByNameAsync(user.Identity.Name);
+			user_auth = await _userManager.GetUserAsync(user);
 		}
 	}
 }
