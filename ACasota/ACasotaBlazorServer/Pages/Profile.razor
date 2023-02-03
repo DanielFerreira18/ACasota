@@ -4,6 +4,7 @@
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.EntityFrameworkCore;
 @inject UserManager<ApplicationUser> _userManager
+@inject IDbContextFactory<DataContext> contextDb
 @attribute [Authorize]
 
 <PageTitle>Perfil</PageTitle>
@@ -41,7 +42,16 @@
 										<p class="mb-0">Nome Completo</p>
 									</div>
 									<div class="col-sm-9">
-										<p class="text-muted mb-0">@user_auth.FirstName @user_auth.LastName</p>
+										<input type="text" class="form-control" placeholder="Primeiro Nome" onfocusout="checkFirstName()" onkeyup="checkFirstName()" value="@user_auth.FirstName" id="firstname" required>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-3">
+										<p class="mb-0">Ultimo Nome</p>
+									</div>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" placeholder="Ultimo Nome" onfocusout="checkLastName()" onkeyup="checkLastName()" value="@user_auth.LastName" id="lastname" required>
 									</div>
 								</div>
 								<hr>
@@ -50,7 +60,7 @@
 										<p class="mb-0">Email</p>
 									</div>
 									<div class="col-sm-9">
-										<p class="text-muted mb-0">@user_auth.Email</p>
+										<input type="email" class="form-control" placeholder="Email" onfocusout="checkEmail()" onkeyup="checkEmail()" value="@user_auth.Email" id="email" required>
 									</div>
 								</div>
 								<hr>
@@ -59,14 +69,7 @@
 										<p class="mb-0">Telemóvel</p>
 									</div>
 									<div class="col-sm-9">
-										@if (user_auth.PhoneNumber == "" || user_auth.PhoneNumber == null)
-										{
-											<p class="text-muted mb-0">Numero de telemovel não atribuido</p>
-										}
-										else
-										{
-											<p class="text-muted mb-0">@user_auth.PhoneNumber</p>
-										}
+										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.PhoneNumber" id="telemovel">
 									</div>
 								</div>
 								<hr>
@@ -75,14 +78,7 @@
 										<p class="mb-0">Morada</p>
 									</div>
 									<div class="col-sm-9">
-										@if (user_auth.Address == "" || user_auth.Address == null)
-										{
-												<p class="text-muted mb-0">Morada não atribuido</p>
-										}
-										else
-										{
-												<p class="text-muted mb-0">@user_auth.Address</p>
-										}
+										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.Address" id="morada">
 									</div>
 								</div>
 								<hr>
@@ -91,14 +87,7 @@
 										<p class="mb-0">Numero de CC</p>
 									</div>
 									<div class="col-sm-9">
-										@if (user_auth.CCnumber == "" || user_auth.CCnumber == null)
-										{
-												<p class="text-muted mb-0">Numero de cartão de cidadão não atribuido</p>
-										}
-										else
-										{
-												<p class="text-muted mb-0">@user_auth.CCnumber</p>
-										}
+										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.CCnumber" id="ccnumber">
 									</div>
 								</div>
 								<hr>
@@ -107,18 +96,15 @@
 										<p class="mb-0">NIF</p>
 									</div>
 									<div class="col-sm-9">
-										@if (user_auth.Nif == 0 || user_auth.Nif == null)
-										{
-											<p class="text-muted mb-0">Numero de identificação fiscal não atribuido</p>
-										}
-										else
-										{
-											<p class="text-muted mb-0">@user_auth.Nif</p>
-										}
+										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.Nif" id="NIF">
 									</div>
 								</div>
 							</div>
 						</div>
+						<div id="addEventForm">
+							<a class="btn btn-pill btn-outline-primary" href="">Editar Conta</a>
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -141,7 +127,16 @@
 
 		if (user.Identity.IsAuthenticated)
 		{
-			user_auth = await _userManager.GetUserAsync(user);
+			using (var ctx = contextDb.CreateDbContext())
+			{
+				var usersCT = await ctx.Users.ToArrayAsync();
+
+				foreach (var userct in usersCT)
+				{
+					user_auth = await _userManager.GetUserAsync(user);
+				}
+				
+			}
 		}
 	}
 }

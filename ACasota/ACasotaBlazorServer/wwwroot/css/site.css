@@ -66,3 +66,9 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+#addEventForm {
+    position: relative;
+    float: right;
+    padding-left: 10px;
+}
