@@ -102,9 +102,8 @@
 							</div>
 						</div>
 						<div id="addEventForm">
-							<a class="btn btn-pill btn-outline-primary" href="">Editar Conta</a>
+							<a class="btn btn-pill btn-outline-primary" href="/Profile">Editar Conta</a>
 						</div>
-						
 					</div>
 				</div>
 			</div>
@@ -119,6 +118,7 @@
 	[CascadingParameter]
 	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
 	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+	public string random = "";
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -129,13 +129,7 @@
 		{
 			using (var ctx = contextDb.CreateDbContext())
 			{
-				var usersCT = await ctx.Users.ToArrayAsync();
-
-				foreach (var userct in usersCT)
-				{
-					user_auth = await _userManager.GetUserAsync(user);
-				}
-				
+				user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
 			}
 		}
 	}
