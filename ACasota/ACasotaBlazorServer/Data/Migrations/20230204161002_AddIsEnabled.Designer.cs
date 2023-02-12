@@ -4,6 +4,7 @@ using ACasotaBlazorServer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACasotaBlazorServer.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230204161002_AddIsEnabled")]
+    partial class AddIsEnabled
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,41 +115,41 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9efdf132-a705-4d3a-94f4-eb965af95d12",
+                            Id = "18dd22b8-0e15-4838-83ab-1010c5fd8f36",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "242719c2-674e-449c-adb8-0c1284c2fc3f",
-                            DateBirth = new DateTime(2023, 2, 4, 16, 12, 52, 213, DateTimeKind.Local).AddTicks(5543),
+                            ConcurrencyStamp = "91685b19-ee1e-44b0-b87e-81034281edc4",
+                            DateBirth = new DateTime(2023, 2, 4, 16, 10, 1, 979, DateTimeKind.Local).AddTicks(9020),
                             Email = "user@user.com",
                             EmailConfirmed = false,
                             FirstName = "User",
-                            IsEnabled = true,
+                            IsEnabled = false,
                             LastName = "User",
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@USER.COM",
                             NormalizedUserName = "USER@USER.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAENUJR0sb8WOA0Gl3hHpiBvuhVozfqAyYJr6jHhQstTFJumaqsYOSfdcC4ocIMYirZg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ06BOYor+l/NmpNd17a/NEAK6/wCMyOpZymorF9piiuH7QpVc83dbebjkZW7LqSOA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0724d7d1-8fef-4020-9a2c-5b88bc594410",
+                            SecurityStamp = "ad0da82d-3d1c-4377-83a1-c688a57f1f99",
                             TwoFactorEnabled = false,
                             UserName = "user@user.com"
                         },
                         new
                         {
-                            Id = "ebbe3251-5b7a-4a7d-a2a7-2904e86f1f8b",
+                            Id = "347afc61-53e5-4517-8911-8d31b9ca800c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "88566a85-138b-4f44-8bee-8f77e5ae2721",
-                            DateBirth = new DateTime(2023, 2, 4, 16, 12, 52, 275, DateTimeKind.Local).AddTicks(1794),
+                            ConcurrencyStamp = "60870412-1786-45f2-896c-50dea466770e",
+                            DateBirth = new DateTime(2023, 2, 4, 16, 10, 2, 42, DateTimeKind.Local).AddTicks(5826),
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
-                            IsEnabled = true,
+                            IsEnabled = false,
                             LastName = "Admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECAVeXGwEw+aJ7ToD/5uA72isQd5+AEbexyJeohz/bDc/vmNki7zUF6e9gYX/5XSjw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEtz2CI37pIovxHq6sE3eajn7i8D/w1w5HvI3+V6X07o63qVtBG/8iem1BWvuEw5HQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d07cccd7-49bc-4007-a351-e9cb7a2fa415",
+                            SecurityStamp = "abbd83d7-4893-450a-a84e-259018bdd0e5",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com"
                         });
@@ -181,13 +184,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f165e8e4-70ea-400c-a342-b18a8035c950",
+                            Id = "6be72fc4-ce24-4b25-af39-6f628a11855a",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "50f313f4-b6c4-4c73-ba85-3b3d525fba49",
+                            Id = "2060e17d-77d5-4ac0-b22a-62be26cb38df",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -282,13 +285,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "9efdf132-a705-4d3a-94f4-eb965af95d12",
-                            RoleId = "f165e8e4-70ea-400c-a342-b18a8035c950"
+                            UserId = "18dd22b8-0e15-4838-83ab-1010c5fd8f36",
+                            RoleId = "6be72fc4-ce24-4b25-af39-6f628a11855a"
                         },
                         new
                         {
-                            UserId = "ebbe3251-5b7a-4a7d-a2a7-2904e86f1f8b",
-                            RoleId = "50f313f4-b6c4-4c73-ba85-3b3d525fba49"
+                            UserId = "347afc61-53e5-4517-8911-8d31b9ca800c",
+                            RoleId = "2060e17d-77d5-4ac0-b22a-62be26cb38df"
                         });
                 });
 

@@ -2,7 +2,9 @@ using ACasotaBlazorServer.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 {
@@ -10,11 +12,13 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
     {
 
         private readonly SignInManager<ApplicationUser> _signInManager;
+		private readonly UserManager<ApplicationUser> _userManager;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager)
+		public LoginModel(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
-        }      
+			_userManager = userManager;
+		}      
 
         [BindProperty]
         public InputModel Input { get; set; }
@@ -30,30 +34,44 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
         {
 			ReturnUrl = Url.Content("/");
 
+            ApplicationUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName.Equals(Input.Email));
+
 			if (ModelState.IsValid)
             {
-				Microsoft.AspNetCore.Identity.SignInResult result;
+                if (user != null)
+                {
+                    if (user.IsEnabled)
+                    {
+                        SignInResult result;
 
-                if (Input.RememberMe)
-                {
-					result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, true, false);
-                }
-                else
-                {
-                    result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, false);
+                        if (Input.RememberMe)
+                        {
+                            result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, true, false);
+                        }
+                        else
+                        {
+                            result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, false);
+                        }
+
+                        if (result.Succeeded)
+                        {
+                            return LocalRedirect(ReturnUrl);
+                        }
+                        else
+                        {
+                            ViewData["Errors"] = "Email ou password errado!!";
+
+                            return Page();
+                        }
+                    }
+
+					ViewData["Errors"] = "Utilizador Bloqueado!!";
+
+                    return Page();
 				}
 
-                if(result.Succeeded)
-                {
-                    return LocalRedirect(ReturnUrl);
-                }
-                else
-                {
-					ViewData["Errors"] = "Email ou password errado!!";
-
-					return Page();
-                }
-            }
+				ViewData["Errors"] = "Utilizador Inexistente!!";
+			}
 
             return Page();
         }

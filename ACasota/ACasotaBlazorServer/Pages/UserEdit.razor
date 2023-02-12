@@ -1,0 +1,184 @@
+﻿@page "/UserEdit"
+@page "/UserEdit/{id}"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject NavigationManager nav
+@inject UserManager<ApplicationUser> _userManager
+@inject IDbContextFactory<DataContext> contextDb
+@attribute [Authorize]
+
+<PageTitle>Perfil</PageTitle>
+
+<AuthorizeView>
+	<Authorized>
+		<h1>Perfil</h1>
+		<section style="background-color: #eee;">
+			<div class="container py-5">
+				<div class="row">
+					<div class="col">
+						<nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+							<ol class="breadcrumb mb-0">
+								@if (context.User.IsInRole("Admin"))
+								{
+									<li class="breadcrumb-item"><a href="/">Página Principal</a></li>
+									<li class="breadcrumb-item"><a href="/UserManagement">Lista de Utilizadores</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
+
+								}else{
+									<li class="breadcrumb-item"><a href="/">Página Principal</a></li>
+									<li class="breadcrumb-item"><a href="/Profile">Perfil</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
+								}
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="card mb-4">
+							<div class="card-body text-center">
+								<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+									 class="rounded-circle img-fluid" style="width: 150px;">
+								<h5 class="my-3">@user_auth.FirstName @user_auth.LastName</h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<div class="card mb-4">
+							<div class="card-body">
+								<form runat="server" method="post">
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Primeiro Nome</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.FirstName" @bind:event="oninput" class="form-control" placeholder="Primeiro Nome" id="firstname" required>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Ultimo Nome</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.LastName" @bind:event="oninput" class="form-control" placeholder="Sobrenome" id="lastname" required>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Email</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="email" @bind="user_auth.Email" @bind:event="oninput" class="form-control" placeholder="Email" id="email" disabled required>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Numero Telemóvel</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.PhoneNumber" @bind:event="oninput" class="form-control" placeholder="Numero de telemóvel" id="telemovel">
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Morada</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.Address" @bind:event="oninput" class="form-control" placeholder="Morada" id="morada">
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">Numero de CC</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.CCnumber" @bind:event="oninput" class="form-control" placeholder="Numero de cartão de cidadão" id="ccnumber">
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-sm-3">
+											<p class="mb-0">NIF</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" @bind="user_auth.Nif" @bind:event="oninput" class="form-control" placeholder="Numero de indetificação fiscal" id="NIF">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div id="addEventForm">
+							<a class="btn btn-pill btn-outline-primary" onclick="@updateUser">Editar Conta</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</Authorized>
+	<NotAuthorized>
+		<p role="status">You are not authorized to see this component</p>
+	</NotAuthorized>
+</AuthorizeView>
+
+@code {
+	[CascadingParameter]
+	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+	[Parameter]
+	public string? id { get; set; }
+	public string? email { get; set; }
+
+	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+
+	protected override async Task OnInitializedAsync()
+	{
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		if (user.Identity.IsAuthenticated)
+		{
+			using (var ctx = contextDb.CreateDbContext())
+			{
+				if (user.IsInRole("Admin"))
+				{
+					user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+					this.email = user_auth.Email;
+				}
+				else
+				{
+					user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
+					this.email = user_auth.Email;
+				}
+			}
+		}
+	}
+
+	public async Task updateUser()
+	{
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		user_auth.Email = email;
+		using (var ctx = contextDb.CreateDbContext())
+		{
+			ctx.Users.Update(user_auth);
+			await ctx.SaveChangesAsync();
+		}
+
+		var location = "/Profile";
+
+		if (user.IsInRole("Admin"))
+		{
+			location = "/UserManagement";
+		}
+
+		nav.NavigateTo(location);
+	}
+}

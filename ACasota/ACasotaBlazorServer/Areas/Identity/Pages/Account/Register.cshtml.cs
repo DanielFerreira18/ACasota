@@ -39,9 +39,10 @@ namespace ACasotaBlazorServer.Areas.Identity.Pages.Account
 					{
 						FirstName = Input.FirstName,
 						LastName = Input.LastName,
-						Date_Birth= Input.Date_Birth,
-						UserName = Input.Email, 
-						Email = Input.Email
+						Date_Birth = Input.Date_Birth,
+						UserName = Input.Email,
+						Email = Input.Email,
+						IsEnabled = true
 					};
 
 					var result = await _userManager.CreateAsync(identity, Input.Password);

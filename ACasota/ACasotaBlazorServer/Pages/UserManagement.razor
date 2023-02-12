@@ -1,4 +1,4 @@
-﻿@page "/Usermanagement"
+﻿@page "/UserManagement"
 @using System.Collections
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity
@@ -29,8 +29,15 @@
 							<td>@userDb.Email</td>
 							<td>@userDb.Date_Birth.Date</td>
 							<td>
-								<a class="btn btn-pill btn-outline-danger" href="Identity/Account/Login">Bloquear</a>
-								<a class="btn btn-pill btn-outline-primary" href="Identity/Account/Register">Editar</a>
+								@if (userDb.IsEnabled)
+								{
+									<button class="btn btn-pill btn-danger" @onclick="() => blockUser(userDb.Id, userDb.IsEnabled)">Bloquear</button>
+								}
+								else
+								{
+									<button class="btn btn-pill btn-outline-danger" @onclick="() => blockUser(userDb.Id, userDb.IsEnabled)">Desbloquear</button>
+								}
+								<a class="btn btn-pill btn-primary" href="/UserEdit/@userDb.Id">Editar</a>
 							</td>
 						</tr>
 				}
@@ -61,6 +68,23 @@
 				foreach (var userct in usersCT)
 				{
 					users.Add(userct);
+				}
+			}
+		}
+	}
+
+	public async Task blockUser(string id, bool enable)
+	{
+		using (var ctx = contextDb.CreateDbContext())
+		{
+			foreach (var user in users)
+			{
+				if (user.Id.Equals(id))
+				{
+					user.IsEnabled = !enable;
+					ctx.Users.Update(user);
+
+					await ctx.SaveChangesAsync();
 				}
 			}
 		}

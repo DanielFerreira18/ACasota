@@ -39,10 +39,14 @@
 							<div class="card-body">
 								<div class="row">
 									<div class="col-sm-3">
-										<p class="mb-0">Nome Completo</p>
+										<p class="mb-0">Primeiro Nome</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="Primeiro Nome" onfocusout="checkFirstName()" onkeyup="checkFirstName()" value="@user_auth.FirstName" id="firstname" required>
+										@if(@user_auth.FirstName == "" || @user_auth.FirstName == null){
+											<label class="form-control" id="Address">Não possui um primeiro nome</label>
+										}else{
+											<label class="form-control" id="Address">@user_auth.FirstName</label>
+										}
 									</div>
 								</div>
 								<hr>
@@ -51,7 +55,11 @@
 										<p class="mb-0">Ultimo Nome</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="Ultimo Nome" onfocusout="checkLastName()" onkeyup="checkLastName()" value="@user_auth.LastName" id="lastname" required>
+										@if(@user_auth.LastName == "" || @user_auth.LastName == null){
+											<label class="form-control" id="Address">Não possui um sobrenome</label>
+										}else{
+											<label class="form-control" id="Address">@user_auth.LastName</label>
+										}
 									</div>
 								</div>
 								<hr>
@@ -60,16 +68,24 @@
 										<p class="mb-0">Email</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="email" class="form-control" placeholder="Email" onfocusout="checkEmail()" onkeyup="checkEmail()" value="@user_auth.Email" id="email" required>
+										@if(@user_auth.Email == "" || @user_auth.Email == null){
+											<label class="form-control" id="Email">Não contem qualquer Email</label>
+										}else{
+											<label class="form-control"id="Email">@user_auth.Email</label>
+										}
 									</div>
 								</div>
 								<hr>
 								<div class="row">
 									<div class="col-sm-3">
-										<p class="mb-0">Telemóvel</p>
+										<p class="mb-0">Numero Telemóvel</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.PhoneNumber" id="telemovel">
+										@if(@user_auth.PhoneNumber == "" || @user_auth.PhoneNumber == null){
+											<label class="form-control" id="Address">Não contem qualquer numero de telemóvel</label>
+										}else{
+											<label class="form-control" id="Address">@user_auth.PhoneNumber</label>
+										}
 									</div>
 								</div>
 								<hr>
@@ -78,7 +94,11 @@
 										<p class="mb-0">Morada</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.Address" id="morada">
+										@if(@user_auth.Address == "" || @user_auth.Address == null){
+											<label class="form-control" id="Address">Não contem qualquer morada</label>
+										}else{
+											<label class="form-control" id="Address">@user_auth.Address</label>
+										}
 									</div>
 								</div>
 								<hr>
@@ -87,7 +107,11 @@
 										<p class="mb-0">Numero de CC</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.CCnumber" id="ccnumber">
+										@if(@user_auth.CCnumber == "" || @user_auth.CCnumber == null){
+											<label class="form-control" id="CCNumber">Não contem qualquer numero de cidadão</label>
+										}else{
+											<label class="form-control" id="CCNumber">@user_auth.CCnumber</label>
+										}
 									</div>
 								</div>
 								<hr>
@@ -96,13 +120,17 @@
 										<p class="mb-0">NIF</p>
 									</div>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" placeholder="" onfocusout="" onkeyup="" value="@user_auth.Nif" id="NIF">
+										@if(@user_auth.Nif == "" || @user_auth.Nif == null){
+											<label class="form-control" id="NIF">Não contem qualquer NIF</label>
+										}else{
+											<label class="form-control" id="NIF">@user_auth.Nif</label>
+										}
 									</div>
 								</div>
 							</div>
 						</div>
 						<div id="addEventForm">
-							<a class="btn btn-pill btn-outline-primary" href="/Profile">Editar Conta</a>
+							<a class="btn btn-pill btn-outline-primary" href="/UserEdit/@user_auth.Id">Editar Conta</a>
 						</div>
 					</div>
 				</div>
@@ -118,7 +146,6 @@
 	[CascadingParameter]
 	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
 	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
-	public string random = "";
 
 	protected override async Task OnInitializedAsync()
 	{
