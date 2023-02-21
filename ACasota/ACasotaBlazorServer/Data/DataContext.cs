@@ -10,6 +10,8 @@ namespace ACasotaBlazorServer.Data
         {
         }
 
+		public DbSet<Animal> Animals { get; set; }
+
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);
