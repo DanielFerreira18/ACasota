@@ -241,3 +241,4 @@ C:\Users\Daniel Ferreira\Desktop\Work\Projeto\ACasota\ACasota\ACasotaBlazorServe
 C:\Users\Daniel Ferreira\Desktop\Work\Projeto\ACasota\ACasota\ACasotaBlazorServer\obj\Debug\net7.0\ACasotaBlazorServer.pdb
 C:\Users\Daniel Ferreira\Desktop\Work\Projeto\ACasota\ACasota\ACasotaBlazorServer\obj\Debug\net7.0\ACasotaBlazorServer.genruntimeconfig.cache
 C:\Users\Daniel Ferreira\Desktop\Work\Projeto\ACasota\ACasota\ACasotaBlazorServer\obj\Debug\net7.0\ref\ACasotaBlazorServer.dll
+C:\Users\Daniel Ferreira\Desktop\Work\Projeto\ACasota\ACasota\ACasotaBlazorServer\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
