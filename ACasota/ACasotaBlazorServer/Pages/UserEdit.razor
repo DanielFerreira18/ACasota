@@ -4,9 +4,11 @@
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.EntityFrameworkCore;
+
 @inject NavigationManager nav
 @inject UserManager<ApplicationUser> _userManager
 @inject IDbContextFactory<DataContext> contextDb
+
 @attribute [Authorize]
 
 <PageTitle>Perfil</PageTitle>
