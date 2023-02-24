@@ -11,5 +11,8 @@ namespace ACasotaBlazorServer.Data
         public string? Address { get; set; }
         public DateTime Date_Birth { get; set; }
         public bool IsEnabled { get; set; }
+
+        //List of Animals the User owns
+        public List<Animal>? Animals { get; set; }
     }
 }
