@@ -641,6 +641,10 @@ progress {
   margin-left: auto;
 }
 
+.image-Background{
+  display: none;
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
@@ -660,12 +664,23 @@ progress {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
   }
+  
+  .image-Background{
+    display: inline;
+  }
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
 }
+
+@media (min-width: 1800px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1700px;
+  }
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -1532,6 +1547,11 @@ progress {
   }
 }
 @media (min-width: 1200px) {
+  .col-md-6-custom{
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  
   .col-xl {
     flex: 1 0 0%;
   }
@@ -11302,7 +11322,6 @@ p {
 
 .page-section {
   padding: 6rem 0;
-  background-color: #f0e0ac;
 }
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
@@ -11397,7 +11416,7 @@ p {
   }
   #mainNav.navbar-shrink .navbar-brand svg,
 #mainNav.navbar-shrink .navbar-brand img {
-    height: 1.5rem;
+    height: 2rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -11410,12 +11429,12 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
   background-image: url("../assets/img/Banner4b.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height: 100vh;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
