@@ -1,17 +1,8 @@
 ﻿@page "/"
 <PageTitle>Página Principal</PageTitle>
 
-<h1>ACasota</h1>
-
 <AuthorizeView>
 	<Authorized>
 		<p>Olá @context.User.Identity.Name!</p>
 	</Authorized>
 </AuthorizeView>
-Bem vindo ao website da ACasota
-
-@code{
-	protected override void OnInitialized()
-	{
-	}
-}
