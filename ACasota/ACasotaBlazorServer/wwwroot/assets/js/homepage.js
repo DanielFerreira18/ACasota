@@ -16,9 +16,9 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-homepage-shrink')
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.add('navbar-homepage-shrink')
         }
 
     };
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', event => {
     document.addEventListener('scroll', navbarShrink);
 
     // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const navbarToggler = document.body.querySelector('.navbar-homepage-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );

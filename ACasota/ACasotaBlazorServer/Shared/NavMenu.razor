@@ -10,17 +10,17 @@
         </div>
         <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
             <nav class="flex-column">
-                <div class="nav-item-blazor px-3">
+                <div class="nav-item-homepage-blazor px-3">
                     <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                         <span class="oi oi-home" aria-hidden="true"></span> Página Inicial
                     </NavLink>
                 </div>
-                <div class="nav-item-blazor px-3">
+                <div class="nav-item-homepage-blazor px-3">
                     <NavLink class="nav-link" href="Profile">
                         <span class="oi oi-person" aria-hidden="true"></span> Perfil
                     </NavLink>
                 </div>
-                <div class="nav-item-blazor px-3">
+                <div class="nav-item-homepage-blazor px-3">
                     <NavLink class="nav-link" href="Usermanagement">
                         <span class="oi oi-people" aria-hidden="true"></span> Gestão de utilizadores
                        </NavLink>
@@ -41,12 +41,12 @@
 				</div>
 				<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
 					<nav class="flex-column">
-						<div class="nav-item-blazor px-3">
+						<div class="nav-item-homepage-blazor px-3">
 							<NavLink class="nav-link" href="" Match="NavLinkMatch.All">
 								<span class="oi oi-home" aria-hidden="true"></span> Página Inicial
 							</NavLink>
 						</div>
-						<div class="nav-item-blazor px-3">
+						<div class="nav-item-homepage-blazor px-3">
 							<NavLink class="nav-link" href="Profile">
 								<span class="oi oi-person" aria-hidden="true"></span> Perfil
 							</NavLink>
@@ -56,23 +56,23 @@
 			</Authorized>
 			<NotAuthorized>
 				<!-- Navigation-->
-				<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-					<div class="container">
-						<a class="navbar-brand" href="#page-top"><img src="/../../assets/img/ACasotaLogo.png" alt="..." /></a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+				<nav class="navbar-homepage navbar-homepage-expand-lg navbar-homepage-dark fixed-homepage-top" id="mainNav">
+					<div class="container-homepage">
+						<a class="navbar-homepage-brand" href="#page-top"><img src="/../../assets/img/ACasotaLogo.png" alt="..." /></a>
+						<button class="navbar-homepage-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 								aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 							Menu
 							<i class="fas fa-bars ms-1"></i>
 						</button>
-						<div class="collapse navbar-collapse" id="navbarResponsive">
-							<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-								<li class="nav-item"><a class="nav-link" href="#atividades">Atividades</a></li>
-								<li class="nav-item"><a class="nav-link" href="#animal">Animais</a></li>
-								<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-								<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-								<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-								<li class="nav-item"><a class="nav-link" href="Identity/Account/Login">Sign In</a></li>
-								<li class="nav-item"><a class="nav-link" href="Identity/Account/Register">Sign Up</a></li>
+						<div class="collapse navbar-homepage-collapse" id="navbarResponsive">
+							<ul class="navbar-homepage-nav text-uppercase ms-auto py-4 py-lg-0">
+								<li class="nav-item-homepage"><a class="nav-link" href="#atividades">Atividades</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="#animal">Animais</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="#about">About</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="#team">Team</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="#contact">Contact</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="Identity/Account/Login">Sign In</a></li>
+								<li class="nav-item-homepage"><a class="nav-link" href="Identity/Account/Register">Sign Up</a></li>
 							</ul>
 						</div>
 					</div>
