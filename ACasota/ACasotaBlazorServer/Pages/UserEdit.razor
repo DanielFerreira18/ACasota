@@ -137,6 +137,8 @@
 	public string? id { get; set; }
 	public string? email { get; set; }
 
+	public bool isSelf = false;
+
 	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
 	protected override async Task OnInitializedAsync()
@@ -176,7 +178,7 @@
 
 		var location = "/Profile";
 
-		if (user.IsInRole("Admin"))
+		if (user.IsInRole("Admin") && !user.Identity.Name.Equals(user_auth.UserName))
 		{
 			location = "/UserManagement";
 		}

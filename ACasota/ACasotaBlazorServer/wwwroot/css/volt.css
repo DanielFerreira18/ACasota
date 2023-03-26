@@ -10625,6 +10625,14 @@ textarea.form-control-lg {
     justify-content: flex-start !important;
 }
 
+.justify-content-left {
+    justify-content: left !important;
+}
+
+.justify-content-right {
+    justify-content: right !important;
+}
+
 .justify-content-end {
     justify-content: flex-end !important;
 }
