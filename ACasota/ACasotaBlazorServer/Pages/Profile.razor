@@ -1,4 +1,4 @@
-﻿@page "/Profile"
+﻿@page "/Profile/{id}"
 @using System.Collections
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity;
@@ -38,15 +38,25 @@
                                 <h4 class="h3">@user_auth.FirstName @user_auth.LastName</h4>
                                 <h5 class="fw-normal">Senior Software Engineer</h5>
                                 <p class="text-gray mb-4">New York, USA</p>
-                                <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="#">
+                                <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@user_auth.Id">
                                     <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
                                         </path>
                                     </svg>
-                                    Connect
+                                    Editar
                                 </a>
-                                <a class="btn btn-sm btn-secondary" href="#">Send Message</a>
+                                @if (context.User.IsInRole("Admin"))
+                                {
+                                    if (user_auth.IsEnabled)
+                                    {
+                                        <button class="btn btn-sm btn-danger" @onclick="() => blockUser(user_auth.Id, user_auth.IsEnabled)">Bloquear</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-sm btn-outline-danger" @onclick="() => blockUser(user_auth.Id, user_auth.IsEnabled)">Desbloquear</button>
+                                    } 
+                                }                                
                             </div>
                         </div>
                     </div>
@@ -221,9 +231,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-3">
-                        <a class="btn btn-gray-800 mt-2 animate-up-2" href="/UserEdit/@user_auth.Id">Editar Conta</a>
-                        </div>
                 </div>
                 <div class="card card-body border-0 shadow mb-4">
                     <h2 class="h5 mb-4">Alerts & Notifications</h2>
@@ -293,23 +300,36 @@
 </AuthorizeView>
 
 @code {
-	[CascadingParameter]
-	public Task<AuthenticationState> AuthenticationStateTask { get; set; }
-	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
 
-	protected override async Task OnInitializedAsync()
-	{
-		var authState = await AuthenticationStateTask;
-		var user = authState.User;
+    [Parameter]
+    public string? id { get; set; }
 
-		if (user.Identity.IsAuthenticated)
-		{
-			using (var ctx = contextDb.CreateDbContext())
-			{
-				user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
-			}
-		}
-	}
+    public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
 
+        if (user.Identity.IsAuthenticated)
+        {
+            using (var ctx = contextDb.CreateDbContext())
+            {
+                user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+            }
+        }
+    }
+
+    public async Task blockUser(string id, bool enable)
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.IsEnabled = !enable;
+            ctx.Users.Update(user_auth);
+
+            await ctx.SaveChangesAsync();
+        }
+    }
 }

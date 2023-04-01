@@ -176,12 +176,7 @@
 			await ctx.SaveChangesAsync();
 		}
 
-		var location = "/Profile";
-
-		if (user.IsInRole("Admin") && !user.Identity.Name.Equals(user_auth.UserName))
-		{
-			location = "/UserManagement";
-		}
+		var location = "/Profile/" + user_auth.Id;
 
 		nav.NavigateTo(location);
 	}

@@ -1,4 +1,13 @@
-﻿<AuthorizeView Context="AuthorizeAdmin" Roles="Admin">
+﻿@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+
+@inject NavigationManager nav
+@inject UserManager<ApplicationUser> _userManager
+@inject IDbContextFactory<DataContext> contextDb
+
+<AuthorizeView Context="AuthorizeAdmin" Roles="Admin">
     <Authorized>
 		<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
 			<a class="navbar-brand me-lg-5" href="../index.html">
@@ -66,7 +75,7 @@
                             <span class="sidebar-text">Dashboard</span>
                         </div>
                     </NavLink>
-                    <NavLink href="Profile" class="nav-item">
+                    <NavLink href="@($"/Profile/{user_auth.Id}")" class="nav-item">
                         <div class="nav-link">
                             <span class="sidebar-icon">
                                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +173,7 @@
                                     <span class="sidebar-text">Dashboard</span>
                                 </div>
                             </NavLink>
-                            <NavLink href="Profile" class="nav-item">
+                            <NavLink href="@($"/Profile/{user_auth.Id}")" class="nav-item">
                                 <div class="nav-link">
                                     <span class="sidebar-icon">
                                         <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -209,12 +218,21 @@
 </AuthorizeView>
 
 @code {
-	private bool collapseNavMenu = true;
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+    public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
-	private string? NavMenuCssClass => collapseNavMenu ? "collapse-blazor" : null;
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
 
-	private void ToggleNavMenu()
-	{
-		collapseNavMenu = !collapseNavMenu;
-	}
+        if (user.Identity.IsAuthenticated)
+        {
+            using (var ctx = contextDb.CreateDbContext())
+            {
+                user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
+            }
+        }
+    }
 }
