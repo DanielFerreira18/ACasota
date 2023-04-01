@@ -168,15 +168,23 @@
 	{
 		var authState = await AuthenticationStateTask;
 		var user = authState.User;
+		var userId = new ApplicationUser();
 
 		user_auth.Email = email;
 		using (var ctx = contextDb.CreateDbContext())
 		{
 			ctx.Users.Update(user_auth);
 			await ctx.SaveChangesAsync();
+
+			userId = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
 		}
 
-		var location = "/Profile/" + user_auth.Id;
+		var location = "/Profiles/" + user_auth.Id;
+
+		if(userId.Id == user_auth.Id)
+		{
+			location = "/Profile/" + user_auth.Id;
+		}
 
 		nav.NavigateTo(location);
 	}
