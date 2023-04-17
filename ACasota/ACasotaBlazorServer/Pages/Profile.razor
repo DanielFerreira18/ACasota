@@ -47,18 +47,7 @@
                                         </path>
                                     </svg>
                                     Editar
-                                </a>
-                                @if (context.User.IsInRole("Admin"))
-                                {
-                                    if (user_auth.IsEnabled)
-                                    {
-                                        <button class="btn btn-sm btn-danger" @onclick="() => blockUser(user_auth.Id, user_auth.IsEnabled)">Bloquear</button>
-                                    }
-                                    else
-                                    {
-                                        <button class="btn btn-sm btn-outline-danger" @onclick="() => blockUser(user_auth.Id, user_auth.IsEnabled)">Desbloquear</button>
-                                    } 
-                                }                                
+                                </a>                             
                             </div>
                         </div>
                     </div>
