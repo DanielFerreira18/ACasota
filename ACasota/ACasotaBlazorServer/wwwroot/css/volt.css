@@ -10169,6 +10169,10 @@ textarea.form-control-lg {
     display: flex !important;
 }
 
+.d-flex-none {
+    display: none !important;
+}
+
 .d-inline-flex {
     display: inline-flex !important;
 }
@@ -14812,6 +14816,10 @@ textarea.form-control-lg {
 
     .d-md-none {
         display: none !important;
+    }
+
+    .d-flex-none {
+        display: flex !important;
     }
 
     .vh-md-100 {
@@ -23680,6 +23688,16 @@ label {
 .avatar-md img {
     width: 3rem;
     height: 3rem;
+}
+
+.avatar-md-half {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.avatar-md-half img {
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 .avatar-lg {
