@@ -10,7 +10,7 @@
 <PageTitle>Perfil</PageTitle>
 
 <AuthorizeView>
-	<Authorized>
+    <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
             <div class="d-block mb-4 mb-md-0">
                 <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -47,11 +47,157 @@
                                         </path>
                                     </svg>
                                     Editar
-                                </a>                             
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mb-4">
+                </div>
+            </div>
+            <div class="col-12 col-xl-8">
+                <div class="card card-body border-0 shadow mb-4">
+                    <h2 class="h5 mb-4">Informação pessoal</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="first_name">Primeiro Nome</label>
+                                @if (@user_auth.FirstName == "" || @user_auth.FirstName == null)
+                                {
+                                    <label class="form-control" id="Address">Não possui um primeiro nome</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Address">@user_auth.FirstName</label>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="last_name">Apelido</label>
+                                @if (@user_auth.LastName == "" || @user_auth.LastName == null)
+                                {
+                                    <label class="form-control" id="Address">Não possui um sobrenome</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Address">@user_auth.LastName</label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-3">
+                            <label for="birthday">Cartão de Cidadão</label>
+                            @if (@user_auth.CCnumber == "" || @user_auth.CCnumber == null)
+                            {
+                                <label class="form-control" id="CCNumber">Não contem qualquer numero de cidadão</label>
+                            }
+                            else
+                            {
+                                <label class="form-control" id="CCNumber">@user_auth.CCnumber</label>
+                            }
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="gender">Numero de Indentificação Fiscal</label>
+                            @if (@user_auth.Nif == "" || @user_auth.Nif == null)
+                            {
+                                <label class="form-control" id="NIF">Não contem qualquer NIF</label>
+                            }
+                            else
+                            {
+                                <label class="form-control" id="NIF">@user_auth.Nif</label>
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                @if (@user_auth.Email == "" || @user_auth.Email == null)
+                                {
+                                    <label class="form-control" id="Email">Não contem qualquer Email</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Email">@user_auth.Email</label>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="phone">Numero Telémovel</label>
+                                @if (@user_auth.PhoneNumber == "" || @user_auth.PhoneNumber == null)
+                                {
+                                    <label class="form-control" id="Address">Não contem qualquer numero de telemóvel</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Address">@user_auth.PhoneNumber</label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="h5 my-4">Location</h2>
+                    <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="form-group">
+                                <label for="address">Morada</label>
+                                @if (@user_auth.Address == "" || @user_auth.Address == null)
+                                {
+                                    <label class="form-control" id="Address">Não contem qualquer morada</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Address">@user_auth.Address</label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input class="form-control" id="city" type="text" placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="zip">ZIP</label>
+                                <input class="form-control" id="zip" type="tel" placeholder="ZIP" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6-custom">
+                        <div class="card card-body border-0 shadow mb-4">
+                            <h2 class="h5 mb-4">Select cover photo</h2>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <!-- Avatar -->
+                                    <img class="rounded avatar-xl" src="../assets/img/profile-cover.jpg" alt="change cover">
+                                </div>
+                                <div class="file-field">
+                                    <div class="d-flex justify-content-xl-center ms-xl-3">
+                                        <div class="d-flex">
+                                            <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                      d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                                                      clip-rule="evenodd"></path>
+                                            </svg>
+                                            <input type="file">
+                                            <div class="d-md-block text-left">
+                                                <div class="fw-normal text-dark mb-1">Choose Image</div>
+                                                <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6-custom">
                         <div class="card card-body border-0 shadow">
                             <h2 class="h5 mb-4">Select profile photo</h2>
                             <div class="d-flex align-items-center">
@@ -79,190 +225,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 mb-4">
-                        <div class="card card-body border-0 shadow">
-                            <h2 class="h5 mb-4">Select cover photo</h2>
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">
-                                    <!-- Avatar -->
-                                    <img class="rounded avatar-xl" src="../assets/img/profile-cover.jpg" alt="change cover">
-                                </div>
-                                <div class="file-field">
-                                    <div class="d-flex justify-content-xl-center ms-xl-3">
-                                        <div class="d-flex">
-                                            <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                      d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
-                                                      clip-rule="evenodd"></path>
-                                            </svg>
-                                            <input type="file">
-                                            <div class="d-md-block text-left">
-                                                <div class="fw-normal text-dark mb-1">Choose Image</div>
-                                                <div class="text-gray small">JPG, GIF or PNG. Max size of 800K</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-xl-8">
-                <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">Informação pessoal</h2>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div>
-                                    <label for="first_name">Primeiro Nome</label>
-                                    @if (@user_auth.FirstName == "" || @user_auth.FirstName == null)
-                                    {
-                                        <label class="form-control" id="Address">Não possui um primeiro nome</label>
-                                    }
-                                    else
-                                    {
-                                        <label class="form-control" id="Address">@user_auth.FirstName</label>
-                                    }
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div>
-                                    <label for="last_name">Apelido</label>
-                                    @if (@user_auth.LastName == "" || @user_auth.LastName == null)
-                                    {
-                                        <label class="form-control" id="Address">Não possui um sobrenome</label>
-                                    }
-                                    else
-                                    {
-                                        <label class="form-control" id="Address">@user_auth.LastName</label>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6 mb-3">
-                                <label for="birthday">Cartão de Cidadão</label>
-                                @if (@user_auth.CCnumber == "" || @user_auth.CCnumber == null)
-                                {
-                                    <label class="form-control" id="CCNumber">Não contem qualquer numero de cidadão</label>
-                                }
-                                else
-                                {
-                                    <label class="form-control" id="CCNumber">@user_auth.CCnumber</label>
-                                }
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="gender">Numero de Indentificação Fiscal</label>
-                                @if (@user_auth.Nif == "" || @user_auth.Nif == null)
-                                {
-                                    <label class="form-control" id="NIF">Não contem qualquer NIF</label>
-                                }
-                                else
-                                {
-                                    <label class="form-control" id="NIF">@user_auth.Nif</label>
-                                }
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    @if (@user_auth.Email == "" || @user_auth.Email == null)
-                                    {
-                                        <label class="form-control" id="Email">Não contem qualquer Email</label>
-                                    }
-                                    else
-                                    {
-                                        <label class="form-control" id="Email">@user_auth.Email</label>
-                                    }
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <label for="phone">Numero Telémovel</label>
-                                    @if (@user_auth.PhoneNumber == "" || @user_auth.PhoneNumber == null)
-                                    {
-                                        <label class="form-control" id="Address">Não contem qualquer numero de telemóvel</label>
-                                    }
-                                    else
-                                    {
-                                        <label class="form-control" id="Address">@user_auth.PhoneNumber</label>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="h5 my-4">Location</h2>
-                        <div class="row">
-                            <div class="col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label for="address">Morada</label>
-                                    @if (@user_auth.Address == "" || @user_auth.Address == null)
-                                    {
-                                        <label class="form-control" id="Address">Não contem qualquer morada</label>
-                                    }
-                                    else
-                                    {
-                                        <label class="form-control" id="Address">@user_auth.Address</label>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <label for="city">City</label>
-                                    <input class="form-control" id="city" type="text" placeholder="City" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="zip">ZIP</label>
-                                    <input class="form-control" id="zip" type="tel" placeholder="ZIP" required>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">Alerts & Notifications</h2>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex align-items-center justify-content-between px-0 border-bottom">
-                            <div>
-                                <h3 class="h6 mb-1">Company News</h3>
-                                <p class="small pe-4">Get Rocket news, announcements, and product updates</p>
-                            </div>
-                            <div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="user-notification-1">
-                                    <label class="form-check-label" for="user-notification-1"></label>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-between px-0 border-bottom">
-                            <div>
-                                <h3 class="h6 mb-1">Account Activity</h3>
-                                <p class="small pe-4">Get important notifications about you or activity you've missed</p>
-                            </div>
-                            <div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="user-notification-2" checked>
-                                    <label class="form-check-label" for="user-notification-2"></label>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex align-items-center justify-content-between px-0">
-                            <div>
-                                <h3 class="h6 mb-1">Meetups Near You</h3>
-                                <p class="small pe-4">Get an email when a Dribbble Meetup is posted close to my location</p>
-                            </div>
-                            <div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="user-notification-3" checked>
-                                    <label class="form-check-label" for="user-notification-3"></label>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -287,7 +249,7 @@
                 </div>
             </div>
         </footer>
-	</Authorized>
+    </Authorized>
 </AuthorizeView>
 
 @code {
