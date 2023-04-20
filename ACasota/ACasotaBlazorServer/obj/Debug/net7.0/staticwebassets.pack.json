@@ -701,6 +701,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\themesberg.svg"
     },
     {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\coverDefault.png",
+      "PackagePath": "staticwebassets\\assets\\img\\userDefault\\coverDefault.png"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\userDefault.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\userDefault\\userDefault.jpg"
+    },
+    {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\ACasota.js",
       "PackagePath": "staticwebassets\\assets\\js\\ACasota.js"
     },
@@ -779,6 +787,22 @@
     {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\fdnplu5q.jpg",
+      "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\fdnplu5q.jpg"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ouig1guk.jpg",
+      "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\ouig1guk.jpg"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\emlnqrbh.jpg",
+      "PackagePath": "staticwebassets\\users_pics\\carina@gmail.com\\emlnqrbh.jpg"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\vblnzc2f.jpg",
+      "PackagePath": "staticwebassets\\users_pics\\carina@gmail.com\\vblnzc2f.jpg"
     },
     {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.min.css",

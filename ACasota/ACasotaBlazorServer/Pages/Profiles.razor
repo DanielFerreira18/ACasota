@@ -5,6 +5,7 @@
 @using Microsoft.EntityFrameworkCore;
 @inject UserManager<ApplicationUser> _userManager
 @inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
 @attribute [Authorize]
 
 <PageTitle>Perfil</PageTitle>
@@ -33,13 +34,25 @@
                 <div class="row">
                     <div class="col-12 mb-4">
                         <div class="card shadow border-0 text-center p-0">
-                            <div class="profile-cover rounded-top" data-background="../assets/img/profile-cover.jpg"></div>
+                            <div class="profile-cover rounded-top" data-background="@coverPic">
+                                <img src="@coverPic" class="image-cover rounded-top" alt="Cover Picture">
+                            </div>
                             <div class="card-body pb-5">
-                                <img src="../assets/img/team/profile-picture-1.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4"
+                                <img src="@profilePic" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4 image-fit"
                                      alt="Neil Portrait">
                                 <h4 class="h3">@user_auth.FirstName @user_auth.LastName</h4>
-                                <h5 class="fw-normal">Senior Software Engineer</h5>
-                                <p class="text-gray mb-4">New York, USA</p>
+                                @if (@user_auth.Title != "" || @user_auth.Title != null)
+                                {
+                                    <h5 class="fw-normal">@user_auth.Title</h5>
+                                }
+                                @if (@user_auth.City == "" || @user_auth.City == null)
+                                {
+                                    <p class="text-gray mb-4">Guarda, PT</p>
+                                }
+                                else
+                                {
+                                    <p class="text-gray mb-4">@user_auth, PT</p>
+                                }
                                 <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@user_auth.Id">
                                     <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -166,14 +179,28 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
-                                <label for="city">City</label>
-                                <input class="form-control" id="city" type="text" placeholder="City" required>
+                                <label for="city">Cidade</label>
+                                @if (@user_auth.City == "" || @user_auth.City == null)
+                                {
+                                    <label class="form-control" id="city" type="text">Cidade não atribuida</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="city" type="text">@user_auth.City</label>
+                                }
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="zip">ZIP</label>
-                                <input class="form-control" id="zip" type="tel" placeholder="ZIP" required>
+                                <label for="zip">Código Postal</label>
+                                @if (@user_auth.Zip == "" || @user_auth.Zip == null)
+                                {
+                                    <label class="form-control" id="zip" type="text">Código Postal não atribuido</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="zip" type="text">@user_auth.Zip</label>
+                                }
                             </div>
                         </div>
                     </div>
@@ -213,8 +240,15 @@
 
     public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string profilePic = "";
+    private string coverPic = "";
+
     protected override async Task OnInitializedAsync()
     {
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
         var authState = await AuthenticationStateTask;
         var user = authState.User;
 
@@ -223,6 +257,25 @@
             using (var ctx = contextDb.CreateDbContext())
             {
                 user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+                pathPicsRoot = Path.Combine(pathPicsRoot, user_auth.UserName);
+
+                if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.ProfilePic)))
+                {
+                    profilePic = Path.Combine(pathPicsRoot, user_auth.ProfilePic);
+                }
+                else
+                {
+                    profilePic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                }
+
+                if (user_auth.CoverPic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.CoverPic)))
+                {
+                    coverPic = Path.Combine(pathPicsRoot, user_auth.CoverPic);
+                }
+                else
+                {
+                    coverPic = "..\\assets\\img\\userDefault\\coverDefault.png";
+                }
             }
         }
     }

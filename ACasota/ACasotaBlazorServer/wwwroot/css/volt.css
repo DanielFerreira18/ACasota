@@ -23715,13 +23715,6 @@ label {
     height: 8rem;
 }
 
-@media (max-width: 991.98px) {
-    .avatar-xl {
-        width: 4.5rem;
-        height: 4.5rem;
-    }
-}
-
 .avatar-offline::before,
 .avatar-online::before {
     position: absolute;
@@ -25851,6 +25844,16 @@ label {
 /**
  * = Images
  */
+.image-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-fit{
+    object-fit: cover;
+}
+
 .image-xl {
     height: 20rem;
 }
@@ -25885,6 +25888,7 @@ label {
 
 .image-xs {
     height: 1.5rem;
+    width: 1.5rem;
 }
 
 .image-xs img {

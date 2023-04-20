@@ -5,6 +5,7 @@
 @using Microsoft.EntityFrameworkCore
 
 @inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
 
 @attribute [Authorize]
 
@@ -59,11 +60,21 @@
                 <tbody>
                     @foreach (var userDb in usersShow)
                     {
+                        {
+                            if (userDb.ProfilePic != null && File.Exists(Path.Combine(pathRoot, userDb.UserName, userDb.ProfilePic)))
+                            {
+                                pathPic = Path.Combine(pathPicsRoot, userDb.UserName, userDb.ProfilePic);
+                            }
+                            else 
+                            {
+                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                            }
+                        }
                         <!-- Item -->
                         <tr>
                             <td>
                                 <a href="/Profiles/@userDb.Id" class="fw-bold">
-                                    <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="../../assets/img/flags/united-states-of-america.svg">
+                                    <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="@pathPic">
                                     <span class="h6">@userDb.FirstName @userDb.LastName</span>
                                 </a>
                             </td>
@@ -168,6 +179,10 @@
     public List<ApplicationUser> users { get; set; } = new List<ApplicationUser>();
     public List<ApplicationUser> userDB { get; set; } = new List<ApplicationUser>();
 
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string pathPic = "";
+
     //Sets a list for the number of pages, set automatically
     public List<Int32> pageSelection { get; set; } = new List<Int32>();
 
@@ -189,6 +204,8 @@
 
     protected override async Task OnInitializedAsync()
     {
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
         var authState = await AuthenticationStateTask;
         var user = authState.User;
 
