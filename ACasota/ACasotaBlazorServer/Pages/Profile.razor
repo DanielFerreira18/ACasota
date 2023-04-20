@@ -53,7 +53,7 @@
                                 }
                                 else
                                 {
-                                    <p class="text-gray mb-4">@user_auth, PT</p>
+                                    <p class="text-gray mb-4">@user_auth.City, PT</p>
                                 }
                                 <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@user_auth.Id">
                                     <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
@@ -357,7 +357,7 @@
 
         profilePic = Path.Combine(pathPicsRoot, newFileName);
 
-        if (File.Exists(Path.Combine(pathUser, user_auth.ProfilePic)))
+        if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathUser, user_auth.ProfilePic)))
         {
             File.Delete(Path.Combine(pathUser, user_auth.ProfilePic));
         }
@@ -391,7 +391,7 @@
 
         coverPic = Path.Combine(pathPicsRoot, newFileName);
 
-        if (File.Exists(Path.Combine(pathUser, user_auth.CoverPic)))
+        if (user_auth.CoverPic != null && File.Exists(Path.Combine(pathUser, user_auth.CoverPic)))
         {
             File.Delete(Path.Combine(pathUser, user_auth.CoverPic));
         }
