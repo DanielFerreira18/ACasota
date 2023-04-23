@@ -1,14 +1,15 @@
-﻿@page "/UserManagement"
+﻿@page "/Animalmanagement/{id}"
 @using System.Collections
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
-@inject IDbContextFactory<DataContext> contextDb
 @inject IWebHostEnvironment enviroment
+@inject IDbContextFactory<DataContext> contextDb
+
 @attribute [Authorize]
 
-<PageTitle>Gestão de Utilizadores</PageTitle>
-<AuthorizeView Roles="Admin">
+<PageTitle>Os nossos Animais</PageTitle>
+<AuthorizeView>
     <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
             <div class="d-block mb-4 mb-md-0">
@@ -20,11 +21,11 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">ACasota</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Gestão de Utilizadores</li>
+                        <li class="breadcrumb-item active" aria-current="page">Animais</li>
                     </ol>
                 </nav>
-                <h2 class="h4">Gestão de Utilizadores</h2>
-                <p class="mb-0">Página de gestão para todos os utilizadores e contas activas</p>
+                <h2 class="h4">Os nossos Animais</h2>
+                <p class="mb-0">Todos os animais precisam de uma casa, adota um!!</p>
             </div>
         </div>
         <div class="table-settings mb-4">
@@ -36,78 +37,41 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </span>
-                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Utilizadores">
+                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Animal">
                     </div>
                 </div>
                 <div class="col-4 col-md-3 col-xl-2 ps-md-0 text-end">
-                    <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="">Adicionar Utilizador</a>
+                    <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="">Registar Animal</a>
                 </div>
             </div>
         </div>
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th class="border-gray-200">Nome</th>
-                        <th class="border-gray-200">E-mail</th>
-                        <th class="border-gray-200">Telemovel</th>
-                        <th class="border-gray-200">Morada</th>
-                        <th class="border-gray-200">Estado de Conta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var userDb in usersShow)
+            <div class="row">
+                @foreach (var userDb in usersShow)
+                {
                     {
+                        if (userDb.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, userDb.Id, userDb.AnimalPicture)))
                         {
-                            if (userDb.ProfilePic != null && File.Exists(Path.Combine(pathRoot, userDb.UserName, userDb.ProfilePic)))
-                            {
-                                pathPic = Path.Combine(pathPicsRoot, userDb.UserName, userDb.ProfilePic);
-                            }
-                            else 
-                            {
-                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
-                            }
+                            pathPic = Path.Combine(pathPicsRoot, userDb.Id, userDb.AnimalPicture);
                         }
-                        <!-- Item -->
-                        <tr>
-                            <td>
-                                <a href="/Profiles/@userDb.Id" class="fw-bold">
-                                    <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="@pathPic">
-                                    <span class="h6">@userDb.FirstName @userDb.LastName</span>
-                                </a>
-                            </td>
-                            <td><span class="fw-normal">@userDb.Email</span></td>
-
-                            @if (userDb.PhoneNumber == null)
-                            {
-                                <td><span class="fw-normal text-danger">Numero indisponivel</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-normal">@userDb.PhoneNumber</span></td>
-                            }
-
-                            @if (userDb.Address == null)
-                            {
-                                <td><span class="fw-normal text-danger">Morada indisponivel</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-normal">@userDb.Address</span></td>
-                            }
-
-                            @if (userDb.IsEnabled)
-                            {
-                                <td><span class="fw-bold text-success">Ativada</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-bold text-danger">Bloqueada</span></td>
-                            }
-                        </tr>
+                        else
+                        {
+                            pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                        }
                     }
-                </tbody>
-            </table>
+
+                    <div class="col-sm-3" style="margin-bottom:1rem">
+                        <a href="/Animal/@userDb.Id">
+                            <div class="card">
+                                <img class="card-img-top" src="@pathPic" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">@userDb.Name</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
         </div>
         @if (numberPages > 1)
         {
@@ -173,9 +137,14 @@
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthenticationStateTask { get; set; }
-    public List<ApplicationUser> usersShow { get; set; } = new List<ApplicationUser>();
-    public List<ApplicationUser> users { get; set; } = new List<ApplicationUser>();
-    public List<ApplicationUser> userDB { get; set; } = new List<ApplicationUser>();
+    public List<Animal> usersShow { get; set; } = new List<Animal>();
+    public List<Animal> users { get; set; } = new List<Animal>();
+    public List<Animal> userDB { get; set; } = new List<Animal>();
+
+    public List<System.Security.Claims.Claim> user_role { get; set; } = new List<System.Security.Claims.Claim>();
+
+    [Parameter]
+    public string? id { get; set; }
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
@@ -185,7 +154,7 @@
     public List<Int32> pageSelection { get; set; } = new List<Int32>();
 
     //Sets the number of entries per page for the table
-    public int numberEntriesPerPage { get; set; } = 10;
+    public int numberEntriesPerPage { get; set; } = 8;
     //Sets the total amount of entries, set automatically
     public int numberEntries { get; set; }
     //Sets the total amount of pages needed, set automatically
@@ -211,13 +180,15 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                var usersCT = await ctx.Users.ToArrayAsync();
+                var usersCT = await ctx.Animals.Where(x => x.UserId == id).ToListAsync();
 
                 foreach (var userct in usersCT)
                 {
                     userDB.Add(userct);
                 }
             }
+
+            user_role = user.Claims.Where(c => c.Type == System.Security.Claims.ClaimTypes.Role).ToList();
 
             userFill();
 
@@ -378,11 +349,10 @@
         {
             foreach (var u in userDB)
             {
-                var firstNameLower = u.FirstName.ToLower();
-                var lastNameLower = u.LastName.ToLower();
+                var nameLower = u.Name.ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower))
+                if (nameLower.Contains(searchLower))
                 {
                     users.Add(u);
                 }

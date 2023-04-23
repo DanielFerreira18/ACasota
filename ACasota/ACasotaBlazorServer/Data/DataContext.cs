@@ -11,23 +11,28 @@ namespace ACasotaBlazorServer.Data
         {
         }
 
-		public DbSet<Animal> Animals { get; set; }
+        public DbSet<Animal> Animals { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder builder)
-		{
-			base.OnModelCreating(builder);
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
 
-			var idRoleUser = Guid.NewGuid().ToString();
-			var idRoleAdmin = Guid.NewGuid().ToString();
-			var idUserUser = Guid.NewGuid().ToString();
-			var idUserAdmin = Guid.NewGuid().ToString();
-			var idAnimalUser = Guid.NewGuid().ToString();
-			var idAnimalAlone = Guid.NewGuid().ToString();
+            builder.Entity<Animal>()
+                .HasOne(u => u.User)
+                .WithMany(u => u.Animals)
+                .HasForeignKey(u => u.UserId);
 
-			var hasher = new PasswordHasher<IdentityUser>();
+            var idRoleUser = Guid.NewGuid().ToString();
+            var idRoleAdmin = Guid.NewGuid().ToString();
+            var idUserUser = Guid.NewGuid().ToString();
+            var idUserAdmin = Guid.NewGuid().ToString();
+            var idAnimalUser = Guid.NewGuid().ToString();
+            var idAnimalAlone = Guid.NewGuid().ToString();
 
-			builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleUser, Name = "User", NormalizedName="USER" });
-			builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleAdmin, Name = "Admin", NormalizedName = "ADMIN" });
+            var hasher = new PasswordHasher<IdentityUser>();
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleUser, Name = "User", NormalizedName = "USER" });
+            builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleAdmin, Name = "Admin", NormalizedName = "ADMIN" });
 
             builder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
@@ -47,45 +52,45 @@ namespace ACasotaBlazorServer.Data
                 LockoutEnabled = false,
                 AccessFailedCount = 0
             });
-			builder.Entity<ApplicationUser>().HasData(new ApplicationUser
-			{
-				Id = idUserAdmin,
-				FirstName = "Admin",
-				LastName = "Admin",
-				Date_Birth = DateTime.Now,
-				Email = "admin@admin.com",
-				IsEnabled= true,
-				NormalizedEmail = "ADMIN@ADMIN.COM",
-				UserName = "admin@admin.com",
-				NormalizedUserName = "ADMIN@ADMIN.COM",
-				PasswordHash = hasher.HashPassword(null, "adminpass"),
-				EmailConfirmed = false,
-				PhoneNumberConfirmed = false,
-				TwoFactorEnabled = false,
-				LockoutEnabled = false,
-				AccessFailedCount = 0
-			});
+            builder.Entity<ApplicationUser>().HasData(new ApplicationUser
+            {
+                Id = idUserAdmin,
+                FirstName = "Admin",
+                LastName = "Admin",
+                Date_Birth = DateTime.Now,
+                Email = "admin@admin.com",
+                IsEnabled = true,
+                NormalizedEmail = "ADMIN@ADMIN.COM",
+                UserName = "admin@admin.com",
+                NormalizedUserName = "ADMIN@ADMIN.COM",
+                PasswordHash = hasher.HashPassword(null, "adminpass"),
+                EmailConfirmed = false,
+                PhoneNumberConfirmed = false,
+                TwoFactorEnabled = false,
+                LockoutEnabled = false,
+                AccessFailedCount = 0
+            });
 
-			builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
-			{
-				UserId = idUserUser,
-				RoleId = idRoleUser,
-			});
-			builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
-			{
-				UserId = idUserAdmin,
-				RoleId = idRoleAdmin,
-			});
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                UserId = idUserUser,
+                RoleId = idRoleUser,
+            });
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                UserId = idUserAdmin,
+                RoleId = idRoleAdmin,
+            });
 
-			builder.Entity<Animal>().HasData(new Animal
-			{
-				Id = idAnimalUser,
-				Name = "Lucas",
-				Age = "2 Months",
-				Colour = "Ginger",
-				Race = "Cat",
-				UserId = idUserUser
-			});
-		}
-	}
+            builder.Entity<Animal>().HasData(new Animal
+            {
+                Id = idAnimalUser,
+                Name = "Lucas",
+                Age = "2 Months",
+                Colour = "Ginger",
+                Race = "Cat",
+                UserId = idUserUser
+            });
+        }
+    }
 }

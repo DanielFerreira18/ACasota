@@ -1,0 +1,345 @@
+﻿@page "/Animal/{id}"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject UserManager<ApplicationUser> _userManager
+@inject NavigationManager nav
+@inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
+@attribute [Authorize]
+
+<PageTitle>Perfil</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        @if (canInspect)
+        {
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+                <div class="d-block mb-4 mb-md-0">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="/">ACasota</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+                        </ol>
+                    </nav>
+                    <h2 class="h4">Perfil de Animal</h2>
+                    <p class="mb-0">Página de especificações e caracteristicas do animal</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xl-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card shadow border-0 text-center p-0">
+                                <div class="profile-cover rounded-top" data-background="@coverPic">
+                                    <img src="@coverPic" class="image-cover rounded-top" alt="Cover Picture">
+                                </div>
+                                <div class="card-body pb-5">
+                                    <img src="@profilePic" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4 image-fit"
+                                         alt="Neil Portrait">
+                                    <h4 class="h3">@animal_auth.Name</h4>
+
+                                    <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@animal_auth.Id">
+                                        <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                            </path>
+                                        </svg>
+                                        Editar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8">
+                    <div class="card card-body border-0 shadow mb-4">
+                        <h2 class="h5 mb-4">Informação pessoal</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div>
+                                    <label for="first_name">Primeiro Nome</label>
+                                    @if (animal_auth.Name == "" || animal_auth.Name == null)
+                                    {
+                                        <label class="form-control" id="Address">Não possui um primeiro nome</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="Address">@animal_auth.Name</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div>
+                                    <label for="last_name">Apelido</label>
+                                    @if (animal_auth.Race == "" || animal_auth.Race == null)
+                                    {
+                                        <label class="form-control" id="Address">Não possui um sobrenome</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="Address">@animal_auth.Race</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3">
+                                <label for="birthday">Cartão de Cidadão</label>
+                                @if (animal_auth.Age == "" || animal_auth.Age == null)
+                                {
+                                    <label class="form-control" id="CCNumber">Não contem qualquer numero de cidadão</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="CCNumber">@animal_auth.Age</label>
+                                }
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="gender">Numero de Indentificação Fiscal</label>
+                                @if (animal_auth.Colour == "" || animal_auth.Colour == null)
+                                {
+                                    <label class="form-control" id="NIF">Não contem qualquer NIF</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="NIF">@animal_auth.Colour</label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6-custom">
+                            <div class="card card-body border-0 shadow mb-4">
+                                <h2 class="h5 mb-4">Select cover photo</h2>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <!-- Avatar -->
+                                        <img class="rounded avatar-xl" src="../assets/img/profile-cover.jpg" alt="change cover">
+                                    </div>
+                                    <div class="file-field">
+                                        <div class="d-flex justify-content-xl-center ms-xl-3">
+                                            <div class="d-flex">
+                                                <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                          d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                                                          clip-rule="evenodd"></path>
+                                                </svg>
+                                                <InputFile OnChange="@LoadFilesCoverPics" accept=".png,.jpg,.jpeg" />
+                                                <div class="d-md-block text-left">
+                                                    <div class="fw-normal text-dark mb-1">Choose Image</div>
+                                                    <div class="text-gray small">JPG or PNG. Max size of 3MB</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6-custom">
+                            <div class="card card-body border-0 shadow">
+                                <h2 class="h5 mb-4">Select profile photo</h2>
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <!-- Avatar -->
+                                        <img class="rounded avatar-xl" src="../assets/img/team/profile-picture-3.jpg" alt="change avatar">
+                                    </div>
+                                    <div class="file-field">
+                                        <div class="d-flex justify-content-xl-center ms-xl-3">
+                                            <div class="d-flex">
+                                                <svg class="icon text-gray-500 me-2" fill="currentColor" viewBox="0 0 20 20"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                          d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+                                                          clip-rule="evenodd"></path>
+                                                </svg>
+                                                <InputFile OnChange="@LoadFilesProfilePics" accept=".png,.jpg,.jpeg" />
+                                                <div class="d-md-block text-left">
+                                                    <div class="fw-normal text-dark mb-1">Choose Image</div>
+                                                    <div class="text-gray small">JPG or PNG. Max size of 3MB</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
+                        <p class="mb-0 text-center text-lg-start">© 2023<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">ACasota</a></p>
+                    </div>
+                    <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
+                        <!-- List -->
+                        <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
+                            <li class="list-inline-item px-0 px-sm-2">
+                                <a href="https://themesberg.com/about">Instagram</a>
+                            </li>
+                            <li class="list-inline-item px-0 px-sm-2">
+                                <a href="https://themesberg.com/themes">Twitter</a>
+                            </li>
+                            <li class="list-inline-item px-0 px-sm-2">
+                                <a href="https://themesberg.com/blog">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        }
+        else
+        {
+            <p>nao pode</p>
+        }
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    [Parameter]
+    public string? id { get; set; }
+
+    public Animal animal_auth { get; set; } = new Animal();
+    public List<System.Security.Claims.Claim> user_role { get; set; } = new List<System.Security.Claims.Claim>();
+
+    private bool canInspect = true;
+
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string profilePic = "";
+    private string coverPic = "";
+    private long maxFileSize = 1024 * 1024 * 3;
+
+    protected override async Task OnInitializedAsync()
+    {
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            using (var ctx = contextDb.CreateDbContext())
+            {
+                try
+                {
+                    animal_auth = await ctx.Animals.Where(u => u.Id.Equals(this.id)).Include(c => c.User).FirstAsync();
+                }
+                catch
+                {
+                    canInspect = false;
+                    return;
+                }
+                
+                pathPicsRoot = Path.Combine(pathPicsRoot, animal_auth.Id);
+
+                user_role = user.Claims.Where(c => c.Type == System.Security.Claims.ClaimTypes.Role).ToList();
+
+                if (user_role[0].Value != "Admin")
+                {
+                    if (!user.Identity.Name.Equals(animal_auth.User.UserName))
+                    {
+                        canInspect = false;
+                    }
+                }
+
+                if (animal_auth.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, animal_auth.Id, animal_auth.AnimalPicture)))
+                {
+                    profilePic = Path.Combine(pathPicsRoot, animal_auth.AnimalPicture);
+                }
+                else
+                {
+                    profilePic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                }
+
+                if (animal_auth.CoverPicture != null && File.Exists(Path.Combine(pathRoot, animal_auth.Id, animal_auth.AnimalPicture)))
+                {
+                    coverPic = Path.Combine(pathPicsRoot, animal_auth.CoverPicture);
+                }
+                else
+                {
+                    coverPic = "..\\assets\\img\\userDefault\\coverDefault.png";
+                }
+            }
+        }
+    }
+
+    public async Task LoadFilesProfilePics(InputFileChangeEventArgs e)
+    {
+        string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
+
+        string pathUser = Path.Combine(pathRoot, animal_auth.Id!);
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        string filePath = Path.Combine(pathUser, newFileName);
+
+        profilePic = Path.Combine(pathPicsRoot, newFileName);
+
+        if (animal_auth.AnimalPicture != null && File.Exists(Path.Combine(pathUser, animal_auth.AnimalPicture)))
+        {
+            File.Delete(Path.Combine(pathUser, animal_auth.AnimalPicture));
+        }
+
+        await using FileStream fs = new(filePath, FileMode.Create);
+        await e.File.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            animal_auth.AnimalPicture = newFileName;
+
+            ctx.Animals.Update(animal_auth);
+            await ctx.SaveChangesAsync();
+        }
+
+        nav.NavigateTo("/Animal/" + animal_auth.Id, true);
+    }
+
+    public async Task LoadFilesCoverPics(InputFileChangeEventArgs e)
+    {
+        string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
+
+        string pathUser = Path.Combine(pathRoot, animal_auth.Id!);
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        string filePath = Path.Combine(pathUser, newFileName);
+
+        coverPic = Path.Combine(pathPicsRoot, newFileName);
+
+        if (animal_auth.CoverPicture != null && File.Exists(Path.Combine(pathUser, animal_auth.CoverPicture)))
+        {
+            File.Delete(Path.Combine(pathUser, animal_auth.CoverPicture));
+        }
+
+        await using FileStream fs = new(filePath, FileMode.Create);
+        await e.File.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            animal_auth.CoverPicture = newFileName;
+
+            ctx.Animals.Update(animal_auth);
+            await ctx.SaveChangesAsync();
+        }
+
+        nav.NavigateTo("/Animal/" + animal_auth.Id, true);
+    }
+}
