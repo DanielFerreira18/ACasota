@@ -8,125 +8,162 @@
 @inject NavigationManager nav
 @inject UserManager<ApplicationUser> _userManager
 @inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
 
 @attribute [Authorize]
 
-<PageTitle>Perfil</PageTitle>
+<PageTitle>Configuração</PageTitle>
 
 <AuthorizeView>
 	<Authorized>
-		<h1>Perfil</h1>
-		<section style="background-color: #eee;">
-			<div class="container py-5">
-				<div class="row">
-					<div class="col">
-						<nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-							<ol class="breadcrumb mb-0">
-								@if (context.User.IsInRole("Admin"))
-								{
-									<li class="breadcrumb-item"><a href="/">Página Principal</a></li>
-									<li class="breadcrumb-item"><a href="/UserManagement">Lista de Utilizadores</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
-
-								}else{
-									<li class="breadcrumb-item"><a href="/">Página Principal</a></li>
-									<li class="breadcrumb-item"><a href="/Profile">Perfil</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
-								}
-							</ol>
-						</nav>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="card mb-4">
-							<div class="card-body text-center">
-								<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-									 class="rounded-circle img-fluid" style="width: 150px;">
-								<h5 class="my-3">@user_auth.FirstName @user_auth.LastName</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-8">
-						<div class="card mb-4">
-							<div class="card-body">
-								<form runat="server" method="post">
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Primeiro Nome</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.FirstName" @bind:event="oninput" class="form-control" placeholder="Primeiro Nome" id="firstname" required>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Ultimo Nome</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.LastName" @bind:event="oninput" class="form-control" placeholder="Sobrenome" id="lastname" required>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Email</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="email" @bind="user_auth.Email" @bind:event="oninput" class="form-control" placeholder="Email" id="email" disabled required>
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Numero Telemóvel</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.PhoneNumber" @bind:event="oninput" class="form-control" placeholder="Numero de telemóvel" id="telemovel">
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Morada</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.Address" @bind:event="oninput" class="form-control" placeholder="Morada" id="morada">
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">Numero de CC</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.CCnumber" @bind:event="oninput" class="form-control" placeholder="Numero de cartão de cidadão" id="ccnumber">
-										</div>
-									</div>
-									<hr>
-									<div class="row">
-										<div class="col-sm-3">
-											<p class="mb-0">NIF</p>
-										</div>
-										<div class="col-sm-9">
-											<input type="text" @bind="user_auth.Nif" @bind:event="oninput" class="form-control" placeholder="Numero de indetificação fiscal" id="NIF">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-						<div id="addEventForm">
-							<a class="btn btn-pill btn-outline-primary" onclick="@updateUser">Editar Conta</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+            <div class="d-block mb-4 mb-md-0">
+                <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                    <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                        @if (context.User.IsInRole("Admin"))
+                        {
+                            <li class="breadcrumb-item"><a href="/">Página Principal</a></li>
+                            <li class="breadcrumb-item"><a href="/UserManagement">Lista de Utilizadores</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
+                        }
+                        else
+                        {
+                            <li class="breadcrumb-item"><a href="/">Página Principal</a></li>
+                            <li class="breadcrumb-item"><a href="/Profile">Perfil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Editar Perfil</li>
+                        }
+                    </ol>
+                </nav>
+                <h2 class="h4">Configuração de Perfil</h2>
+                <p class="mb-0">Página de configuração das caracteristicas do utilizador</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-4">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="card shadow border-0 text-center p-0">
+                            <div class="profile-cover rounded-top" data-background="@coverPic">
+                                <img src="@coverPic" class="image-cover rounded-top" alt="Cover Picture">
+                            </div>
+                            <div class="card-body pb-5">
+                                <img src="@profilePic" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4 image-fit"
+                                     alt="Profile Picture">
+                                <h4 class="h3">@user_auth.FirstName @user_auth.LastName</h4>
+                                @if (context.User.IsInRole("Admin"))
+                                {
+                                    <input type="text" @bind="@user_auth.Title" @bind:event="oninput" class="form-control" placeholder="Introduza um titulo" id="titulo"/>
+                                }
+                                @if (@user_auth.City == "" || @user_auth.City == null)
+                                {
+                                    <p class="text-gray mb-4">Guarda, PT</p>
+                                }
+                                else
+                                {
+                                    <p class="text-gray mb-4">@user_auth.City, PT</p>
+                                }
+                                <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" onclick="@updateUser">
+                                    <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                        </path>
+                                    </svg>
+                                    Editar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-8">
+                <div class="card card-body border-0 shadow mb-4">
+                    <h2 class="h5 mb-4">Informação pessoal</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="nome">Primeiro Nome</label>
+                                <input type="text" @bind="@user_auth.FirstName" @bind:event="oninput" class="form-control" placeholder="Introduza um nome próprio" id="nome" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div>
+                                <label for="apelido">Apelido</label>
+                                <input type="text" @bind="@user_auth.LastName" @bind:event="oninput" class="form-control" placeholder="Introduza um apelido" id="apelido" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-3">
+                            <label for="cartao">Cartão de Cidadão</label>
+                            <input type="text" @bind="@user_auth.CCnumber" @bind:event="oninput" class="form-control" placeholder="Introduza um numero cartão de cidadão" id="cartao" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nif">Numero de Indentificação Fiscal</label>
+                            <input type="text" @bind="@user_auth.Nif" @bind:event="oninput" class="form-control" placeholder="Introduza um numero de identificação fiscal" id="nif" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" @bind="user_auth.Email" @bind:event="oninput" class="form-control" placeholder="Introduza um email" id="email" disabled required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="telemovel">Numero Telémovel</label>
+                                <input type="text" @bind="@user_auth.PhoneNumber" @bind:event="oninput" class="form-control" placeholder="Introduza um numero de telémovel" id="telemovel" />
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="h5 my-4">Location</h2>
+                    <div class="row">
+                        <div class="col-sm-12 mb-3">
+                            <div class="form-group">
+                                <label for="morada">Morada</label>
+                                <input type="text" @bind="@user_auth.Address" @bind:event="oninput" class="form-control" placeholder="Introduza uma morada" id="morada" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="localidade">Localidade</label>
+                                <input type="text" @bind="@user_auth.City" @bind:event="oninput" class="form-control" placeholder="Introduza um localidade" id="localidade" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="zip">Código Postal</label>
+                                <input type="text" @bind="@user_auth.Zip" @bind:event="oninput" class="form-control" placeholder="Introduza um codigo postal" id="zip" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
+            <div class="row">
+                <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
+                    <p class="mb-0 text-center text-lg-start">© 2023<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">ACasota</a></p>
+                </div>
+                <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
+                    <!-- List -->
+                    <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
+                        <li class="list-inline-item px-0 px-sm-2">
+                            <a href="https://themesberg.com/about">Instagram</a>
+                        </li>
+                        <li class="list-inline-item px-0 px-sm-2">
+                            <a href="https://themesberg.com/themes">Twitter</a>
+                        </li>
+                        <li class="list-inline-item px-0 px-sm-2">
+                            <a href="https://themesberg.com/blog">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 	</Authorized>
-	<NotAuthorized>
-		<p role="status">You are not authorized to see this component</p>
-	</NotAuthorized>
 </AuthorizeView>
 
 @code {
@@ -139,10 +176,18 @@
 
 	public bool isSelf = false;
 
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string profilePic = "";
+    private string coverPic = "";
+    private long maxFileSize = 1024 * 1024 * 3;
+
 	public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
 	protected override async Task OnInitializedAsync()
 	{
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
 		var authState = await AuthenticationStateTask;
 		var user = authState.User;
 
@@ -160,9 +205,97 @@
 					user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
 					this.email = user_auth.Email;
 				}
+
+                pathPicsRoot = Path.Combine(pathPicsRoot, user_auth.UserName);
+
+                if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.ProfilePic)))
+                {
+                    profilePic = Path.Combine(pathPicsRoot, user_auth.ProfilePic);
+                }
+                else
+                {
+                    profilePic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                }
+
+                if (user_auth.CoverPic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.CoverPic)))
+                {
+                    coverPic = Path.Combine(pathPicsRoot, user_auth.CoverPic);
+                }
+                else
+                {
+                    coverPic = "..\\assets\\img\\userDefault\\coverDefault.png";
+                }
 			}
 		}
 	}
+
+    public async Task LoadFilesProfilePics(InputFileChangeEventArgs e)
+    {
+        string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
+
+        string pathUser = Path.Combine(pathRoot, user_auth.UserName!);
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        string filePath = Path.Combine(pathUser, newFileName);
+
+        profilePic = Path.Combine(pathPicsRoot, newFileName);
+
+        if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathUser, user_auth.ProfilePic)))
+        {
+            File.Delete(Path.Combine(pathUser, user_auth.ProfilePic));
+        }
+
+        await using FileStream fs = new(filePath, FileMode.Create);
+        await e.File.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.ProfilePic = newFileName;
+
+            ctx.Users.Update(user_auth);
+            await ctx.SaveChangesAsync();
+        }
+
+        nav.NavigateTo("/Profile/" + user_auth.Id, true);
+    }
+
+    public async Task LoadFilesCoverPics(InputFileChangeEventArgs e)
+    {
+        string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
+
+        string pathUser = Path.Combine(pathRoot, user_auth.UserName!);
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        string filePath = Path.Combine(pathUser, newFileName);
+
+        coverPic = Path.Combine(pathPicsRoot, newFileName);
+
+        if (user_auth.CoverPic != null && File.Exists(Path.Combine(pathUser, user_auth.CoverPic)))
+        {
+            File.Delete(Path.Combine(pathUser, user_auth.CoverPic));
+        }
+
+        await using FileStream fs = new(filePath, FileMode.Create);
+        await e.File.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.CoverPic = newFileName;
+
+            ctx.Users.Update(user_auth);
+            await ctx.SaveChangesAsync();
+        }
+
+        nav.NavigateTo("/Profile/" + user_auth.Id, true);
+    }
 
 	public async Task updateUser()
 	{

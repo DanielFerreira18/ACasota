@@ -4,8 +4,8 @@
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.EntityFrameworkCore;
 @inject UserManager<ApplicationUser> _userManager
-@inject IDbContextFactory<DataContext> contextDb
 @inject NavigationManager nav
+@inject IDbContextFactory<DataContext> contextDb
 @inject IWebHostEnvironment enviroment
 
 @attribute [Authorize]
