@@ -53,6 +53,17 @@
                                         </svg>
                                         Editar
                                     </a>
+                                    @if (animal_auth.UserId == null || animal_auth.UserId == "")
+                                    {
+                                        <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@animal_auth.Id">
+                                            <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                                </path>
+                                            </svg>
+                                            Adotar
+                                        </a>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -211,9 +222,9 @@
     public string? id { get; set; }
 
     public Animal animal_auth { get; set; } = new Animal();
-    public List<System.Security.Claims.Claim> user_role { get; set; } = new List<System.Security.Claims.Claim>();
 
     private bool canInspect = true;
+    private bool errorHandling = true;
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
@@ -238,15 +249,13 @@
                 }
                 catch
                 {
-                    canInspect = false;
+                    errorHandling = false;
                     return;
                 }
                 
                 pathPicsRoot = Path.Combine(pathPicsRoot, animal_auth.Id);
 
-                user_role = user.Claims.Where(c => c.Type == System.Security.Claims.ClaimTypes.Role).ToList();
-
-                if (user_role[0].Value != "Admin")
+                if (!user.IsInRole("Admin"))
                 {
                     if (!user.Identity.Name.Equals(animal_auth.User.UserName))
                     {

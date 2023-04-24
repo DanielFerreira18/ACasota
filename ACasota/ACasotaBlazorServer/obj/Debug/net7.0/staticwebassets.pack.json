@@ -561,6 +561,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\icons\\google_analytics.svg"
     },
     {
+      "Id": "C:\\Users\\Daniel\\Desktop\\Work\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\403.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\403.svg"
+    },
+    {
       "Id": "C:\\Users\\Daniel\\Desktop\\Work\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\404.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\404.svg"
     },

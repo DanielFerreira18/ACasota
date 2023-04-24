@@ -9,6 +9,7 @@
 @attribute [Authorize]
 
 <PageTitle>Gestão de Animais</PageTitle>
+
 <AuthorizeView>
     <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -40,9 +41,12 @@
                         <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Animal">
                     </div>
                 </div>
-                <div class="col-4 col-md-3 col-xl-2 ps-md-0 text-end">
-                    <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="">Registar Animal</a>
-                </div>
+                @if (isAdmin)
+                {
+                    <div class="col-4 col-md-3 col-xl-2 ps-md-0 text-end">
+                        <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="">Registar Animal</a>
+                    </div>
+                }
             </div>
         </div>
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
@@ -65,7 +69,13 @@
                             <div class="card">
                                 <img class="card-img-top" src="@pathPic" alt="Card image cap">
                                 <div class="card-body">
-                                    <p class="text-danger" style="font-size:smaller">Adotado</p>
+                                    @if (isAdmin)
+                                    {
+                                        @if (userDb.UserId != null || userDb.UserId != "")
+                                        {
+                                            <p class="text-danger" style="font-size:smaller">Adotado</p>
+                                        }
+                                    }
                                     <h5 class="card-title">@userDb.Name</h5>
                                 </div>
                             </div>
@@ -142,7 +152,7 @@
     public List<Animal> users { get; set; } = new List<Animal>();
     public List<Animal> userDB { get; set; } = new List<Animal>();
 
-    public List<System.Security.Claims.Claim> user_role { get; set; } = new List<System.Security.Claims.Claim>();
+    private bool isAdmin = true;
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
@@ -180,9 +190,7 @@
             {
                 var usersCT = await ctx.Animals.ToArrayAsync();
 
-                user_role = user.Claims.Where(c => c.Type == System.Security.Claims.ClaimTypes.Role).ToList();
-
-                if (user_role[0].Value.Equals("Admin"))
+                if (user.IsInRole("Admin"))
                 {
                     foreach (var userct in usersCT)
                     {
@@ -191,9 +199,11 @@
                 }
                 else
                 {
+                    isAdmin = false;
+
                     foreach (var userct in usersCT)
                     {
-                        if(userct.UserId == null || userct.UserId == "")
+                        if (userct.UserId == null || userct.UserId == "")
                         {
                             userDB.Add(userct);
                         }
@@ -220,7 +230,7 @@
                     usersShow.Add(userInDb);
                 }
 
-                if(numberEntries == 0)
+                if (numberEntries == 0)
                 {
                     startIndex = 0;
                 }

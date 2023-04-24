@@ -10,7 +10,7 @@
 
 <PageTitle>Perfil</PageTitle>
 
-<AuthorizeView>
+<AuthorizeView Roles="Admin">
     <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
             <div class="d-block mb-4 mb-md-0">
@@ -229,6 +229,9 @@
             </div>
         </footer>
     </Authorized>
+    <NotAuthorized>
+
+    </NotAuthorized>
 </AuthorizeView>
 
 @code {
@@ -239,6 +242,8 @@
     public string? id { get; set; }
 
     public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+
+    public bool errorHandling = true;
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
@@ -256,7 +261,16 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+                try
+                {
+                    user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+                }
+                catch
+                {
+                    errorHandling = false;
+                    return;
+                }
+                
                 pathPicsRoot = Path.Combine(pathPicsRoot, user_auth.UserName);
 
                 if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.ProfilePic)))

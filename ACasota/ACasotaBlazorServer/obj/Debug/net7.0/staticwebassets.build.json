@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sWSkvg0upL4KOTGSbSas9cPLhHpCwGliVcrX9jIwerg=",
+  "Hash": "q6YMa1Xe/970gX06+wBQMA81nbABD469115vipPWSzo=",
   "Source": "ACasotaBlazorServer",
   "BasePath": "_content/ACasotaBlazorServer",
   "Mode": "Default",
@@ -2412,6 +2412,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\google-tag-manager.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Daniel\\Desktop\\Work\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\403.svg",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Daniel\\Desktop\\Work\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "assets/img/illustrations/403.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\illustrations\\403.svg"
     },
     {
       "Identity": "C:\\Users\\Daniel\\Desktop\\Work\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\404.svg",

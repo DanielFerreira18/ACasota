@@ -289,6 +289,8 @@
 
     public ApplicationUser user_auth { get; set; } = new ApplicationUser();
 
+    private bool errorHandling = true;
+
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
     private string profilePic = "";
@@ -307,7 +309,8 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
+                user_auth = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
+
                 pathPicsRoot = Path.Combine(pathPicsRoot, user_auth.UserName);
 
                 if (user_auth.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.UserName, user_auth.ProfilePic)))
