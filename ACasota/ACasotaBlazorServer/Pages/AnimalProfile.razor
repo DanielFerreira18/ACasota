@@ -77,10 +77,10 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name">Primeiro Nome</label>
+                                        <label for="first_name">Nome</label>
                                         @if (animal_auth.Name == "" || animal_auth.Name == null)
                                         {
-                                            <label class="form-control" id="Address">Não possui um primeiro nome</label>
+                                            <label class="form-control" id="Address">Não possui um nome</label>
                                         }
                                         else
                                         {
@@ -90,10 +90,10 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Apelido</label>
+                                        <label for="last_name">Especie</label>
                                         @if (animal_auth.Race == "" || animal_auth.Race == null)
                                         {
-                                            <label class="form-control" id="Address">Não possui um sobrenome</label>
+                                            <label class="form-control" id="Address">Especie não especificada</label>
                                         }
                                         else
                                         {
@@ -104,10 +104,10 @@
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-6 mb-3">
-                                    <label for="birthday">Cartão de Cidadão</label>
+                                    <label for="birthday">Idade</label>
                                     @if (animal_auth.Age == "" || animal_auth.Age == null)
                                     {
-                                        <label class="form-control" id="CCNumber">Não contem qualquer numero de cidadão</label>
+                                        <label class="form-control" id="CCNumber">Idade não especificada</label>
                                     }
                                     else
                                     {
@@ -115,10 +115,10 @@
                                     }
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="gender">Numero de Indentificação Fiscal</label>
+                                    <label for="gender">Cor</label>
                                     @if (animal_auth.Colour == "" || animal_auth.Colour == null)
                                     {
-                                        <label class="form-control" id="NIF">Não contem qualquer NIF</label>
+                                        <label class="form-control" id="NIF">Cor não especificada</label>
                                     }
                                     else
                                     {
