@@ -44,8 +44,58 @@
                 @if (isAdmin)
                 {
                     <div class="col-4 col-md-3 col-xl-2 ps-md-0 text-end">
-                        <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="">Registar Animal</a>
+                        <button type="button" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal-form-signup">Registar Animal</button>
                     </div>
+                    <!-- Modal Content -->
+                    <div class="modal fade" id="modal-form-signup" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body p-0">
+                                    <div class="card p-3 p-lg-4">
+                                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="text-center text-md-center mb-4 mt-md-0">
+                                            <h1 class="mb-0 h4">Novo registo Animal</h1>
+                                            
+                                        </div>
+                                        <!-- Form -->
+                                        <div class="form-group mb-4">
+                                            <label for="nome">Nome do Animal</label>
+                                            <div class="input-group">
+                                                <input type="text" @bind="@animalReg.Name" @bind:event="oninput" class="form-control" placeholder="Nome do animal" id="nome" autofocus required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="especie">Especie</label>
+                                            <div class="input-group">
+                                                <input type="text" @bind="@animalReg.Race" @bind:event="oninput" placeholder="Especie do animal" class="form-control" id="especie" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="idade">Idade do animal</label>
+                                            <div class="input-group">
+                                                <input type="text" @bind="@animalReg.Age" @bind:event="oninput" placeholder="Idade do animal" class="form-control" id="idade" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="cor">Cor do animal</label>
+                                            <div class="input-group">
+                                                <input type="text" @bind="@animalReg.Colour" @bind:event="oninput" placeholder="Cor do animal" class="form-control" id="cor" required>
+                                            </div>
+                                        </div>
+                                        <!-- End of Form -->
+
+                                        <div class="d-grid mb-4">
+                                            <button type="button" class="btn btn-gray-800" @onclick="CreateAnimal">Registar Animal</button>
+                                        </div>
+                                        <div class="text-center text-md-center mb-4 mt-md-0">
+                                            <p class="text-gray">Após preenchimento do formulário e registo será necessário a atribuição das imágens do animal!!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal Content -->
                 }
             </div>
         </div>
@@ -71,7 +121,7 @@
                                 <div class="card-body">
                                     @if (isAdmin)
                                     {
-                                        @if (userDb.UserId != null || userDb.UserId != "")
+                                        @if (userDb.UserId != null)
                                         {
                                             <p class="text-danger" style="font-size:smaller">Adotado</p>
                                         }
@@ -151,6 +201,8 @@
     public List<Animal> usersShow { get; set; } = new List<Animal>();
     public List<Animal> users { get; set; } = new List<Animal>();
     public List<Animal> userDB { get; set; } = new List<Animal>();
+
+    private Animal animalReg { get; set; } = new Animal();
 
     private bool isAdmin = true;
 
@@ -378,6 +430,17 @@
                     users.Add(u);
                 }
             }
+        }
+    }
+
+    public async Task CreateAnimal()
+    {
+        animalReg.Id = Guid.NewGuid().ToString();
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            await ctx.Animals.AddAsync(animalReg);
+            await ctx.SaveChangesAsync();
         }
     }
 }

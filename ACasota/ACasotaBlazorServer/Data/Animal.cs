@@ -15,6 +15,6 @@ namespace ACasotaBlazorServer.Data
 
         //FK to the owner of the animal
         public string? UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }

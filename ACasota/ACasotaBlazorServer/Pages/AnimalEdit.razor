@@ -202,9 +202,12 @@
 
                 if (!user.IsInRole("Admin"))
                 {
-                    if (!user.Identity.Name.Equals(animal_auth.User.UserName))
+                    if(animal_auth.User != null)
                     {
-                        canInspect = false;
+                        if (!user.Identity.Name.Equals(animal_auth.User.UserName))
+                        {
+                            canInspect = false;
+                        }
                     }
                 }
 
