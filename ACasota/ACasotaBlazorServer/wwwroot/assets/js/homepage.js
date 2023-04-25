@@ -66,3 +66,8 @@ function NavScrollSpy() {
         });
     };
 }
+
+function DownModal() {
+    document.getElementById('close-modal').click();
+    document.getElementById('openSecond-modal').click();
+}

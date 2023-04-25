@@ -7,6 +7,8 @@
 @inject NavigationManager nav
 @inject IDbContextFactory<DataContext> contextDb
 @inject IWebHostEnvironment enviroment
+@inject IJSRuntime JSRuntime
+
 @attribute [Authorize]
 
 <PageTitle>Perfil</PageTitle>
@@ -75,16 +77,74 @@
                                                 }
                                             }
                                         }
-                                        @if (animal_auth.UserId != null)
+
+                                        @if (animal_auth.UserId == null)
                                         {
-                                            <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/UserEdit/@animal_auth.Id">
-                                                <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
-                                                    </path>
-                                                </svg>
-                                                Adotar
-                                            </a>
+                                            @if (context.User.IsInRole("Admin"))
+                                            {
+                                                <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal-subscribe">
+                                                    <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                                        </path>
+                                                    </svg>
+                                                    Adotar
+                                                </a>
+                                                <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
+                                                <!-- Modal Content -->
+                                                <div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog" aria-labelledby="modal-subscribe" aria-hidden="true">
+                                                    <div class="modal-dialog modal-tertiary modal-dialog-centered modal-lg" role="document">
+                                                        <div class="modal-content bg-dark text-white">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="btn-close btn-close-white text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center py-3">
+                                                                <span class="modal-icon">
+                                                                    <svg class="icon icon-xl text-gray-200 mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.94 6.412A2 2 0 002 8.108V16a2 2 0 002 2h12a2 2 0 002-2V8.108a2 2 0 00-.94-1.696l-6-3.75a2 2 0 00-2.12 0l-6 3.75zm2.615 2.423a1 1 0 10-1.11 1.664l5 3.333a1 1 0 001.11 0l5-3.333a1 1 0 00-1.11-1.664L10 11.798 5.555 8.835z" clip-rule="evenodd"></path></svg>
+                                                                </span>
+                                                                <h3 class="modal-title mb-3">Join our 1,360,462 subscribers</h3>
+                                                                <p class="mb-4 lead">Get exclusive access to freebies, premium products and news.</p>
+                                                                <div class="form-group px-lg-5">
+                                                                    <div class="d-flex mb-3 justify-content-center">
+                                                                        <input type="text" @bind="@adoptEmail" id="subscribe" class="me-sm-1 mb-sm-0 form-control form-control-lg" placeholder="example@company.com">
+                                                                        <div>
+                                                                            <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" @onclick="AdoptAnimal">Subscribe</button>
+                                                                            <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="text-danger" style="margin-left: 3rem; text-align: left;">@errors</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End of Modal Content -->
+                                                <!-- Modal Content -->
+                                                <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+                                                    <div class="modal-dialog modal-success modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <div class="modal-header mx-auto">
+                                                            </div>
+                                                            <div class="modal-body pt-0">
+                                                                <div class="py-3 px-5 text-center">
+                                                                    <span class="modal-icon display-1 text-white">
+                                                                        <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                                            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <h2 class="h3 modal-title mb-3 text-white">O @animal_auth.Name foi adotado!!</h2>
+                                                                    <p class="mb-4 text-white">Processo de adoção completo com sucesso, volte para a página de gestão de animais!!</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
+                                                                <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End of Modal Content -->
+                                            }
                                         }
                                     </div>
                                 </div>
@@ -285,7 +345,9 @@
     public string? id { get; set; }
 
     public Animal animal_auth { get; set; } = new Animal();
+    public string errors { get; set; } = "";
 
+    public string adoptEmail = "";
     private bool canInspect = true;
     private bool errorHandling = true;
 
@@ -301,7 +363,6 @@
 
         var authState = await AuthenticationStateTask;
         var user = authState.User;
-
         if (user.Identity.IsAuthenticated)
         {
             using (var ctx = contextDb.CreateDbContext())
@@ -416,5 +477,35 @@
         }
 
         nav.NavigateTo("/Animal/" + animal_auth.Id, true);
+    }
+
+    public void GetDown()
+    {
+        JSRuntime.InvokeVoidAsync("DownModal");
+    }
+
+    public async Task AdoptAnimal()
+    {
+        using (var ctxs = contextDb.CreateDbContext())
+        {
+            ApplicationUser userAdopting = null;
+
+            try
+            {
+                userAdopting = await ctxs.Users.SingleAsync(u => u.UserName == adoptEmail);
+            }
+            catch
+            {
+                errors = "Email errado!! Introduza um email válido";
+                return;
+            }
+
+            animal_auth.UserId = userAdopting.Id;
+
+            ctxs.Animals.Update(animal_auth);
+            await ctxs.SaveChangesAsync();
+
+            GetDown();
+        }
     }
 }
