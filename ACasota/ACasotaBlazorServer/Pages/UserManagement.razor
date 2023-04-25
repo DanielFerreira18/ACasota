@@ -54,55 +54,62 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var userDb in usersShow)
+                    @if (usersShow.Count == 0)
                     {
+                        <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem animais disponiveis!!</p>
+                    }
+                    else
+                    {
+                        @foreach (var userDb in usersShow)
                         {
-                            if (userDb.ProfilePic != null && File.Exists(Path.Combine(pathRoot, userDb.UserName, userDb.ProfilePic)))
                             {
-                                pathPic = Path.Combine(pathPicsRoot, userDb.UserName, userDb.ProfilePic);
+                                if (userDb.ProfilePic != null && File.Exists(Path.Combine(pathRoot, userDb.UserName, userDb.ProfilePic)))
+                                {
+                                    pathPic = Path.Combine(pathPicsRoot, userDb.UserName, userDb.ProfilePic);
+                                }
+                                else
+                                {
+                                    pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                                }
                             }
-                            else 
-                            {
-                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
-                            }
+                            <!-- Item -->
+                            <tr>
+                                <td>
+                                    <a href="/Profiles/@userDb.Id" class="fw-bold">
+                                        <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="@pathPic">
+                                        <span class="h6">@userDb.FirstName @userDb.LastName</span>
+                                    </a>
+                                </td>
+                                <td><span class="fw-normal">@userDb.Email</span></td>
+
+                                @if (userDb.PhoneNumber == null)
+                                {
+                                    <td><span class="fw-normal text-danger">Numero indisponivel</span></td>
+                                }
+                                else
+                                {
+                                    <td><span class="fw-normal">@userDb.PhoneNumber</span></td>
+                                }
+
+                                @if (userDb.Address == null)
+                                {
+                                    <td><span class="fw-normal text-danger">Morada indisponivel</span></td>
+                                }
+                                else
+                                {
+                                    <td><span class="fw-normal">@userDb.Address</span></td>
+                                }
+
+                                @if (userDb.IsEnabled)
+                                {
+                                    <td><span class="fw-bold text-success">Ativada</span></td>
+                                }
+                                else
+                                {
+                                    <td><span class="fw-bold text-danger">Bloqueada</span></td>
+                                }
+                            </tr>
                         }
-                        <!-- Item -->
-                        <tr>
-                            <td>
-                                <a href="/Profiles/@userDb.Id" class="fw-bold">
-                                    <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="@pathPic">
-                                    <span class="h6">@userDb.FirstName @userDb.LastName</span>
-                                </a>
-                            </td>
-                            <td><span class="fw-normal">@userDb.Email</span></td>
-
-                            @if (userDb.PhoneNumber == null)
-                            {
-                                <td><span class="fw-normal text-danger">Numero indisponivel</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-normal">@userDb.PhoneNumber</span></td>
-                            }
-
-                            @if (userDb.Address == null)
-                            {
-                                <td><span class="fw-normal text-danger">Morada indisponivel</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-normal">@userDb.Address</span></td>
-                            }
-
-                            @if (userDb.IsEnabled)
-                            {
-                                <td><span class="fw-bold text-success">Ativada</span></td>
-                            }
-                            else
-                            {
-                                <td><span class="fw-bold text-danger">Bloqueada</span></td>
-                            }
-                        </tr>
                     }
                 </tbody>
             </table>

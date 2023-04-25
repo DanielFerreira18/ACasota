@@ -129,36 +129,43 @@
         </div>
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
             <div class="row">
-                @foreach (var userDb in usersShow)
+                @if (usersShow.Count == 0)
                 {
+                    <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem animais disponiveis!!</p>
+                }
+                else
+                {
+                    @foreach (var userDb in usersShow)
                     {
-                        if (userDb.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, userDb.Id, userDb.AnimalPicture)))
                         {
-                            pathPic = Path.Combine(pathPicsRoot, userDb.Id, userDb.AnimalPicture);
+                            if (userDb.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, userDb.Id, userDb.AnimalPicture)))
+                            {
+                                pathPic = Path.Combine(pathPicsRoot, userDb.Id, userDb.AnimalPicture);
+                            }
+                            else
+                            {
+                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                            }
                         }
-                        else
-                        {
-                            pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
-                        }
-                    }
 
-                    <div class="col-sm-3" style="margin-bottom:1rem">
-                        <a href="/Animal/@userDb.Id">
-                            <div class="card">
-                                <img class="card-img-top" src="@pathPic" alt="Card image cap">
-                                <div class="card-body">
-                                    @if (isAdmin)
-                                    {
-                                        @if (userDb.UserId != null)
+                        <div class="col-sm-3" style="margin-bottom:1rem">
+                            <a href="/Animal/@userDb.Id">
+                                <div class="card">
+                                    <img class="card-img-top" src="@pathPic" alt="Card image cap">
+                                    <div class="card-body">
+                                        @if (isAdmin)
                                         {
-                                            <p class="text-danger" style="font-size:smaller">Adotado</p>
+                                            @if (userDb.UserId != null)
+                                            {
+                                                <p class="text-danger" style="font-size:smaller">Adotado</p>
+                                            }
                                         }
-                                    }
-                                    <h5 class="card-title">@userDb.Name</h5>
+                                        <h5 class="card-title">@userDb.Name</h5>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    }
                 }
             </div>
         </div>
