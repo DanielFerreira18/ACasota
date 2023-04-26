@@ -78,14 +78,14 @@
                                                 <input type="text" @bind="@animalReg.Age" @bind:event="oninput" placeholder="Idade do animal" class="form-control" id="idade" required>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
+                                        <div class="form-group">
                                             <label for="cor">Cor do animal</label>
                                             <div class="input-group">
                                                 <input type="text" @bind="@animalReg.Colour" @bind:event="oninput" placeholder="Cor do animal" class="form-control" id="cor" required>
                                             </div>
                                         </div>
                                         <!-- End of Form -->
-
+                                        <p class="text-danger" style="text-align: left;">@errors</p>
                                         <div class="d-grid mb-4">
                                             <button type="button" class="btn btn-gray-800" @onclick="CreateAnimal">Registar Animal</button>
                                             <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
@@ -239,8 +239,9 @@
 
     private Animal animalReg { get; set; } = new Animal();
 
-    private bool isAdmin = true;
+    public string errors { get; set; } = "";
 
+    private bool isAdmin = true;
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
     private string pathPic = "";
@@ -484,8 +485,16 @@
 
         using (var ctx = contextDb.CreateDbContext())
         {
-            await ctx.Animals.AddAsync(animalReg);
-            await ctx.SaveChangesAsync();
+            try
+            {
+                await ctx.Animals.AddAsync(animalReg);
+                await ctx.SaveChangesAsync();
+            }
+            catch
+            {
+                errors = "Preencha todos as caractristicas do animal!!";
+                return;
+            }
 
             GetDown();
         }
