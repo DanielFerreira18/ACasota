@@ -6,6 +6,7 @@ namespace ACasotaBlazorServer.Data
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string? Sex { get; set; }
         public string? Title { get; set; }
         public string? Nif { get; set; }
         public string? CCnumber { get; set; }
@@ -19,5 +20,8 @@ namespace ACasotaBlazorServer.Data
 
         //List of Animals the User owns
         public List<Animal>? Animals { get; set; }
+
+        //List of Adoption Forms made
+        public List<Adoption>? Adoptions { get; set; }
     }
 }

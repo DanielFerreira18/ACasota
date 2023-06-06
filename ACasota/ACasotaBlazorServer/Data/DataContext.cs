@@ -12,6 +12,7 @@ namespace ACasotaBlazorServer.Data
         }
 
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<Adoption> Adoptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -20,6 +21,16 @@ namespace ACasotaBlazorServer.Data
             builder.Entity<Animal>()
                 .HasOne(u => u.User)
                 .WithMany(u => u.Animals)
+                .HasForeignKey(u => u.UserId);
+
+            builder.Entity<Adoption>()
+                .HasOne(u => u.Animal)
+                .WithMany(u => u.Adoptions)
+                .HasForeignKey(u => u.AnimalId);
+
+            builder.Entity<Adoption>()
+                .HasOne(u => u.User)
+                .WithMany(u => u.Adoptions)
                 .HasForeignKey(u => u.UserId);
 
             var idRoleUser = Guid.NewGuid().ToString();
@@ -39,6 +50,7 @@ namespace ACasotaBlazorServer.Data
                 Id = idUserUser,
                 FirstName = "User",
                 LastName = "User",
+                Sex = "Masculino",
                 Date_Birth = DateTime.Now,
                 Email = "user@user.com",
                 IsEnabled = true,
@@ -57,6 +69,7 @@ namespace ACasotaBlazorServer.Data
                 Id = idUserAdmin,
                 FirstName = "Admin",
                 LastName = "Admin",
+                Sex = "Masculino",
                 Date_Birth = DateTime.Now,
                 Email = "admin@admin.com",
                 IsEnabled = true,
@@ -86,9 +99,12 @@ namespace ACasotaBlazorServer.Data
             {
                 Id = idAnimalUser,
                 Name = "Lucas",
-                Age = "2 Months",
-                Colour = "Ginger",
+                Age = "Baby",
                 Race = "Cat",
+                Sex = "Masculino",
+                Size = "Pequeno",
+                IsSterile = false,
+                IsVacinated = false,
                 UserId = idUserUser
             });
         }
