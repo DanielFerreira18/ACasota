@@ -4,8 +4,6 @@
     public class Adoption
     {
         public string Id { get; set; }
-        public string TypeHouse { get; set; }
-        public string Typology { get; set; }
         public bool HasAnimals { get; set; }
         
         //Proof of consent and responsability towards the animal
@@ -25,6 +23,10 @@
         //FK to the animal being adopted
         public string AnimalId { get; set; }
         public Animal Animal { get; set; }
+
+        //FK to the house of the person
+        public string HouseId { get; set; }
+        public AdoptionHouse House { get; set; }
 
     }
 }

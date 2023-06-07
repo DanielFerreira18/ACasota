@@ -33,6 +33,16 @@ namespace ACasotaBlazorServer.Data
                 .WithMany(u => u.Adoptions)
                 .HasForeignKey(u => u.UserId);
 
+            builder.Entity<AdoptionHouse>()
+                .HasOne(u => u.Type)
+                .WithMany(u => u.Houses)
+                .HasForeignKey(u => u.TypeId);
+
+            builder.Entity<Adoption>()
+                .HasOne(u => u.House)
+                .WithMany(u => u.Adoptions)
+                .HasForeignKey(u => u.HouseId);
+
             var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
             var idUserUser = Guid.NewGuid().ToString();
