@@ -5,12 +5,13 @@
     {
         public string Id { get; set; }
         public bool HasAnimals { get; set; }
-        
+        public int State { get; set; }
+
         //Proof of consent and responsability towards the animal
         public bool ConsentResponsability { get; set; }
 
         //Proprety used to describe the pets that it has
-        public string AnimalDescription { get; set;}
+        public string? AnimalDescription { get; set;}
 
         //Proprety used to describe the intentions behind the adoption form
         public string AdoptionReason { get; set;}

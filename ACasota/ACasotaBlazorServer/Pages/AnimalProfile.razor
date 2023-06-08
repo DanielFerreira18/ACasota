@@ -80,71 +80,176 @@
 
                                         @if (animal_auth.UserId == null)
                                         {
-                                            @if (context.User.IsInRole("Admin"))
-                                            {
-                                                <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal-subscribe">
-                                                    <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
-                                                        </path>
-                                                    </svg>
-                                                    Adotar
-                                                </a>
-                                                <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
-                                                <!-- Modal Content -->
-                                                <div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog" aria-labelledby="modal-subscribe" aria-hidden="true">
-                                                    <div class="modal-dialog modal-tertiary modal-dialog-centered modal-lg" role="document">
-                                                        <div class="modal-content bg-dark text-white">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close btn-close-white text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body text-center py-3">
-                                                                <span class="modal-icon">
-                                                                    <i class="fas fa-paw icon icon-xxl text-gray-200 mb-4" ></i>
-                                                                </span>
-                                                                <h3 class="modal-title mb-3">Formulário de Adoção</h3>
-                                                                <p class="mb-4 lead">Introduza o email do utilizador que pretende fazer a adoção</p>
-                                                                <div class="form-group px-lg-5">
-                                                                    <div class="d-flex mb-3 justify-content-center">
-                                                                        <input type="text" @bind="@adoptEmail" id="subscribe" class="me-sm-1 mb-sm-0 form-control form-control-lg" placeholder="example@company.com">
-                                                                        <div>
-                                                                            <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" @onclick="AdoptAnimal">Subscribe</button>
-                                                                            <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                                            <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" data-bs-toggle="modal" data-bs-target="#modal-subscribe">
+                                                <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                                    </path>
+                                                </svg>
+                                                Adotar
+                                            </a>
+                                            <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
+                                            <!-- Modal Content -->
+                                            <div class="modal fade" id="modal-subscribe" tabindex="-1" role="dialog" aria-labelledby="modal-subscribe" aria-hidden="true">
+                                                <div class="modal-dialog modal-tertiary modal-dialog-centered modal-lg" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header" style="border: none;">
+                                                            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center py-3">
+                                                            <span class="modal-icon">
+                                                                <i class="fas fa-paw icon icon-xxl mb-4" style="color: #f0bc74;"></i>
+                                                            </span>
+                                                            <h3 class="modal-title mb-3">Formulário de Adoção</h3>
+                                                            <p class="mb-4 lead">Preencha este formulário de adoção.</p>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div class="form-group" style="text-align:left; padding-left: 3rem;">
+                                                                        <label>Primeiro Nome</label>
+                                                                        <div class="d-flex mb-3 justify-content-center">
+                                                                            <label id="primeiroNome" class="me-sm-1 mb-sm-0 form-control" style="font-size: 1rem; color:black;">@user_adopting.FirstName</label>
                                                                         </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="form-group" style="text-align:left; padding-right: 3rem;">
+                                                                        <label>Apelido</label>
+                                                                        <div class="d-flex mb-3 justify-content-center">
+                                                                            <label id="apelido" class="me-sm-1 mb-sm-0 form-control" style="font-size: 1rem; color:black;">@user_adopting.LastName</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group px-lg-5" style="text-align:left;">
+                                                                <label>Email</label>
+                                                                <div class="d-flex mb-3 justify-content-center">
+                                                                    <label id="subscribe" class="me-sm-1 mb-sm-0 form-control" style="font-size: 1rem; color:black;">@user_adopting.Email</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-6">
+                                                                    <div class="form-group" style="text-align:left; padding-left: 3rem;">
+                                                                        <label>Tipo de Habitação</label>
+                                                                        <div class="d-flex mb-3 justify-content-center">
+                                                                            <select @bind="@adoptHouseType" class="form-select" style="color:black;" id="habitacao" aria-label="Default select example">
+                                                                                <option value="0">Escolha o tipo de habitação</option>
+                                                                                <option value="1">Apartamento</option>
+                                                                                <option value="2">Moradia, sem exterior</option>
+                                                                                <option value="3">Moradia, com exterior</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="form-group" style="text-align:left; padding-right: 3rem;">
+                                                                        <label>Tipologia da Habitação</label>
+                                                                        <div class="d-flex mb-3 justify-content-center">
+                                                                            <select @bind="@adoptHouseTipology" class="form-select" style="color:black;" id="country" aria-label="Default select example">
+                                                                                <option value="">Escolha a tipologia da habitação</option>
+                                                                                <option value="T0">T0</option>
+                                                                                <option value="T1">T1</option>
+                                                                                <option value="T2">T2</option>
+                                                                                <option value="T3">T3</option>
+                                                                                <option value="T4Plus">T4 ou +</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-3">
+                                                                    <div class="form-group" style="padding-left: 3rem;">
+                                                                        <label>Possui Animais?</label>
+                                                                        <div class="d-flex mb-3">
+                                                                            <!-- Radio -->
+                                                                            <fieldset>
+                                                                                <InputRadioGroup Name="hasAnimals" @bind-Value="@adoptHasAnimal">
+                                                                                    <div class="form-check">
+                                                                                        <InputRadio Name="hasAnimals" class="form-check-input" Value="@true" />Sim<br>
+                                                                                    </div>
+                                                                                    <div class="form-check">
+                                                                                        <InputRadio Name="hasAnimals" class="form-check-input" Value="@false" />Não<br>
+                                                                                    </div>
+                                                                                </InputRadioGroup>
+                                                                            </fieldset>
+                                                                            <!-- End of Radio -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <div class="form-group" style="padding-right: 3rem;">
+                                                                        <label for="textarea">Se sim quantos e quais, faça uma breve descrição.</label>
+                                                                        <textarea @bind="@adoptAnimalDescription" class="form-control" style="color:black;" placeholder="Descrição..." id="textarea" rows="4"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-3" style="text-align:left">
+                                                                    <div class="form-group" style="padding-left: 3rem;">
+                                                                        <label>Consentimento e Responsabilidade</label>
+                                                                        <div class="d-flex mb-3">
+                                                                            <!-- Radio -->
+                                                                            <fieldset>
+                                                                                <InputRadioGroup Name="consentResponsability" @bind-Value="@adoptConsentResponsability">
+                                                                                    <div class="form-check">
+                                                                                        <InputRadio Name="consentResponsability" class="form-check-input" Value="@true" />Aceito<br>
+                                                                                    </div>
+                                                                                    <div class="form-check">
+                                                                                        <InputRadio Name="consentResponsability" class="form-check-input" Value="@false" />Não Aceito<br>
+                                                                                    </div>
+                                                                                </InputRadioGroup>
+                                                                            </fieldset>
+                                                                            <!-- End of Radio -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-9">
+                                                                    <div class="form-group" style="padding-right: 3rem;">
+                                                                        <label for="textarea">Razão de adoção.</label>
+                                                                        <textarea @bind="@adoptReason" class="form-control" style="color:black;" placeholder="Quero adotar porque..." id="textarea" rows="4"></textarea>
                                                                     </div>
                                                                 </div>
                                                                 <p class="text-danger" style="margin-left: 3rem; text-align: left;">@errors</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End of Modal Content -->
-                                                <!-- Modal Content -->
-                                                <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
-                                                    <div class="modal-dialog modal-success modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
-                                                            <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            <div class="modal-header mx-auto">
-                                                            </div>
-                                                            <div class="modal-body pt-0">
-                                                                <div class="py-3 px-5 text-center">
-                                                                    <span class="modal-icon display-1 text-white">
-                                                                        <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                                            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
-                                                                        </svg>
-                                                                    </span>
-                                                                    <h2 class="h3 modal-title mb-3 text-white">O @animal_auth.Name foi adotado!!</h2>
-                                                                    <p class="mb-4 text-white">Processo de adoção completo com sucesso, volte para a página de gestão de animais!!</p>
+
+                                                            <div class="row">
+                                                                <div class="col-12 justify-content-center">
+                                                                    <div>
+                                                                        <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" @onclick="AdoptAnimal">Submeter formulário</button>
+                                                                        <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
-                                                                <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- End of Modal Content -->
-                                            }
+                                            </div>
+                                            <!-- End of Modal Content -->
+                                            <!-- Modal Content -->
+                                            <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+                                                <div class="modal-dialog modal-success modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <div class="modal-header mx-auto">
+                                                        </div>
+                                                        <div class="modal-body pt-0">
+                                                            <div class="py-3 px-5 text-center">
+                                                                <span class="modal-icon display-1 text-white">
+                                                                    <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                                        <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
+                                                                    </svg>
+                                                                </span>
+                                                                <h2 class="h3 modal-title mb-3 text-white">O formulário foi feito com sucesso!!</h2>
+                                                                <p class="mb-4 text-white">Processo de adoção está em curso, espere pela resposta da nossa equipa.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
+                                                            <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Modal Content -->
                                         }
                                     </div>
                                 </div>
@@ -334,9 +439,16 @@
     public string? id { get; set; }
 
     public Animal animal_auth { get; set; } = new Animal();
+    public ApplicationUser user_adopting { get; set; } = new ApplicationUser();
     public string errors { get; set; } = "";
 
-    public string adoptEmail = "";
+    public int adoptHouseType = 0;
+    public bool adoptHasAnimal = false;
+    public bool adoptConsentResponsability = false;
+    public string adoptReason = "";
+    public string adoptHouseTipology = "";
+    public string adoptAnimalDescription = "";
+
     private bool canInspect = true;
     private bool errorHandling = true;
 
@@ -377,6 +489,11 @@
                             canInspect = false;
                         }
                     }
+                }
+
+                if (animal_auth.User == null)
+                {
+                    user_adopting = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
                 }
 
                 if (animal_auth.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, animal_auth.Id, animal_auth.AnimalPicture)))
@@ -475,23 +592,65 @@
 
     public async Task AdoptAnimal()
     {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
         using (var ctxs = contextDb.CreateDbContext())
         {
-            ApplicationUser userAdopting = null;
+            Adoption adoptionForm = new Adoption();
+            AdoptionHouse adoptionHouse = new AdoptionHouse();
 
-            try
+            if (adoptHouseType > 0 && adoptHouseType <= 3)
             {
-                userAdopting = await ctxs.Users.SingleAsync(u => u.UserName == adoptEmail);
+                if (!adoptHouseTipology.Equals(""))
+                {
+                    adoptionHouse.Id = Guid.NewGuid().ToString();
+                    adoptionHouse.Tipology = adoptHouseTipology;
+                    adoptionHouse.TypeId = adoptHouseType;
+                }
+                else
+                {
+                    errors = "Escolha uma tipologia de habitação";
+                    return;
+                }
             }
-            catch
+            else
             {
-                errors = "Email errado!! Introduza um email válido";
+                errors = "Escolha um tipo de habitação";
                 return;
             }
 
-            animal_auth.UserId = userAdopting.Id;
+            if (adoptConsentResponsability)
+            {
+                if (!adoptReason.Equals(""))
+                {
+                    adoptionForm.Id = Guid.NewGuid().ToString();
+                    adoptionForm.AdoptionReason = adoptReason;
+                    adoptionForm.AnimalDescription = adoptAnimalDescription;
+                    adoptionForm.ConsentResponsability = adoptConsentResponsability;
+                    adoptionForm.HasAnimals = adoptHasAnimal;
+                    adoptionForm.State = 2;
 
-            ctxs.Animals.Update(animal_auth);
+                    adoptionForm.AnimalId = animal_auth.Id;
+                    adoptionForm.UserId = user_adopting.Id;
+                    adoptionForm.HouseId = adoptionHouse.Id;
+                }
+                else
+                {
+                    errors = "Descreva a razão da adoção";
+                    return;
+                }
+            }
+            else
+            {
+                errors = "Aceite e concinta a responsabilidade da adoção";
+                return;
+            }
+
+            await ctxs.AdoptionHouses.AddAsync(adoptionHouse);
+            await ctxs.SaveChangesAsync();
+
+            await ctxs.Adoptions.AddAsync(adoptionForm);
             await ctxs.SaveChangesAsync();
 
             GetDown();

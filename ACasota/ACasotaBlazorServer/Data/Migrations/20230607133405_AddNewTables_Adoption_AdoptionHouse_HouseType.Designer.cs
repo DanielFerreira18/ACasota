@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACasotaBlazorServer.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230606231739_NewTable_AdoptionForm_Constraints")]
-    partial class NewTable_AdoptionForm_Constraints
+    [Migration("20230607133405_AddNewTables_Adoption_AdoptionHouse_HouseType")]
+    partial class AddNewTables_Adoption_AdoptionHouse_HouseType
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,6 @@ namespace ACasotaBlazorServer.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AnimalDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AnimalId")
@@ -48,13 +47,9 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.Property<bool>("HasAnimals")
                         .HasColumnType("bit");
 
-                    b.Property<string>("TypeHouse")
+                    b.Property<string>("HouseId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Typology")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -64,9 +59,30 @@ namespace ACasotaBlazorServer.Data.Migrations
 
                     b.HasIndex("AnimalId");
 
+                    b.HasIndex("HouseId");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("Adoption");
+                    b.ToTable("Adoptions");
+                });
+
+            modelBuilder.Entity("ACasotaBlazorServer.Data.AdoptionHouse", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Tipology")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TypeId");
+
+                    b.ToTable("AdoptionHouses");
                 });
 
             modelBuilder.Entity("ACasotaBlazorServer.Data.Animal", b =>
@@ -117,7 +133,7 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b1506370-56a5-4c3c-a519-1025d6981dda",
+                            Id = "b4aad935-6702-4f40-a939-e11c943e0d76",
                             Age = "Baby",
                             IsSterile = false,
                             IsVacinated = false,
@@ -125,7 +141,7 @@ namespace ACasotaBlazorServer.Data.Migrations
                             Race = "Cat",
                             Sex = "Masculino",
                             Size = "Pequeno",
-                            UserId = "5f8ee865-d8a8-41c1-baea-4accb0c59034"
+                            UserId = "5f84a4d0-378d-4112-a52f-f292f7617573"
                         });
                 });
 
@@ -206,6 +222,9 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Sex")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -234,10 +253,10 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5f8ee865-d8a8-41c1-baea-4accb0c59034",
+                            Id = "5f84a4d0-378d-4112-a52f-f292f7617573",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a5fabc95-4851-46f3-a4f7-f636ed1c190b",
-                            Date_Birth = new DateTime(2023, 6, 7, 0, 17, 39, 136, DateTimeKind.Local).AddTicks(2240),
+                            ConcurrencyStamp = "b08b3495-ef47-436a-a50d-3b20290165b2",
+                            Date_Birth = new DateTime(2023, 6, 7, 14, 34, 5, 152, DateTimeKind.Local).AddTicks(2660),
                             Email = "user@user.com",
                             EmailConfirmed = false,
                             FirstName = "User",
@@ -246,18 +265,19 @@ namespace ACasotaBlazorServer.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@USER.COM",
                             NormalizedUserName = "USER@USER.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGaANrcun3JaYwqV4FSp5FYVpIoRZo+LGOsjWNRN9LFMw0TN6LZxADolcXluWCWDqQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL5qXP7wnrgZ1aFcTOWNvwVYFosGUhcJ6T9QW5COMTc6AUHa5W2D+tfJUouVaKiwuA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "37baadca-addc-4a7f-9a4e-6d57f999851d",
+                            SecurityStamp = "7c629c33-e5e9-44e2-a190-8644a4092e62",
+                            Sex = "Masculino",
                             TwoFactorEnabled = false,
                             UserName = "user@user.com"
                         },
                         new
                         {
-                            Id = "79e159eb-0161-44db-977f-b4d99483d449",
+                            Id = "05d87726-71ee-4e38-a077-bae15b3845fc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "79e4885c-3d09-43a0-87c8-dd2980c65308",
-                            Date_Birth = new DateTime(2023, 6, 7, 0, 17, 39, 201, DateTimeKind.Local).AddTicks(3460),
+                            ConcurrencyStamp = "181f2de8-48b5-47bf-8f61-4b41889f6261",
+                            Date_Birth = new DateTime(2023, 6, 7, 14, 34, 5, 214, DateTimeKind.Local).AddTicks(3451),
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -266,12 +286,30 @@ namespace ACasotaBlazorServer.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOKLOsz5StbG0Os7DmEIXp25YPzkwdaf76nEQVV9Y0McRknwgACsgZ80Tvq7Rz2znA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGDvwU92XKIAKpkERmsxA+pq0El2oDwjG+tpn7bSxDiJNxAQYu6/zi6YEnh5hb65xA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "edc89342-57d2-42d2-b534-b0206f22ad6d",
+                            SecurityStamp = "84e76262-2287-494a-b1e9-0627863ec4e8",
+                            Sex = "Masculino",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com"
                         });
+                });
+
+            modelBuilder.Entity("ACasotaBlazorServer.Data.HouseType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HouseTypes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -303,13 +341,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "782f986d-f4bc-443c-8c4e-e6eefb67ab5f",
+                            Id = "90bdd9a0-8cf8-4916-8db0-261361dd2eef",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "63f35aa1-2566-497a-9f6b-73c6fdbbb238",
+                            Id = "60fef3ef-cad6-46cc-aab9-0a2835399573",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -404,13 +442,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "5f8ee865-d8a8-41c1-baea-4accb0c59034",
-                            RoleId = "782f986d-f4bc-443c-8c4e-e6eefb67ab5f"
+                            UserId = "5f84a4d0-378d-4112-a52f-f292f7617573",
+                            RoleId = "90bdd9a0-8cf8-4916-8db0-261361dd2eef"
                         },
                         new
                         {
-                            UserId = "79e159eb-0161-44db-977f-b4d99483d449",
-                            RoleId = "63f35aa1-2566-497a-9f6b-73c6fdbbb238"
+                            UserId = "05d87726-71ee-4e38-a077-bae15b3845fc",
+                            RoleId = "60fef3ef-cad6-46cc-aab9-0a2835399573"
                         });
                 });
 
@@ -441,6 +479,12 @@ namespace ACasotaBlazorServer.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ACasotaBlazorServer.Data.AdoptionHouse", "House")
+                        .WithMany("Adoptions")
+                        .HasForeignKey("HouseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ACasotaBlazorServer.Data.ApplicationUser", "User")
                         .WithMany("Adoptions")
                         .HasForeignKey("UserId")
@@ -449,7 +493,20 @@ namespace ACasotaBlazorServer.Data.Migrations
 
                     b.Navigation("Animal");
 
+                    b.Navigation("House");
+
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ACasotaBlazorServer.Data.AdoptionHouse", b =>
+                {
+                    b.HasOne("ACasotaBlazorServer.Data.HouseType", "Type")
+                        .WithMany("Houses")
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Type");
                 });
 
             modelBuilder.Entity("ACasotaBlazorServer.Data.Animal", b =>
@@ -512,6 +569,11 @@ namespace ACasotaBlazorServer.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ACasotaBlazorServer.Data.AdoptionHouse", b =>
+                {
+                    b.Navigation("Adoptions");
+                });
+
             modelBuilder.Entity("ACasotaBlazorServer.Data.Animal", b =>
                 {
                     b.Navigation("Adoptions");
@@ -522,6 +584,11 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.Navigation("Adoptions");
 
                     b.Navigation("Animals");
+                });
+
+            modelBuilder.Entity("ACasotaBlazorServer.Data.HouseType", b =>
+                {
+                    b.Navigation("Houses");
                 });
 #pragma warning restore 612, 618
         }

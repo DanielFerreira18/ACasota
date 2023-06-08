@@ -1,4 +1,4 @@
-﻿@page "/UserManagement"
+﻿@page "/AdoptionManagement"
 @using System.Collections
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity
@@ -7,9 +7,9 @@
 @inject IWebHostEnvironment enviroment
 @attribute [Authorize]
 
-<PageTitle>Gestão de Utilizadores</PageTitle>
+<PageTitle>Formulários de Adoção</PageTitle>
 
-<AuthorizeView Roles="Admin">
+<AuthorizeView>
     <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
             <div class="d-block mb-4 mb-md-0">
@@ -21,11 +21,11 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">ACasota</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Gestão de Utilizadores</li>
+                        <li class="breadcrumb-item active" aria-current="page">Formulários de Adoção</li>
                     </ol>
                 </nav>
-                <h2 class="h4">Gestão de Utilizadores</h2>
-                <p class="mb-0">Página de gestão para todos os utilizadores e contas activas</p>
+                <h2 class="h4">Formulários de Adoção</h2>
+                <p class="mb-0">Página de gestão dos formulários de adoção.</p>
             </div>
         </div>
         <div class="table-settings mb-4">
@@ -37,7 +37,7 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </span>
-                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Utilizadores">
+                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Insira um nome de utilizador">
                     </div>
                 </div>
             </div>
@@ -45,68 +45,44 @@
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
             @if (usersShow.Count == 0)
             {
-                <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem utilizadores disponiveis!!</p>
+                <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem formulários!!</p>
             }
             else
             {
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="border-gray-200">Nome</th>
-                            <th class="border-gray-200">E-mail</th>
-                            <th class="border-gray-200">Telemovel</th>
-                            <th class="border-gray-200">Morada</th>
-                            <th class="border-gray-200">Estado de Conta</th>
+                            <th class="border-gray-200">Id</th>
+                            <th class="border-gray-200">Nome do Utilizador</th>
+                            <th class="border-gray-200">Nome do Animal</th>
+                            <th class="border-gray-200">Estando</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach (var userDb in usersShow)
                         {
-                            {
-                                if (userDb.ProfilePic != null && File.Exists(Path.Combine(pathRoot, userDb.UserName, userDb.ProfilePic)))
-                                {
-                                    pathPic = Path.Combine(pathPicsRoot, userDb.UserName, userDb.ProfilePic);
-                                }
-                                else
-                                {
-                                    pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
-                                }
-                            }
                             <!-- Item -->
                             <tr>
                                 <td>
                                     <a href="/Profiles/@userDb.Id" class="fw-bold">
-                                        <img class="me-2 image image-xs rounded-circle" alt="Image placeholder" src="@pathPic">
-                                        <span class="h6">@userDb.FirstName @userDb.LastName</span>
+                                        <span class="h6">@userDb.Id</span>
                                     </a>
                                 </td>
-                                <td><span class="fw-normal">@userDb.Email</span></td>
+                                <td><span class="fw-normal">@userDb.User.FirstName @userDb.User.LastName</span></td>
+                                <td><span class="fw-normal">@userDb.Animal.Name</span></td>
 
-                                @if (userDb.PhoneNumber == null)
+                                @if (userDb.State == 0)
                                 {
-                                    <td><span class="fw-normal text-danger">Numero indisponivel</span></td>
+                                    <td><span class="fw-bold text-success">Recusado</span></td>
+                                }
+                                else if (userDb.State == 1)
+                                {
+                                    <td><span class="fw-bold text-danger">Aceite</span></td>
                                 }
                                 else
                                 {
-                                    <td><span class="fw-normal">@userDb.PhoneNumber</span></td>
-                                }
-
-                                @if (userDb.Address == null)
-                                {
-                                    <td><span class="fw-normal text-danger">Morada indisponivel</span></td>
-                                }
-                                else
-                                {
-                                    <td><span class="fw-normal">@userDb.Address</span></td>
-                                }
-
-                                @if (userDb.IsEnabled)
-                                {
-                                    <td><span class="fw-bold text-success">Ativada</span></td>
-                                }
-                                else
-                                {
-                                    <td><span class="fw-bold text-danger">Bloqueada</span></td>
+                                    <td><span class="fw-bold text-warning">Pendente</span></td>
                                 }
                             </tr>
                         }
@@ -174,39 +150,14 @@
             </div>
         </footer>
     </Authorized>
-    <NotAuthorized>
-        <div class="row">
-            <div class="col-12 text-center d-flex align-items-center justify-content-center">
-                <div>
-                    <img class="img-fluid w-75" src="../../assets/img/illustrations/403.svg" alt="403 forbidden">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center d-flex align-items-center justify-content-center">
-                <div>
-                    <h1 class="mt-5">Não tem <span class="fw-bolder text-primary">Autorização</span></h1>
-                    <p class="lead my-4">Oops! Não tem autorização para ver o conteudo desta página. Se existir algum problema entra em contacto.</p>
-                    <a href="/" class="btn btn-gray-800 d-inline-flex align-items-center justify-content-center mb-4">
-                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-                        Voltar para a página principal
-                    </a>
-                </div>
-            </div>
-        </div>
-    </NotAuthorized>
 </AuthorizeView>
 
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthenticationStateTask { get; set; }
-    public List<ApplicationUser> usersShow { get; set; } = new List<ApplicationUser>();
-    public List<ApplicationUser> users { get; set; } = new List<ApplicationUser>();
-    public List<ApplicationUser> userDB { get; set; } = new List<ApplicationUser>();
-
-    private string pathRoot = "";
-    private string pathPicsRoot = "..\\users_pics";
-    private string pathPic = "";
+    public List<Adoption> usersShow { get; set; } = new List<Adoption>();
+    public List<Adoption> users { get; set; } = new List<Adoption>();
+    public List<Adoption> userDB { get; set; } = new List<Adoption>();
 
     //Sets a list for the number of pages, set automatically
     public List<Int32> pageSelection { get; set; } = new List<Int32>();
@@ -229,8 +180,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
-
         var authState = await AuthenticationStateTask;
         var user = authState.User;
 
@@ -238,11 +187,25 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                var usersCT = await ctx.Users.ToArrayAsync();
+                var usersCT = await ctx.Adoptions.Include(c => c.User).Include(a => a.Animal).ToArrayAsync();
+                ApplicationUser user_Adoption = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
 
-                foreach (var userct in usersCT)
+                if (user.IsInRole("Admin"))
                 {
-                    userDB.Add(userct);
+                    foreach (var userct in usersCT)
+                    {
+                        userDB.Add(userct);
+                    }
+                }
+                else
+                {
+                    foreach (var userct in usersCT)
+                    {
+                        if (userct.UserId.Equals(user_Adoption.Id))
+                        {
+                            userDB.Add(userct);
+                        }
+                    }
                 }
             }
 
@@ -405,11 +368,12 @@
         {
             foreach (var u in userDB)
             {
-                var firstNameLower = u.FirstName.ToLower();
-                var lastNameLower = u.LastName.ToLower();
+                var firstNameLower = u.User.FirstName.ToLower();
+                var lastNameLower = u.User.LastName.ToLower();
+                var animalNameLower = u.Animal.Name.ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower))
+                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower) || animalNameLower.Contains(searchLower))
                 {
                     users.Add(u);
                 }

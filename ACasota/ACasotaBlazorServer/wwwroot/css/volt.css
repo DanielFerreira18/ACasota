@@ -4180,8 +4180,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: #1F2937;
-    border-color: #1F2937;
+    background-color: #f0bc74;
+    border-color: #f0bc74;
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -26079,7 +26079,7 @@ label {
 }
 
 .modal-tertiary .modal-content {
-    background-color: #31316A;
+    background-color: #ffffff;
     color: color-yiq(#31316A);
 }
 

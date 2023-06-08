@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ACasotaBlazorServer.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class NewTable_AdoptionForm_Constraints : Migration
+    public partial class AddNewTables_Adoption_AdoptionHouse_HouseType : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,31 +48,74 @@ namespace ACasotaBlazorServer.Data.Migrations
                 keyColumn: "Id",
                 keyValue: "9af3215a-2cf0-4c78-ad15-7ad51065e80e");
 
+            migrationBuilder.AddColumn<string>(
+                name: "Sex",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true);
+
             migrationBuilder.CreateTable(
-                name: "Adoption",
+                name: "HouseTypes",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    TypeHouse = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Typology = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HasAnimals = table.Column<bool>(type: "bit", nullable: false),
-                    ConsentResponsability = table.Column<bool>(type: "bit", nullable: false),
-                    AnimalDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdoptionReason = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    AnimalId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Adoption", x => x.Id);
+                    table.PrimaryKey("PK_HouseTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AdoptionHouses",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Tipology = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TypeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdoptionHouses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Adoption_Animals_AnimalId",
+                        name: "FK_AdoptionHouses_HouseTypes_TypeId",
+                        column: x => x.TypeId,
+                        principalTable: "HouseTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Adoptions",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    HasAnimals = table.Column<bool>(type: "bit", nullable: false),
+                    ConsentResponsability = table.Column<bool>(type: "bit", nullable: false),
+                    AnimalDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AdoptionReason = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AnimalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    HouseId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Adoptions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Adoptions_AdoptionHouses_HouseId",
+                        column: x => x.HouseId,
+                        principalTable: "AdoptionHouses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Adoptions_Animals_AnimalId",
                         column: x => x.AnimalId,
                         principalTable: "Animals",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Adoption_AspNetUsers_UserId",
+                        name: "FK_Adoptions_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -84,41 +127,51 @@ namespace ACasotaBlazorServer.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "63f35aa1-2566-497a-9f6b-73c6fdbbb238", null, "Admin", "ADMIN" },
-                    { "782f986d-f4bc-443c-8c4e-e6eefb67ab5f", null, "User", "USER" }
+                    { "60fef3ef-cad6-46cc-aab9-0a2835399573", null, "Admin", "ADMIN" },
+                    { "90bdd9a0-8cf8-4916-8db0-261361dd2eef", null, "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Address", "CCnumber", "City", "ConcurrencyStamp", "CoverPic", "Date_Birth", "Email", "EmailConfirmed", "FirstName", "IsEnabled", "LastName", "LockoutEnabled", "LockoutEnd", "Nif", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePic", "SecurityStamp", "Title", "TwoFactorEnabled", "UserName", "Zip" },
+                columns: new[] { "Id", "AccessFailedCount", "Address", "CCnumber", "City", "ConcurrencyStamp", "CoverPic", "Date_Birth", "Email", "EmailConfirmed", "FirstName", "IsEnabled", "LastName", "LockoutEnabled", "LockoutEnd", "Nif", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePic", "SecurityStamp", "Sex", "Title", "TwoFactorEnabled", "UserName", "Zip" },
                 values: new object[,]
                 {
-                    { "5f8ee865-d8a8-41c1-baea-4accb0c59034", 0, null, null, null, "a5fabc95-4851-46f3-a4f7-f636ed1c190b", null, new DateTime(2023, 6, 7, 0, 17, 39, 136, DateTimeKind.Local).AddTicks(2240), "user@user.com", false, "User", true, "User", false, null, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAIAAYagAAAAEGaANrcun3JaYwqV4FSp5FYVpIoRZo+LGOsjWNRN9LFMw0TN6LZxADolcXluWCWDqQ==", null, false, null, "37baadca-addc-4a7f-9a4e-6d57f999851d", null, false, "user@user.com", null },
-                    { "79e159eb-0161-44db-977f-b4d99483d449", 0, null, null, null, "79e4885c-3d09-43a0-87c8-dd2980c65308", null, new DateTime(2023, 6, 7, 0, 17, 39, 201, DateTimeKind.Local).AddTicks(3460), "admin@admin.com", false, "Admin", true, "Admin", false, null, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAIAAYagAAAAEOKLOsz5StbG0Os7DmEIXp25YPzkwdaf76nEQVV9Y0McRknwgACsgZ80Tvq7Rz2znA==", null, false, null, "edc89342-57d2-42d2-b534-b0206f22ad6d", null, false, "admin@admin.com", null }
+                    { "05d87726-71ee-4e38-a077-bae15b3845fc", 0, null, null, null, "181f2de8-48b5-47bf-8f61-4b41889f6261", null, new DateTime(2023, 6, 7, 14, 34, 5, 214, DateTimeKind.Local).AddTicks(3451), "admin@admin.com", false, "Admin", true, "Admin", false, null, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAIAAYagAAAAEGDvwU92XKIAKpkERmsxA+pq0El2oDwjG+tpn7bSxDiJNxAQYu6/zi6YEnh5hb65xA==", null, false, null, "84e76262-2287-494a-b1e9-0627863ec4e8", "Masculino", null, false, "admin@admin.com", null },
+                    { "5f84a4d0-378d-4112-a52f-f292f7617573", 0, null, null, null, "b08b3495-ef47-436a-a50d-3b20290165b2", null, new DateTime(2023, 6, 7, 14, 34, 5, 152, DateTimeKind.Local).AddTicks(2660), "user@user.com", false, "User", true, "User", false, null, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAIAAYagAAAAEL5qXP7wnrgZ1aFcTOWNvwVYFosGUhcJ6T9QW5COMTc6AUHa5W2D+tfJUouVaKiwuA==", null, false, null, "7c629c33-e5e9-44e2-a190-8644a4092e62", "Masculino", null, false, "user@user.com", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Animals",
                 columns: new[] { "Id", "Age", "AnimalPicture", "CoverPicture", "IsSterile", "IsVacinated", "Name", "Race", "Sex", "Size", "UserId" },
-                values: new object[] { "b1506370-56a5-4c3c-a519-1025d6981dda", "Baby", null, null, false, false, "Lucas", "Cat", "Masculino", "Pequeno", "5f8ee865-d8a8-41c1-baea-4accb0c59034" });
+                values: new object[] { "b4aad935-6702-4f40-a939-e11c943e0d76", "Baby", null, null, false, false, "Lucas", "Cat", "Masculino", "Pequeno", "5f84a4d0-378d-4112-a52f-f292f7617573" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "782f986d-f4bc-443c-8c4e-e6eefb67ab5f", "5f8ee865-d8a8-41c1-baea-4accb0c59034" },
-                    { "63f35aa1-2566-497a-9f6b-73c6fdbbb238", "79e159eb-0161-44db-977f-b4d99483d449" }
+                    { "60fef3ef-cad6-46cc-aab9-0a2835399573", "05d87726-71ee-4e38-a077-bae15b3845fc" },
+                    { "90bdd9a0-8cf8-4916-8db0-261361dd2eef", "5f84a4d0-378d-4112-a52f-f292f7617573" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Adoption_AnimalId",
-                table: "Adoption",
+                name: "IX_AdoptionHouses_TypeId",
+                table: "AdoptionHouses",
+                column: "TypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Adoptions_AnimalId",
+                table: "Adoptions",
                 column: "AnimalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Adoption_UserId",
-                table: "Adoption",
+                name: "IX_Adoptions_HouseId",
+                table: "Adoptions",
+                column: "HouseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Adoptions_UserId",
+                table: "Adoptions",
                 column: "UserId");
         }
 
@@ -126,42 +179,52 @@ namespace ACasotaBlazorServer.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Adoption");
+                name: "Adoptions");
+
+            migrationBuilder.DropTable(
+                name: "AdoptionHouses");
+
+            migrationBuilder.DropTable(
+                name: "HouseTypes");
 
             migrationBuilder.DeleteData(
                 table: "Animals",
                 keyColumn: "Id",
-                keyValue: "b1506370-56a5-4c3c-a519-1025d6981dda");
+                keyValue: "b4aad935-6702-4f40-a939-e11c943e0d76");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUserRoles",
                 keyColumns: new[] { "RoleId", "UserId" },
-                keyValues: new object[] { "782f986d-f4bc-443c-8c4e-e6eefb67ab5f", "5f8ee865-d8a8-41c1-baea-4accb0c59034" });
+                keyValues: new object[] { "60fef3ef-cad6-46cc-aab9-0a2835399573", "05d87726-71ee-4e38-a077-bae15b3845fc" });
 
             migrationBuilder.DeleteData(
                 table: "AspNetUserRoles",
                 keyColumns: new[] { "RoleId", "UserId" },
-                keyValues: new object[] { "63f35aa1-2566-497a-9f6b-73c6fdbbb238", "79e159eb-0161-44db-977f-b4d99483d449" });
+                keyValues: new object[] { "90bdd9a0-8cf8-4916-8db0-261361dd2eef", "5f84a4d0-378d-4112-a52f-f292f7617573" });
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "63f35aa1-2566-497a-9f6b-73c6fdbbb238");
+                keyValue: "60fef3ef-cad6-46cc-aab9-0a2835399573");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "782f986d-f4bc-443c-8c4e-e6eefb67ab5f");
+                keyValue: "90bdd9a0-8cf8-4916-8db0-261361dd2eef");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "5f8ee865-d8a8-41c1-baea-4accb0c59034");
+                keyValue: "05d87726-71ee-4e38-a077-bae15b3845fc");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "79e159eb-0161-44db-977f-b4d99483d449");
+                keyValue: "5f84a4d0-378d-4112-a52f-f292f7617573");
+
+            migrationBuilder.DropColumn(
+                name: "Sex",
+                table: "AspNetUsers");
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",

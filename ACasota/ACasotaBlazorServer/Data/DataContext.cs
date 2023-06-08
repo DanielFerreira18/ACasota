@@ -13,6 +13,8 @@ namespace ACasotaBlazorServer.Data
 
         public DbSet<Animal> Animals { get; set; }
         public DbSet<Adoption> Adoptions { get; set; }
+        public DbSet<AdoptionHouse> AdoptionHouses { get; set; }
+        public DbSet<HouseType> HouseTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -97,12 +99,12 @@ namespace ACasotaBlazorServer.Data
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 UserId = idUserUser,
-                RoleId = idRoleUser,
+                RoleId = idRoleUser
             });
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 UserId = idUserAdmin,
-                RoleId = idRoleAdmin,
+                RoleId = idRoleAdmin
             });
 
             builder.Entity<Animal>().HasData(new Animal
@@ -116,6 +118,24 @@ namespace ACasotaBlazorServer.Data
                 IsSterile = false,
                 IsVacinated = false,
                 UserId = idUserUser
+            });
+
+            builder.Entity<HouseType>().HasData(new HouseType
+            {
+                Id = 1,
+                Type = "Apartamento"
+            });
+
+            builder.Entity<HouseType>().HasData(new HouseType
+            {
+                Id = 2,
+                Type = "Moradia, sem exterior"
+            });
+
+            builder.Entity<HouseType>().HasData(new HouseType
+            {
+                Id = 3,
+                Type = "Moradia, com exterior"
             });
         }
     }

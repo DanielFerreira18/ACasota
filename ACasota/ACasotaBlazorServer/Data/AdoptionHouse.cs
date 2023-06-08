@@ -7,7 +7,7 @@
         
 
         //FK to the type of the house
-        public string TypeId { get; set; }
+        public int TypeId { get; set; }
         public HouseType Type { get; set; }
 
         //FK to the adoptions forms made
