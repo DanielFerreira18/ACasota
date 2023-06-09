@@ -291,6 +291,12 @@
 
     private bool errorHandling = true;
 
+    //List of extentions
+    public List<string> imageExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
+    //Bool control extention
+    public bool hasExtention = false;
+
+
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
     private string profilePic = "";
@@ -347,6 +353,20 @@
 
     public async Task LoadFilesProfilePics(InputFileChangeEventArgs e)
     {
+        foreach (var extention in imageExtensions)
+        {
+            if (Path.GetExtension(e.File.Name).ToLower().Contains(extention))
+            {
+                hasExtention = true;
+                break;
+            }
+        }
+
+        if (!hasExtention)
+        {
+            return;
+        }
+
         string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
 
         string pathUser = Path.Combine(pathRoot, user_auth.UserName!);
@@ -381,6 +401,20 @@
 
     public async Task LoadFilesCoverPics(InputFileChangeEventArgs e)
     {
+        foreach (var extention in imageExtensions)
+        {
+            if (Path.GetExtension(e.File.Name).ToLower().Contains(extention))
+            {
+                hasExtention = true;
+                break;
+            }
+        }
+
+        if (!hasExtention)
+        {
+            return;
+        }
+
         string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
 
         string pathUser = Path.Combine(pathRoot, user_auth.UserName!);

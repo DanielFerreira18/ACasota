@@ -231,11 +231,16 @@
     public List<Animal> users { get; set; } = new List<Animal>();
     public List<Animal> userDB { get; set; } = new List<Animal>();
 
+    //New animal that is being created
     private Animal animalReg { get; set; } = new Animal();
 
+    //Errors when the user doesnt input all the date when creating an animal
     public string errors { get; set; } = "";
 
+    //Checks if user is admin so he can register a new animal
     private bool isAdmin = true;
+
+    //variables for the animal pictures
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
     private string pathPic = "";

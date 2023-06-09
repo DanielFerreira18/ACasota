@@ -442,6 +442,11 @@
     public ApplicationUser user_adopting { get; set; } = new ApplicationUser();
     public string errors { get; set; } = "";
 
+    //List of extentions
+    public List<string> imageExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
+    //Bool control extention
+    public bool hasExtention = false;
+
     public int adoptHouseType = 0;
     public bool adoptHasAnimal = false;
     public bool adoptConsentResponsability = false;
@@ -519,6 +524,20 @@
 
     public async Task LoadFilesProfilePics(InputFileChangeEventArgs e)
     {
+        foreach (var extention in imageExtensions)
+        {
+            if (Path.GetExtension(e.File.Name).ToLower().Contains(extention))
+            {
+                hasExtention = true;
+                break;
+            }
+        }
+
+        if (!hasExtention)
+        {
+            return;
+        }
+
         string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
 
         string pathUser = Path.Combine(pathRoot, animal_auth.Id!);
@@ -553,6 +572,20 @@
 
     public async Task LoadFilesCoverPics(InputFileChangeEventArgs e)
     {
+        foreach (var extention in imageExtensions)
+        {
+            if (Path.GetExtension(e.File.Name).ToLower().Contains(extention))
+            {
+                hasExtention = true;
+                break;
+            }
+        }
+
+        if (!hasExtention)
+        {
+            return;
+        }
+
         string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
 
         string pathUser = Path.Combine(pathRoot, animal_auth.Id!);
