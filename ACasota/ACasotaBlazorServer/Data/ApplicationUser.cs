@@ -23,5 +23,11 @@ namespace ACasotaBlazorServer.Data
 
         //List of Adoption Forms made
         public List<Adoption>? Adoptions { get; set; }
-    }
+
+		//List of Events Subscribed
+		public List<EventUser> EventUsers { get; set; }
+
+		//List of Events Created
+		public List<Event> Events { get; set; }
+	}
 }

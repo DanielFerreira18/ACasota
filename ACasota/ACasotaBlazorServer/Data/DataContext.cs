@@ -10,8 +10,9 @@ namespace ACasotaBlazorServer.Data
         public DataContext(DbContextOptions options) : base(options)
         {
         }
-
-        public DbSet<Animal> Animals { get; set; }
+		public DbSet<Event> Events { get; set; }
+		public DbSet<EventUser> EventUsers { get; set; }
+		public DbSet<Animal> Animals { get; set; }
         public DbSet<Adoption> Adoptions { get; set; }
         public DbSet<AdoptionHouse> AdoptionHouses { get; set; }
         public DbSet<HouseType> HouseTypes { get; set; }
@@ -45,7 +46,26 @@ namespace ACasotaBlazorServer.Data
                 .WithMany(u => u.Adoptions)
                 .HasForeignKey(u => u.HouseId);
 
-            var idRoleUser = Guid.NewGuid().ToString();
+            builder.Entity<Event>()
+                .HasOne(u => u.User)
+                .WithMany(u => u.Events)
+                .HasForeignKey(u => u.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+			builder.Entity<EventUser>()
+                .HasKey(u => new { u.UserId, u.EventId });
+
+			builder.Entity<EventUser>()
+				.HasOne(u => u.Event)
+				.WithMany(u => u.EventUsers)
+				.HasForeignKey(u => u.EventId);
+
+			builder.Entity<EventUser>()
+				.HasOne(u => u.User)
+				.WithMany(u => u.EventUsers)
+				.HasForeignKey(u => u.UserId);
+
+			var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
             var idUserUser = Guid.NewGuid().ToString();
             var idUserAdmin = Guid.NewGuid().ToString();
