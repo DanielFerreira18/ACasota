@@ -66,22 +66,101 @@
                                                 <input type="text" @bind="@animalReg.Name" @bind:event="oninput" class="form-control" placeholder="Nome do animal" id="nome" autofocus required>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
-                                            <label for="especie">Especie</label>
-                                            <div class="input-group">
-                                                <input type="text" @bind="@animalReg.Race" @bind:event="oninput" placeholder="Especie do animal" class="form-control" id="especie" required>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <div class="form-group" style="text-align:left;">
+                                                    <label>Espécie do Animal</label>
+                                                    <div class="d-flex mb-3 justify-content-center">
+                                                        <select @bind="@animalReg.Race" class="form-select" style="color:black;" id="habitacao" aria-label="Default select example">
+                                                            <option value="">Escolha a espécie</option>
+                                                            <option value="Cao">Cão</option>
+                                                            <option value="Gato">Gato</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group" style="text-align:left;">
+                                                    <label>Género do Animal</label>
+                                                    <div class="d-flex mb-3 justify-content-center">
+                                                        <select @bind="@animalReg.Sex" class="form-select" style="color:black;" id="country" aria-label="Default select example">
+                                                            <option value="">Escolha o género</option>
+                                                            <option value="Female">Feminino</option>
+                                                            <option value="Male">Masculino</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
-                                            <label for="idade">Idade do animal</label>
-                                            <div class="input-group">
-                                                <input type="text" @bind="@animalReg.Age" @bind:event="oninput" placeholder="Idade do animal" class="form-control" id="idade" required>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <div class="form-group" style="text-align:left;">
+                                                    <label>Tamanho do Animal</label>
+                                                    <div class="d-flex mb-3 justify-content-center">
+                                                        <select @bind="@animalReg.Size" class="form-select" style="color:black;" id="habitacao" aria-label="Default select example">
+                                                            <option value="">Escolha o tamanho</option>
+                                                            <option value="Little">Pequeno</option>
+                                                            <option value="Medium">Médio</option>
+                                                            <option value="Big">Grande</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group" style="text-align:left;">
+                                                    <label>Idade do Animal</label>
+                                                    <div class="d-flex mb-3 justify-content-center">
+                                                        <select @bind="@animalReg.Age" class="form-select" style="color:black;" id="country" aria-label="Default select example">
+                                                            <option value="">Escolha a idade</option>
+                                                            <option value="Baby">Bebe</option>
+                                                            <option value="Junior">Junior</option>
+                                                            <option value="Adult">Adulto</option>
+                                                            <option value="Senior">Sénior</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Está esterelizado?</label>
+                                                    <div class="d-flex mb-3">
+                                                        <!-- Radio -->
+                                                        <InputRadioGroup Name="IsSterile" @bind-Value="@animalReg.IsSterile">
+                                                            <div class="form-check me-3">
+                                                                <InputRadio Name="IsSterile" class="form-check-input" Value="@true" />Sim<br>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <InputRadio Name="IsSterile" class="form-check-input" Value="@false" />Não<br>
+                                                            </div>
+                                                        </InputRadioGroup>
+                                                        <!-- End of Radio -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Está vacinado?</label>
+                                                    <div class="d-flex mb-3">
+                                                        <!-- Radio -->
+                                                        <InputRadioGroup Name="IsVacinated" @bind-Value="@animalReg.IsVacinated">
+                                                            <div class="form-check me-3">
+                                                                <InputRadio Name="IsVacinated" class="form-check-input" Value="@true" />Sim<br>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <InputRadio Name="IsVacinated" class="form-check-input" Value="@false" />Não<br>
+                                                            </div>
+                                                        </InputRadioGroup>
+                                                        <!-- End of Radio -->
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- End of Form -->
                                         <p class="text-danger" style="text-align: left;">@errors</p>
                                         <div class="d-grid mb-4">
-                                            <button type="button" class="btn btn-gray-800" @onclick="CreateAnimal">Registar Animal</button>
+                                            <button type="button" class="btn btn-secondary" @onclick="CreateAnimal">Registar Animal</button>
                                             <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
                                         </div>
                                         <div class="text-center text-md-center mb-4 mt-md-0">
