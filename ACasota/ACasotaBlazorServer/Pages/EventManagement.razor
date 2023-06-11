@@ -11,7 +11,7 @@
 
 <PageTitle>Gestão de Eventos</PageTitle>
 
-<AuthorizeView Roles="Admin">
+<AuthorizeView>
 	<Authorized>
 		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 			<div class="d-block mb-4 mb-md-0">
@@ -62,7 +62,7 @@
 										<div class="form-group mb-4">
 											<label for="nome">Nome do Evento</label>
 											<div class="input-group">
-												<input type="text" @bind="@eventReg.Name" @bind:event="oninput" class="form-control" placeholder="Nome do Evento" id="nome" autofocus required>
+												<input type="text" @bind="@eventReg.Name" @bind:event="oninput" class="form-control" style="color:black;" placeholder="Nome do Evento" id="nome" autofocus required>
 											</div>
 										</div>
 										<div class="form-group mb-4">
@@ -92,7 +92,18 @@
 										<div class="form-group mb-4">
 											<label for="nome">Numero de participantes</label>
 											<div class="input-group">
-												<input type="text" @bind="@eventReg.MaxAmount" @bind:event="oninput" class="form-control" placeholder="Nome do Evento" id="nome" autofocus required>
+												<select @bind="@eventReg.MaxAmount" class="form-select" style="color:black;" id="MaxAmount" aria-label="Default select example">
+													<option value="">Numero de participantes</option>
+													<option value="10">10</option>
+													<option value="15">15</option>
+													<option value="20">20</option>
+													<option value="25">25</option>
+													<option value="30">30</option>
+													<option value="35">35</option>
+													<option value="40">40</option>
+													<option value="45">45</option>
+													<option value="50">50</option>
+												</select>
 											</div>
 										</div>
 										<!-- End of Form -->
@@ -170,13 +181,17 @@
 								<td><span class="fw-normal">@userDb.InitialDate.Date</span></td>
 								<td><span class="fw-normal">@userDb.EndDate.Date</span></td>
 								<td><span class="fw-normal">@userDb.Count/@userDb.MaxAmount</span></td>
-								@if (userDb.State)
+								@if (userDb.State == 0)
+								{
+									<td><span class="fw-bold text-danger">Cancelado</span></td>
+								}
+								else if (userDb.State == 1)
 								{
 									<td><span class="fw-bold text-success">Aberto</span></td>
 								}
 								else
 								{
-									<td><span class="fw-bold text-danger">Fechado</span></td>
+									<td><span class="fw-bold text-danger">Finalizado</span></td>
 								}
 							</tr>
 						}
@@ -315,25 +330,16 @@
 			using (var ctx = contextDb.CreateDbContext())
 			{
 				var usersCT = await ctx.Events.Include(c => c.User).ToArrayAsync();
-				ApplicationUser user_Event = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
 
-				if (user.IsInRole("Admin"))
+
+				foreach (var userct in usersCT)
 				{
-					foreach (var userct in usersCT)
-					{
-						userDB.Add(userct);
-					}
+					userDB.Add(userct);
 				}
-				else
+
+				if (!user.IsInRole("Admin"))
 				{
 					isAdmin = false;
-					foreach (var userct in usersCT)
-					{
-						if (userct.UserId.Equals(user_Event.Id))
-						{
-							userDB.Add(userct);
-						}
-					}
 				}
 			}
 
@@ -521,10 +527,17 @@
 
 	public async Task CreateEvent()
 	{
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
 		eventReg.Id = Guid.NewGuid().ToString();
+		eventReg.Count = 1;
+		eventReg.State = 1;
 
 		using (var ctx = contextDb.CreateDbContext())
 		{
+			ApplicationUser user_Event = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
+			eventReg.UserId = user_Event.Id;
 			try
 			{
 				await ctx.Events.AddAsync(eventReg);
@@ -535,6 +548,13 @@
 				errors = "Preencha todos as caractristicas do evento!!";
 				return;
 			}
+
+			EventUser eventUserReg = new EventUser();
+			eventUserReg.EventId = eventReg.Id;
+			eventUserReg.UserId = user_Event.Id;
+
+			await ctx.EventUsers.AddAsync(eventUserReg);
+			await ctx.SaveChangesAsync();
 
 			GetDown();
 		}
