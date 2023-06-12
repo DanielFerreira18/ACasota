@@ -160,7 +160,6 @@
                     <thead>
                         <tr>
                             <th class="border-gray-200">Nome do Evento</th>
-                            <th class="border-gray-200">Criador do Evento</th>
                             <th class="border-gray-200">Data Inicio</th>
                             <th class="border-gray-200">Data Fim</th>
                             <th class="border-gray-200">Número de pessoas</th>
@@ -173,11 +172,10 @@
                             <!-- Item -->
                             <tr>
                                 <td>
-                                    <a href="/Profiles/@userDb.Id" class="fw-bold">
+                                    <a href="/EventForm/@userDb.Id" class="fw-bold">
                                         <span class="h6">@userDb.Name</span>
                                     </a>
                                 </td>
-                                <td><span class="fw-normal">@userDb.User.FirstName @userDb.User.LastName</span></td>
                                 <td><span class="fw-normal">@userDb.InitialDate.Date</span></td>
                                 <td><span class="fw-normal">@userDb.EndDate.Date</span></td>
                                 <td><span class="fw-normal">@userDb.Count/@userDb.MaxAmount</span></td>
@@ -329,7 +327,7 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                var usersCT = await ctx.Events.Include(c => c.User).ToArrayAsync();
+                var usersCT = await ctx.Events.ToArrayAsync();
 
                 foreach (var userct in usersCT)
                 {
@@ -501,12 +499,10 @@
         {
             foreach (var u in userDB)
             {
-                var firstNameLower = u.User.FirstName.ToLower();
-                var lastNameLower = u.User.LastName.ToLower();
                 var eventNameLower = u.Name.ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower) || eventNameLower.Contains(searchLower))
+                if (eventNameLower.Contains(searchLower))
                 {
                     users.Add(u);
                 }
@@ -529,17 +525,18 @@
         var authState = await AuthenticationStateTask;
         var user = authState.User;
 
+        ApplicationUser userEvent = new ApplicationUser();
+
         eventReg.Id = Guid.NewGuid().ToString();
         eventReg.Count = 1;
         eventReg.State = 1;
 
         using (var ctx = contextDb.CreateDbContext())
         {
-            ApplicationUser user_Event = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
-            eventReg.UserId = user_Event.Id;
-
             try
             {
+                userEvent = await ctx.Users.Where(u => u.UserName.Equals(user.Identity.Name)).FirstAsync();
+
                 await ctx.Events.AddAsync(eventReg);
                 await ctx.SaveChangesAsync();
             }
@@ -549,13 +546,12 @@
                 return;
             }
 
-            EventUser eventUserReg = new EventUser();
-            eventUserReg.EventId = eventReg.Id;
-            eventUserReg.UserId = user_Event.Id;
+            EventUser eventUser = new EventUser();
+            eventUser.UserId = userEvent.Id;
+            eventUser.EventId = eventReg.Id;
 
-            await ctx.EventUsers.AddAsync(eventUserReg);
+            await ctx.EventUsers.AddAsync(eventUser);
             await ctx.SaveChangesAsync();
-
         }
 
         GetDown();
@@ -568,6 +564,5 @@
             await JSRuntime.InvokeVoidAsync("DateTimePicker");
         }
     }
-
 }
 

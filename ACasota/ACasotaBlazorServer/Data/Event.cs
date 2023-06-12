@@ -11,10 +11,6 @@
 		public int MaxAmount { get; set; }
 		public int State { get; set; }
 
-		//FK to the creator of the event
-		public string UserId { get; set; }
-		public ApplicationUser User { get; set; }
-
 		//List of Users subscribed
 		public List<EventUser> EventUsers { get; set; }
 

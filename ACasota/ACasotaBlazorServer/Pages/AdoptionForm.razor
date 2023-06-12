@@ -14,7 +14,7 @@
 
 <AuthorizeView>
     <Authorized>
-        @if (sip)
+        @if (render)
         {
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
                 <div class="d-block mb-4 mb-md-0">
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div>
-                                    <img class="card-img-top" src="@profileAnimalPic" alt="Card image cap">
+                                    <img class="img-fluid rounded-bottom rounded-top" src="@profileAnimalPic" alt="Card image cap">
                                 </div>
                             </div>
                             <div class="col-md-9 mb-3">
@@ -150,7 +150,7 @@
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div>
-                                    <img class="card-img-top" src="@profileUserPic" alt="Card image cap">
+                                    <img class="img-fluid rounded-bottom rounded-top" src="@profileUserPic" alt="Card image cap">
                                 </div>
                             </div>
                             <div class="col-md-9 mb-3">
@@ -363,7 +363,7 @@
     public Adoption user_auth { get; set; } = new Adoption();
     public AdoptionHouse adoptionHouse { get; set; } = new AdoptionHouse();
 
-    private bool sip = false;
+    private bool render = false;
     private bool isAdmin = false;
 
     private bool errorHandling = true;
@@ -377,6 +377,7 @@
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
     private string pathPicsRootAnimal = "";
+    private string pathPicsRootUser = "";
     private string profileUserPic = "";
     private string profileAnimalPic = "";
     private long maxFileSize = 1024 * 1024 * 3;
@@ -401,14 +402,14 @@
                     isAdmin = true;
                 }
 
-                sip = true;
+                render = true;
 
-                pathPicsRoot = Path.Combine(pathPicsRoot, user_auth.User.UserName);
+                pathPicsRootUser = Path.Combine(pathPicsRoot, user_auth.User.UserName);
                 pathPicsRootAnimal = Path.Combine(pathPicsRoot, user_auth.Animal.Id);
 
                 if (user_auth.User.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.User.UserName, user_auth.User.ProfilePic)))
                 {
-                    profileUserPic = Path.Combine(pathPicsRoot, user_auth.User.ProfilePic);
+                    profileUserPic = Path.Combine(pathPicsRootUser, user_auth.User.ProfilePic);
                 }
                 else
                 {

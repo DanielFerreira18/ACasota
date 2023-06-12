@@ -24,7 +24,8 @@ namespace ACasotaBlazorServer.Data
             builder.Entity<Animal>()
                 .HasOne(u => u.User)
                 .WithMany(u => u.Animals)
-                .HasForeignKey(u => u.UserId);
+                .HasForeignKey(u => u.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.Entity<Adoption>()
                 .HasOne(u => u.Animal)
@@ -46,16 +47,10 @@ namespace ACasotaBlazorServer.Data
                 .WithMany(u => u.Adoptions)
                 .HasForeignKey(u => u.HouseId);
 
-            builder.Entity<Event>()
-                .HasOne(u => u.User)
-                .WithMany(u => u.Events)
-                .HasForeignKey(u => u.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<EventUser>()
+                .HasKey(u => new {u.UserId, u.EventId});
 
-			builder.Entity<EventUser>()
-                .HasKey(u => new { u.UserId, u.EventId });
-
-			builder.Entity<EventUser>()
+            builder.Entity<EventUser>()
 				.HasOne(u => u.Event)
 				.WithMany(u => u.EventUsers)
 				.HasForeignKey(u => u.EventId);
@@ -65,7 +60,7 @@ namespace ACasotaBlazorServer.Data
 				.WithMany(u => u.EventUsers)
 				.HasForeignKey(u => u.UserId);
 
-			var idRoleUser = Guid.NewGuid().ToString();
+            var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
             var idUserUser = Guid.NewGuid().ToString();
             var idUserAdmin = Guid.NewGuid().ToString();

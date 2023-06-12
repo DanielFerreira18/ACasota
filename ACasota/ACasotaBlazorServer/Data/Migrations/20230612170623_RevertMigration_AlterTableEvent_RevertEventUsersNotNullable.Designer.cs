@@ -4,6 +4,7 @@ using ACasotaBlazorServer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ACasotaBlazorServer.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230612170623_RevertMigration_AlterTableEvent_RevertEventUsersNotNullable")]
+    partial class RevertMigration_AlterTableEvent_RevertEventUsersNotNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,7 +137,7 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f2f5cffb-15e4-4854-94ca-27c61454d450",
+                            Id = "845d2a5c-b5fd-4e48-9a7d-3b3ccb54aa4f",
                             Age = "Baby",
                             IsSterile = false,
                             IsVacinated = false,
@@ -142,7 +145,7 @@ namespace ACasotaBlazorServer.Data.Migrations
                             Race = "Cat",
                             Sex = "Male",
                             Size = "Little",
-                            UserId = "222a852c-5481-46c7-8044-523c66bff3c1"
+                            UserId = "29999d65-e585-47ff-b57d-69647ee65b54"
                         });
                 });
 
@@ -254,10 +257,10 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "222a852c-5481-46c7-8044-523c66bff3c1",
+                            Id = "29999d65-e585-47ff-b57d-69647ee65b54",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3db24790-9455-42a8-9cd3-cfa396b2d66b",
-                            Date_Birth = new DateTime(2023, 6, 12, 20, 7, 21, 5, DateTimeKind.Local).AddTicks(2035),
+                            ConcurrencyStamp = "a6dd3f74-1009-45f6-8c94-47491fc48d94",
+                            Date_Birth = new DateTime(2023, 6, 12, 18, 6, 23, 100, DateTimeKind.Local).AddTicks(7037),
                             Email = "user@user.com",
                             EmailConfirmed = false,
                             FirstName = "User",
@@ -266,19 +269,19 @@ namespace ACasotaBlazorServer.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@USER.COM",
                             NormalizedUserName = "USER@USER.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEqxFam5pHUaMaNwSIkDah00erwMmoT11GyazrXQEQ9N0+R1iIkq4XcygBlH07e8Mg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBJTIn8N2pCwf6Ts9CoVtrNmgS8lxCria78IfsHBZnQwVTgwJL9VkiCzjPIieO1NJg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7735431a-1c4c-40b9-88c3-4c72924cb756",
+                            SecurityStamp = "2e6582cd-db3b-4bea-b69f-5acf0fe4d2db",
                             Sex = "Masculino",
                             TwoFactorEnabled = false,
                             UserName = "user@user.com"
                         },
                         new
                         {
-                            Id = "3876115c-24c7-4786-83fc-28a9a6fcd21b",
+                            Id = "1237ed08-6a44-4e20-8cf8-09ec5b3238cf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "137f409f-831b-4aa1-a8b9-d0adbc32f484",
-                            Date_Birth = new DateTime(2023, 6, 12, 20, 7, 21, 64, DateTimeKind.Local).AddTicks(973),
+                            ConcurrencyStamp = "44d37776-1474-490a-82cc-45490ce189c0",
+                            Date_Birth = new DateTime(2023, 6, 12, 18, 6, 23, 159, DateTimeKind.Local).AddTicks(8560),
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -287,9 +290,9 @@ namespace ACasotaBlazorServer.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJl9/ZWlNOBzGATLs39BlSVrkFseKjQZgMQUvvpS5lOeQc4iqaLThAGleP/b+/TXLw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ9I3D0MRUEUhk9ajKsNYjlI2glYb/M2Nn63IEvEufFpNv568xkgDbI6j5BhX99W2g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d31cb3fe-6176-4cfb-ab01-6f483957a75a",
+                            SecurityStamp = "741eb14d-7d1c-4bc8-9206-e8593f80a96f",
                             Sex = "Masculino",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com"
@@ -324,7 +327,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.Property<int>("State")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Events");
                 });
@@ -407,13 +416,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "28b42a5b-bf80-41dd-9d45-c0325fea2bc3",
+                            Id = "f2c49958-a598-4f84-9017-13025be9df0e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "ce9519fe-e5bd-4c51-a972-b30958fde7b9",
+                            Id = "5895f482-8ed1-4f32-aad8-f12689cebd27",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -508,13 +517,13 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "222a852c-5481-46c7-8044-523c66bff3c1",
-                            RoleId = "28b42a5b-bf80-41dd-9d45-c0325fea2bc3"
+                            UserId = "29999d65-e585-47ff-b57d-69647ee65b54",
+                            RoleId = "f2c49958-a598-4f84-9017-13025be9df0e"
                         },
                         new
                         {
-                            UserId = "3876115c-24c7-4786-83fc-28a9a6fcd21b",
-                            RoleId = "ce9519fe-e5bd-4c51-a972-b30958fde7b9"
+                            UserId = "1237ed08-6a44-4e20-8cf8-09ec5b3238cf",
+                            RoleId = "5895f482-8ed1-4f32-aad8-f12689cebd27"
                         });
                 });
 
@@ -579,8 +588,18 @@ namespace ACasotaBlazorServer.Data.Migrations
                 {
                     b.HasOne("ACasotaBlazorServer.Data.ApplicationUser", "User")
                         .WithMany("Animals")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ACasotaBlazorServer.Data.Event", b =>
+                {
+                    b.HasOne("ACasotaBlazorServer.Data.ApplicationUser", "User")
+                        .WithMany("Events")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -672,6 +691,8 @@ namespace ACasotaBlazorServer.Data.Migrations
                     b.Navigation("Animals");
 
                     b.Navigation("EventUsers");
+
+                    b.Navigation("Events");
                 });
 
             modelBuilder.Entity("ACasotaBlazorServer.Data.Event", b =>

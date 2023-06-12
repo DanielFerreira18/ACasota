@@ -5,7 +5,6 @@
         public string Id { get; set; }
         public string Tipology { get; set; }
         
-
         //FK to the type of the house
         public int TypeId { get; set; }
         public HouseType Type { get; set; }

@@ -26,8 +26,5 @@ namespace ACasotaBlazorServer.Data
 
 		//List of Events Subscribed
 		public List<EventUser> EventUsers { get; set; }
-
-		//List of Events Created
-		public List<Event> Events { get; set; }
 	}
 }
