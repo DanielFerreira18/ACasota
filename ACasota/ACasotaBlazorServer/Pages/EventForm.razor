@@ -12,7 +12,7 @@
 
 <PageTitle>Perfil</PageTitle>
 
-<AuthorizeView>
+<AuthorizeView>   
     <Authorized>
         @if (render)
         {
@@ -89,8 +89,21 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group d-flex justify-content-center">
-                                            <button type="button" id="bts" class="ms-2 btn btn-success">Finalizar</button>
-                                            <button type="button" id="bts" class="ms-2 btn btn-danger">Cancelar</button>
+                                            @if (isAdmin){
+                                                <button type="button" id="bts" class="ms-2 btn btn-success">Finalizar</button>
+                                                @if (!isInscripted)
+                                                {
+                                                    <button type="button" id="bts" class="ms-2 btn btn-secondary">Inscrever-se</button>
+                                                }
+                                                <button type="button" id="bts" class="ms-2 btn btn-danger">Cancelar</button>
+                                            }
+                                            else
+                                            {
+                                                @if (!isInscripted)
+                                                {
+                                                    <button type="button" id="bts" class="ms-2 btn btn-secondary">Inscrever-se</button>
+                                                }
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -205,6 +218,7 @@
 
     private bool render = false;
     private bool isAdmin = false;
+    private bool isInscripted = false;
 
     private bool errorHandling = true;
 
@@ -234,6 +248,14 @@
                 user_auth = await ctx.Events.Where(u => u.Id.Equals(this.id)).FirstAsync();
                 user_auth.EventUsers = await ctx.EventUsers.Where(u => u.EventId.Equals(this.id)).Include(u => u.User).Include(u => u.Event).ToListAsync();
 
+                foreach (var userEvent in user_auth.EventUsers)
+                {
+                    if (user.Identity.Name.Equals(userEvent.User.UserName))
+                    {
+                        isInscripted = true;
+                    }
+                }
+
                 if (user.IsInRole("Admin"))
                 {
                     isAdmin = true;
@@ -248,5 +270,4 @@
     {
         nav.NavigateTo("/AdoptionManagement", true);
     }
-
 }
