@@ -444,6 +444,7 @@
 
     //List of extentions
     public List<string> imageExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
+
     //Bool control extention
     public bool hasExtention = false;
 
@@ -469,6 +470,7 @@
 
         var authState = await AuthenticationStateTask;
         var user = authState.User;
+
         if (user.Identity.IsAuthenticated)
         {
             using (var ctx = contextDb.CreateDbContext())

@@ -133,8 +133,8 @@ namespace ACasotaBlazorServer.Data
                 Name = "Lucas",
                 Age = "Baby",
                 Race = "Cat",
-                Sex = "Masculino",
-                Size = "Pequeno",
+                Sex = "Male",
+                Size = "Little",
                 IsSterile = false,
                 IsVacinated = false,
                 UserId = idUserUser

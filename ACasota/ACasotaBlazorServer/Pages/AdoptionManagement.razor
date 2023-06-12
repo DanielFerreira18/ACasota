@@ -65,7 +65,7 @@
                             <!-- Item -->
                             <tr>
                                 <td>
-                                    <a href="/Profiles/@userDb.Id" class="fw-bold">
+                                    <a href="/AdoptionForm/@userDb.Id" class="fw-bold">
                                         <span class="h6">@userDb.Id</span>
                                     </a>
                                 </td>
@@ -74,11 +74,11 @@
 
                                 @if (userDb.State == 0)
                                 {
-                                    <td><span class="fw-bold text-success">Recusado</span></td>
+                                    <td><span class="fw-bold text-danger">Recusado</span></td>
                                 }
                                 else if (userDb.State == 1)
                                 {
-                                    <td><span class="fw-bold text-danger">Aceite</span></td>
+                                    <td><span class="fw-bold text-success">Aceite</span></td>
                                 }
                                 else
                                 {

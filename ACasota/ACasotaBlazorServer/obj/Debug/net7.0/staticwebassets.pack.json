@@ -1,1727 +1,1727 @@
 {
   "Files": [
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ACasotaBlazorServer.bundle.scp.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ACasotaBlazorServer.bundle.scp.css",
       "PackagePath": "staticwebassets\\ACasotaBlazorServer.bundle.scp.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\ACasotaLogo.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\ACasotaLogo.png",
       "PackagePath": "staticwebassets\\assets\\img\\ACasotaLogo.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\brand\\dark.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\brand\\dark.svg",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\dark.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\brand\\light.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\brand\\light.svg",
       "PackagePath": "staticwebassets\\assets\\img\\brand\\light.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\android-chrome-192x192.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\android-chrome-192x192.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\android-chrome-192x192.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\android-chrome-512x512.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\android-chrome-512x512.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\android-chrome-512x512.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\apple-touch-icon.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\apple-touch-icon.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\browserconfig.xml",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\browserconfig.xml",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\browserconfig.xml"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon-16x16.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon-16x16.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\favicon-16x16.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon-32x32.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon-32x32.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\favicon-32x32.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon.ico",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\favicon.ico",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\favicon.ico"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\manifest.json",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\manifest.json",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\manifest.json"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\mstile-150x150.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\mstile-150x150.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\mstile-150x150.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\safari-pinned-tab.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\safari-pinned-tab.svg",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\safari-pinned-tab.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\site.webmanifest",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\favicon\\site.webmanifest",
       "PackagePath": "staticwebassets\\assets\\img\\favicon\\site.webmanifest"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\aland-islands.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\aland-islands.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\aland-islands.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\albania.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\albania.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\albania.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\algeria.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\algeria.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\algeria.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\american-samoa.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\american-samoa.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\american-samoa.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\anguilla.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\anguilla.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\anguilla.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\argentina.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\argentina.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\argentina.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\armenia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\armenia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\armenia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\australia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\australia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\australia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\austria.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\austria.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\austria.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\azerbaijan.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\azerbaijan.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\azerbaijan.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bahrain.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bahrain.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\bahrain.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\belarus.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\belarus.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\belarus.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\belgium.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\belgium.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\belgium.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bolivia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bolivia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\bolivia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bosnia-and-herzegovina.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bosnia-and-herzegovina.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\bosnia-and-herzegovina.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\botswana.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\botswana.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\botswana.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\brazil.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\brazil.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\brazil.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bulgaria.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\bulgaria.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\bulgaria.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cambodia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cambodia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\cambodia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cameroon.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cameroon.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\cameroon.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\canada.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\canada.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\canada.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\chile.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\chile.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\chile.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\china.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\china.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\china.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\colombia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\colombia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\colombia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\costa-rica.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\costa-rica.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\costa-rica.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\croatia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\croatia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\croatia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cuba.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cuba.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\cuba.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cyprus.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\cyprus.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\cyprus.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\czech-republic.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\czech-republic.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\czech-republic.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\denmark.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\denmark.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\denmark.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ecuador.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ecuador.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\ecuador.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\egypt.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\egypt.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\egypt.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\estonia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\estonia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\estonia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ethiopia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ethiopia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\ethiopia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\finland.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\finland.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\finland.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\france.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\france.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\france.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\georgia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\georgia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\georgia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\germany.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\germany.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\germany.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\greece.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\greece.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\greece.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\haiti.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\haiti.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\haiti.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\hong-kong.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\hong-kong.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\hong-kong.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\hungary.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\hungary.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\hungary.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iceland.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iceland.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\iceland.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\india.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\india.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\india.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\indonesia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\indonesia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\indonesia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iran.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iran.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\iran.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iraq.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\iraq.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\iraq.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ireland.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ireland.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\ireland.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\israel.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\israel.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\israel.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\italy.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\italy.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\italy.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ivory-coast.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ivory-coast.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\ivory-coast.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\japan.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\japan.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\japan.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\kazakhstan.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\kazakhstan.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\kazakhstan.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\kuwait.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\kuwait.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\kuwait.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\latvia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\latvia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\latvia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\liechtenstein.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\liechtenstein.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\liechtenstein.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\lithuania.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\lithuania.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\lithuania.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\luxembourg.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\luxembourg.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\luxembourg.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\malaysia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\malaysia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\malaysia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\mexico.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\mexico.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\mexico.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\mongolia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\mongolia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\mongolia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\montenegro.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\montenegro.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\montenegro.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nauru.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nauru.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\nauru.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\netherlands.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\netherlands.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\netherlands.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nicaragua.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nicaragua.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\nicaragua.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nigeria.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\nigeria.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\nigeria.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\norway.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\norway.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\norway.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\pakistan.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\pakistan.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\pakistan.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\panama.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\panama.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\panama.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\paraguay.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\paraguay.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\paraguay.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\peru.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\peru.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\peru.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\philippines.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\philippines.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\philippines.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\portugal.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\portugal.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\portugal.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\puerto-rico.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\puerto-rico.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\puerto-rico.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\republic-of-macedonia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\republic-of-macedonia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\republic-of-macedonia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\republic-of-poland.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\republic-of-poland.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\republic-of-poland.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\romania.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\romania.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\romania.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\russia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\russia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\russia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\serbia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\serbia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\serbia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\singapore.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\singapore.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\singapore.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\slovakia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\slovakia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\slovakia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\slovenia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\slovenia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\slovenia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\south-africa.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\south-africa.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\south-africa.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\south-korea.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\south-korea.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\south-korea.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\spain.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\spain.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\spain.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\sri-lanka.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\sri-lanka.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\sri-lanka.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\sweden.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\sweden.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\sweden.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\switzerland.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\switzerland.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\switzerland.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\taiwan.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\taiwan.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\taiwan.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\thailand.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\thailand.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\thailand.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\tunisia.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\tunisia.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\tunisia.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\turkey.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\turkey.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\turkey.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ukraine.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\ukraine.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\ukraine.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-arab-emirates.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-arab-emirates.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\united-arab-emirates.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-kingdom.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-kingdom.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\united-kingdom.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-states-of-america.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-states-of-america.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\united-states-of-america.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-states.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\united-states.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\united-states.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\uruguay.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\uruguay.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\uruguay.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\venezuela.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\venezuela.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\venezuela.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\vietnam.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\flags\\vietnam.svg",
       "PackagePath": "staticwebassets\\assets\\img\\flags\\vietnam.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\ACasotaLogo.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\ACasotaLogo.png",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\ACasotaLogo.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\Banner4b.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\Banner4b.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\Banner4b.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\1.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\about\\1.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\2.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\about\\2.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\3.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\about\\3.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\4.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\about\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\about\\4.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\catowner2.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\catowner2.png",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\catowner2.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\close-icon.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\close-icon.svg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\close-icon.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\facebook.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\facebook.svg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\logos\\facebook.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\google.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\google.svg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\logos\\google.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\ibm.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\ibm.svg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\logos\\ibm.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\microsoft.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\logos\\microsoft.svg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\logos\\microsoft.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\map-image.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\map-image.png",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\map-image.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\1.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\1.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\2.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\2.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\3.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\3.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\4.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\4.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\5.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\5.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\6.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\portfolio\\6.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\1.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\team\\1.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\2.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\team\\2.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\3.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\homepage\\img\\team\\3.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\github.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\github.svg",
       "PackagePath": "staticwebassets\\assets\\img\\icons\\github.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\google-tag-manager.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\google-tag-manager.svg",
       "PackagePath": "staticwebassets\\assets\\img\\icons\\google-tag-manager.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\google_analytics.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\icons\\google_analytics.svg",
       "PackagePath": "staticwebassets\\assets\\img\\icons\\google_analytics.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\403.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\403.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\403.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\404.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\404.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\404.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\500.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\500.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\500.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\bs5-illustrations.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\bs5-illustrations.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\bs5-illustrations.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\signin.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\illustrations\\signin.svg",
       "PackagePath": "staticwebassets\\assets\\img\\illustrations\\signin.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\marker.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\marker.svg",
       "PackagePath": "staticwebassets\\assets\\img\\marker.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-calendar-presentation.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-calendar-presentation.png",
       "PackagePath": "staticwebassets\\assets\\img\\mockup-calendar-presentation.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-kanban-presentation.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-kanban-presentation.png",
       "PackagePath": "staticwebassets\\assets\\img\\mockup-kanban-presentation.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-map-presentation.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-map-presentation.png",
       "PackagePath": "staticwebassets\\assets\\img\\mockup-map-presentation.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-presentation.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\mockup-presentation.png",
       "PackagePath": "staticwebassets\\assets\\img\\mockup-presentation.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\404.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\404.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\404.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\500.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\500.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\500.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\forgot-password.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\forgot-password.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\forgot-password.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\lock.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\lock.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\lock.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\mockup-presentation.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\mockup-presentation.png",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\mockup-presentation.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\overview.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\overview.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\overview.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\reset-password.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\reset-password.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\reset-password.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\settings.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\settings.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\settings.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\sign-in.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\sign-in.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\sign-in.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\sign-up.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\sign-up.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\sign-up.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\transactions.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\pages\\transactions.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\pages\\transactions.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\paypal-logo.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\paypal-logo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\paypal-logo.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\profile-cover.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\profile-cover.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\profile-cover.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-1.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-1.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-2.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-2.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-3.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-3.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-4.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-4.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-5.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-5.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-6.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\team\\profile-picture-6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\profile-picture-6.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\bootstrap-5-logo.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\bootstrap-5-logo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\technologies\\bootstrap-5-logo.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\react-logo-primary.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\react-logo-primary.svg",
       "PackagePath": "staticwebassets\\assets\\img\\technologies\\react-logo-primary.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\react-logo.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\react-logo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\technologies\\react-logo.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\vuejs-logo.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\technologies\\vuejs-logo.svg",
       "PackagePath": "staticwebassets\\assets\\img\\technologies\\vuejs-logo.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg-logo-alt.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg-logo-alt.svg",
       "PackagePath": "staticwebassets\\assets\\img\\themesberg-logo-alt.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg-mockup.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg-mockup.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\themesberg-mockup.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\themesberg.svg",
       "PackagePath": "staticwebassets\\assets\\img\\themesberg.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\coverDefault.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\coverDefault.png",
       "PackagePath": "staticwebassets\\assets\\img\\userDefault\\coverDefault.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\userDefault.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\userDefault\\userDefault.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\userDefault\\userDefault.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\ACasota.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\ACasota.js",
       "PackagePath": "staticwebassets\\assets\\js\\ACasota.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\homepage.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\homepage.js",
       "PackagePath": "staticwebassets\\assets\\js\\homepage.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\meu.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\meu.js",
       "PackagePath": "staticwebassets\\assets\\js\\meu.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\moment.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\moment.js",
       "PackagePath": "staticwebassets\\assets\\js\\moment.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\volt.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\js\\volt.js",
       "PackagePath": "staticwebassets\\assets\\js\\volt.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\homepage\\styles.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\homepage\\styles.css",
       "PackagePath": "staticwebassets\\css\\homepage\\styles.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\README.md",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\README.md",
       "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\site.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\volt.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\volt.css",
       "PackagePath": "staticwebassets\\css\\volt.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\volt.css.map",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\css\\volt.css.map",
       "PackagePath": "staticwebassets\\css\\volt.css.map"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\favicon.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\ler3d1s1.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\ler3d1s1.jpg",
       "PackagePath": "staticwebassets\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\ler3d1s1.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\zqh3xvli.PNG",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\zqh3xvli.PNG",
       "PackagePath": "staticwebassets\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\zqh3xvli.PNG"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\1r2qkjac.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\1r2qkjac.jpg",
       "PackagePath": "staticwebassets\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\1r2qkjac.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\ya0pfs4d.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\ya0pfs4d.jpg",
       "PackagePath": "staticwebassets\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\ya0pfs4d.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\6272058f-a52e-4ebc-a100-de3c2ffd39eb\\h1rpitnt.PNG",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\6272058f-a52e-4ebc-a100-de3c2ffd39eb\\h1rpitnt.PNG",
       "PackagePath": "staticwebassets\\users_pics\\6272058f-a52e-4ebc-a100-de3c2ffd39eb\\h1rpitnt.PNG"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\67b7e4aa-e805-4548-9b18-ce67888d4138\\dn2t01nk.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\67b7e4aa-e805-4548-9b18-ce67888d4138\\dn2t01nk.jpg",
       "PackagePath": "staticwebassets\\users_pics\\67b7e4aa-e805-4548-9b18-ce67888d4138\\dn2t01nk.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\4je0tvvf.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\4je0tvvf.png",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\4je0tvvf.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\5pbi2ngz.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\5pbi2ngz.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\5pbi2ngz.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ecvzlhjv.PNG",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ecvzlhjv.PNG",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\ecvzlhjv.PNG"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\fdnplu5q.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\fdnplu5q.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\fdnplu5q.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\gk2z2jo3.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\gk2z2jo3.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\gk2z2jo3.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ouig1guk.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ouig1guk.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\ouig1guk.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\vgzsc0tp.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\vgzsc0tp.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\vgzsc0tp.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\wcf5mu3q.png",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\wcf5mu3q.png",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\wcf5mu3q.png"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\wgrsmhwy.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\wgrsmhwy.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\wgrsmhwy.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\zj0t1ofl.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\zj0t1ofl.jpg",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\zj0t1ofl.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\ceo1eqpo.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\ceo1eqpo.jpg",
       "PackagePath": "staticwebassets\\users_pics\\carina@gmail.com\\ceo1eqpo.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\rw1cwbyn.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\carina@gmail.com\\rw1cwbyn.jpg",
       "PackagePath": "staticwebassets\\users_pics\\carina@gmail.com\\rw1cwbyn.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\daniel@ferreira.com\\5nt5jpqu.PNG",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\daniel@ferreira.com\\5nt5jpqu.PNG",
       "PackagePath": "staticwebassets\\users_pics\\daniel@ferreira.com\\5nt5jpqu.PNG"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\daniel@ferreira.com\\pmylji5l.jpg",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\daniel@ferreira.com\\pmylji5l.jpg",
       "PackagePath": "staticwebassets\\users_pics\\daniel@ferreira.com\\pmylji5l.jpg"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.css",
       "PackagePath": "staticwebassets\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.min.js",
       "PackagePath": "staticwebassets\\vendor\\chartist-plugin-tooltips\\dist\\chartist-plugin-tooltip.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist\\dist\\chartist.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist\\dist\\chartist.min.css",
       "PackagePath": "staticwebassets\\vendor\\chartist\\dist\\chartist.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist\\dist\\chartist.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\chartist\\dist\\chartist.min.js",
       "PackagePath": "staticwebassets\\vendor\\chartist\\dist\\chartist.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.es.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.es.js",
       "PackagePath": "staticwebassets\\vendor\\notyf\\notyf.es.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.min.css",
       "PackagePath": "staticwebassets\\vendor\\notyf\\notyf.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.min.js",
       "PackagePath": "staticwebassets\\vendor\\notyf\\notyf.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.umd.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\notyf\\notyf.umd.js",
       "PackagePath": "staticwebassets\\vendor\\notyf\\notyf.umd.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.css",
       "PackagePath": "staticwebassets\\vendor\\nouislider\\dist\\nouislider.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.js",
       "PackagePath": "staticwebassets\\vendor\\nouislider\\dist\\nouislider.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.mjs",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.min.mjs",
       "PackagePath": "staticwebassets\\vendor\\nouislider\\dist\\nouislider.min.mjs"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.mjs",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\nouislider\\dist\\nouislider.mjs",
       "PackagePath": "staticwebassets\\vendor\\nouislider\\dist\\nouislider.mjs"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\index.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\index.js",
       "PackagePath": "staticwebassets\\vendor\\onscreen\\dist\\index.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\on-screen.es6.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\on-screen.es6.js",
       "PackagePath": "staticwebassets\\vendor\\onscreen\\dist\\on-screen.es6.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\on-screen.umd.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\onscreen\\dist\\on-screen.umd.min.js",
       "PackagePath": "staticwebassets\\vendor\\onscreen\\dist\\on-screen.umd.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\enums.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\enums.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\enums.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\enums.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\enums.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\enums.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper-base.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper-lite.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\cjs\\popper.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\cjs\\popper.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\createPopper.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\createPopper.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\createPopper.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\contains.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\contains.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\contains.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getBoundingClientRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getBoundingClientRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getBoundingClientRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getClippingRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getClippingRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getClippingRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getCompositeRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getCompositeRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getCompositeRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getComputedStyle.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getComputedStyle.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getComputedStyle.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentElement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentElement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentElement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getDocumentRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getHTMLElementScroll.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getHTMLElementScroll.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getHTMLElementScroll.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getLayoutRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getLayoutRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getLayoutRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeName.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeName.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeName.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeScroll.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeScroll.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getNodeScroll.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getOffsetParent.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getOffsetParent.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getOffsetParent.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getParentNode.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getParentNode.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getParentNode.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getScrollParent.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getScrollParent.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getScrollParent.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getViewportRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getViewportRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getViewportRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindow.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindow.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindow.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScroll.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScroll.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScroll.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScrollBarX.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScrollBarX.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\getWindowScrollBarX.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\instanceOf.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\instanceOf.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\instanceOf.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isScrollParent.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isScrollParent.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isScrollParent.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isTableElement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isTableElement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\isTableElement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\listScrollParents.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\listScrollParents.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\dom-utils\\listScrollParents.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\enums.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\enums.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\enums.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\index.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\index.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\index.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\applyStyles.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\applyStyles.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\applyStyles.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\arrow.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\arrow.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\arrow.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\computeStyles.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\computeStyles.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\computeStyles.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\eventListeners.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\eventListeners.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\eventListeners.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\flip.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\flip.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\flip.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\hide.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\hide.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\hide.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\index.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\index.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\index.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\offset.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\offset.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\offset.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\popperOffsets.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\popperOffsets.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\popperOffsets.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\preventOverflow.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\preventOverflow.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\modifiers\\preventOverflow.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper-base.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper-base.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\popper-base.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper-lite.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper-lite.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\popper-lite.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\popper.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\popper.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\types.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\types.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\types.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeAutoPlacement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeAutoPlacement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeAutoPlacement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeOffsets.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeOffsets.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\computeOffsets.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\debounce.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\debounce.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\debounce.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\detectOverflow.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\detectOverflow.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\detectOverflow.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\expandToHashMap.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\expandToHashMap.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\expandToHashMap.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\format.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\format.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\format.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltAxis.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltAxis.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltAxis.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltLen.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltLen.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getAltLen.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getBasePlacement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getBasePlacement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getBasePlacement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getFreshSideObject.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getFreshSideObject.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getFreshSideObject.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getMainAxisFromPlacement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getMainAxisFromPlacement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getMainAxisFromPlacement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositePlacement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositePlacement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositePlacement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositeVariationPlacement.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositeVariationPlacement.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getOppositeVariationPlacement.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getVariation.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\getVariation.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\getVariation.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\math.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\math.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\math.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergeByName.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergeByName.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergeByName.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergePaddingObject.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergePaddingObject.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\mergePaddingObject.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\orderModifiers.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\orderModifiers.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\orderModifiers.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\rectToClientRect.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\rectToClientRect.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\rectToClientRect.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\uniqueBy.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\uniqueBy.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\uniqueBy.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\validateModifiers.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\validateModifiers.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\validateModifiers.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\within.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\esm\\utils\\within.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\esm\\utils\\within.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\enums.min.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper-base.min.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper-lite.min.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js.flow",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js.flow",
       "PackagePath": "staticwebassets\\vendor\\popperjs\\core\\dist\\umd\\popper.min.js.flow"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.dart.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.dart.js",
       "PackagePath": "staticwebassets\\vendor\\sass\\sass.dart.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.default.dart.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.default.dart.js",
       "PackagePath": "staticwebassets\\vendor\\sass\\sass.default.dart.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sass\\sass.js",
       "PackagePath": "staticwebassets\\vendor\\sass\\sass.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar-core.esm.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar-core.esm.js",
       "PackagePath": "staticwebassets\\vendor\\simplebar\\dist\\simplebar-core.esm.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.esm.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.esm.js",
       "PackagePath": "staticwebassets\\vendor\\simplebar\\dist\\simplebar.esm.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.min.css",
       "PackagePath": "staticwebassets\\vendor\\simplebar\\dist\\simplebar.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.min.js",
       "PackagePath": "staticwebassets\\vendor\\simplebar\\dist\\simplebar.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.umd.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\simplebar\\dist\\simplebar.umd.js",
       "PackagePath": "staticwebassets\\vendor\\simplebar\\dist\\simplebar.umd.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\smooth-scroll\\dist\\smooth-scroll.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\smooth-scroll\\dist\\smooth-scroll.min.js",
       "PackagePath": "staticwebassets\\vendor\\smooth-scroll\\dist\\smooth-scroll.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\smooth-scroll\\dist\\smooth-scroll.polyfills.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\smooth-scroll\\dist\\smooth-scroll.polyfills.min.js",
       "PackagePath": "staticwebassets\\vendor\\smooth-scroll\\dist\\smooth-scroll.polyfills.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.all.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.all.min.js",
       "PackagePath": "staticwebassets\\vendor\\sweetalert2\\dist\\sweetalert2.all.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.min.css",
       "PackagePath": "staticwebassets\\vendor\\sweetalert2\\dist\\sweetalert2.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\sweetalert2\\dist\\sweetalert2.min.js",
       "PackagePath": "staticwebassets\\vendor\\sweetalert2\\dist\\sweetalert2.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs4.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs4.min.css",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs4.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs5.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs5.min.css",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bs5.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bulma.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bulma.min.css",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-bulma.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-foundation.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-foundation.min.css",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker-foundation.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker.min.css",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker.min.css",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\css\\datepicker.min.css"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker-full.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker-full.min.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker-full.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker.min.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\datepicker.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-DZ.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-DZ.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-DZ.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-tn.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-tn.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar-tn.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ar.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\az.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\az.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\az.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bg.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bg.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bg.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bm.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bm.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bm.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bn.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bn.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bn.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\br.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\br.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\br.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bs.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bs.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\bs.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ca.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ca.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ca.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cs.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cs.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cs.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cy.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cy.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\cy.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\da.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\da.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\da.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\de.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\de.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\de.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\el.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\el.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\el.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-AU.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-AU.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-AU.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-CA.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-CA.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-CA.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-GB.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-GB.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-GB.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-IE.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-IE.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-IE.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-NZ.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-NZ.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-NZ.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-ZA.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-ZA.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\en-ZA.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eo.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eo.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eo.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\es.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\es.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\es.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\et.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\et.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\et.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eu.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eu.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\eu.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fa.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fa.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fa.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fi.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fi.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fi.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fo.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fo.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fo.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr-CH.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr-CH.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr-CH.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\fr.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\gl.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\gl.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\gl.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\he.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\he.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\he.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hi.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hi.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hi.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hr.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hr.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hr.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hu.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hu.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hu.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hy.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hy.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\hy.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\id.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\id.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\id.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\is.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\is.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\is.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it-CH.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it-CH.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it-CH.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\it.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ja.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ja.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ja.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ka.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ka.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ka.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\kk.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\kk.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\kk.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\km.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\km.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\km.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ko.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ko.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ko.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lt.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lt.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lt.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lv.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lv.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\lv.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\me.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\me.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\me.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mk.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mk.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mk.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mn.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mn.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mn.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mr.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mr.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\mr.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ms.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ms.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ms.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl-BE.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl-BE.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl-BE.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\nl.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\no.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\no.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\no.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\oc.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\oc.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\oc.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pl.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pl.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pl.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt-BR.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt-BR.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt-BR.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\pt.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ro.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ro.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ro.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ru.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ru.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ru.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\si.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\si.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\si.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sk.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sk.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sk.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sl.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sl.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sl.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sq.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sq.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sq.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr-latn.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr-latn.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr-latn.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sr.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sv.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sv.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sv.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sw.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sw.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\sw.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ta.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ta.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\ta.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tg.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tg.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tg.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\th.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\th.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\th.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tk.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tk.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tk.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tr.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tr.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\tr.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uk.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uk.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uk.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-cyrl.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-cyrl.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-cyrl.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-latn.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-latn.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\uz-latn.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\vi.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\vi.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\vi.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-CN.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-CN.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-CN.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-TW.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-TW.js",
       "PackagePath": "staticwebassets\\vendor\\vanillajs-datepicker\\dist\\js\\locales\\zh-TW.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\jquery.waypoints.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\jquery.waypoints.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\jquery.waypoints.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\noframework.waypoints.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\noframework.waypoints.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\noframework.waypoints.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\infinite.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\infinite.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\shortcuts\\infinite.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\inview.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\inview.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\shortcuts\\inview.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\sticky.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\shortcuts\\sticky.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\shortcuts\\sticky.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\waypoints.debug.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\waypoints.debug.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\waypoints.debug.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\zepto.waypoints.min.js",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\lib\\zepto.waypoints.min.js",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\lib\\zepto.waypoints.min.js"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\licenses.txt",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\licenses.txt",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\licenses.txt"
     },
     {
-      "Id": "D:\\ACasota\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\testem.json",
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\waypoints\\testem.json",
       "PackagePath": "staticwebassets\\vendor\\waypoints\\testem.json"
     },
     {
