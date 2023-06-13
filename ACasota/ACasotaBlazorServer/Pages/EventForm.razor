@@ -56,13 +56,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserAddress">Data Inicio</label>
-                                            <label class="form-control" id="UserAddress">@user_auth.InitialDate.Date</label>
+                                            <label class="form-control" id="UserAddress">@user_auth.InitialDate.Date.ToString("D", new System.Globalization.CultureInfo("pt-PT"))</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseType">Data Fim</label>
-                                            <label class="form-control" id="UserHouseType">@user_auth.EndDate.Date</label>
+                                            <label class="form-control" id="UserHouseType">@user_auth.EndDate.Date.ToString("D", new System.Globalization.CultureInfo("pt-PT"))</label>
                                         </div>
                                     </div>
                                 </div>
@@ -70,13 +70,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="UserHouseTipology">Hora Inicio</label>
-                                            <label class="form-control" id="UserHouseTipology">@user_auth.InitialDate.TimeOfDay</label>
+                                            <label class="form-control" id="UserHouseTipology">@user_auth.InitialDate.ToString("HH:mm")</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="UserHouseTipology">Hora Fim</label>
-                                            <label class="form-control" id="UserHouseTipology">@user_auth.EndDate.TimeOfDay</label>
+                                            <label class="form-control" id="UserHouseTipology">@user_auth.EndDate.ToString("HH:mm")</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
