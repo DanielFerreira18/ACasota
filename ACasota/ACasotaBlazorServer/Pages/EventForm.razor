@@ -12,7 +12,7 @@
 
 <PageTitle>Perfil</PageTitle>
 
-<AuthorizeView>   
+<AuthorizeView>
     <Authorized>
         @if (render)
         {
@@ -89,20 +89,40 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group d-flex justify-content-center">
-                                            @if (isAdmin){
-                                                <button type="button" id="bts" class="ms-2 btn btn-success">Finalizar</button>
-                                                @if (!isInscripted)
+                                            @if (user_auth.State == 0)
+                                            {
+                                                <span class="fw-bold text-danger">Evento Cancelado</span>
+                                            }
+                                            else if (user_auth.State == 1)
+                                            {
+                                                @if (isAdmin)
                                                 {
-                                                    <button type="button" id="bts" class="ms-2 btn btn-secondary">Inscrever-se</button>
+                                                    <button type="button" id="bts" class="ms-2 btn btn-success" @onclick="EndEvent">Finalizar</button>
+                                                    @if (!isInscripted)
+                                                    {
+                                                        <button type="button" id="bts" class="ms-2 btn btn-secondary" @onclick="RegisterInEvent">Inscrever-se</button>
+                                                    }
+                                                    else
+                                                    {
+                                                        <button type="button" id="bts" class="ms-2 btn btn-secondary" @onclick="UnregisterInEvent">Anular Inscrição</button>
+                                                    }
+                                                    <button type="button" id="bts" class="ms-2 btn btn-danger" @onclick="CancelEvent">Cancelar</button>
                                                 }
-                                                <button type="button" id="bts" class="ms-2 btn btn-danger">Cancelar</button>
+                                                else
+                                                {
+                                                    @if (!isInscripted)
+                                                    {
+                                                        <button type="button" id="bts" class="ms-2 btn btn-secondary" @onclick="RegisterInEvent">Inscrever-se</button>
+                                                    }
+                                                    else
+                                                    {
+                                                        <button type="button" id="bts" class="ms-2 btn btn-secondary" @onclick="UnregisterInEvent">Anular Inscrição</button>
+                                                    }
+                                                }
                                             }
                                             else
                                             {
-                                                @if (!isInscripted)
-                                                {
-                                                    <button type="button" id="bts" class="ms-2 btn btn-secondary">Inscrever-se</button>
-                                                }
+                                                <span class="fw-bold text-success">Evento Finalizado</span>
                                             }
                                         </div>
                                     </div>
@@ -268,6 +288,124 @@
 
     public void Navs()
     {
-        nav.NavigateTo("/AdoptionManagement", true);
+        nav.NavigateTo("/EventForm/" + this.id, true);
+    }
+
+    public async Task AddCount()
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.Count++;
+
+            ctx.Events.Update(user_auth);
+            await ctx.SaveChangesAsync();
+        }
+    }
+
+    public async Task DeleteCount()
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.Count--;
+
+            ctx.Events.Update(user_auth);
+            await ctx.SaveChangesAsync();
+        }
+    }
+
+    public async Task EndEvent()
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.State = 2;
+
+            ctx.Events.Update(user_auth);
+            await ctx.SaveChangesAsync();
+
+            StateHasChanged();
+        }
+    }
+
+    public async Task CancelEvent()
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.State = 0;
+
+            ctx.Events.Update(user_auth);
+            await ctx.SaveChangesAsync();
+
+            StateHasChanged();
+        }
+    }
+
+    public async Task RegisterInEvent()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        Event thisEvent = new Event();
+        EventUser eventUser = new EventUser();
+        ApplicationUser userEvent = new ApplicationUser();
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            userEvent = await ctx.Users.Where(u => u.UserName.Equals(user.Identity.Name)).FirstAsync();
+            thisEvent = await ctx.Events.Where(e => e.Id.Equals(this.id)).FirstAsync();
+
+            eventUser.UserId = userEvent.Id;
+            eventUser.User = userEvent;
+            eventUser.EventId = this.id;
+            eventUser.Event = thisEvent;
+
+            await ctx.EventUsers.AddAsync(eventUser);
+            await ctx.SaveChangesAsync();
+        }
+
+        await AddCount();
+
+        user_auth.EventUsers.Add(eventUser);
+        isInscripted = true;
+
+        StateHasChanged();
+    }
+
+    public async Task UnregisterInEvent()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        ApplicationUser userEvent = new ApplicationUser();
+        Event thisEvent = new Event();
+        EventUser eventUser = new EventUser();
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            userEvent = await ctx.Users.Where(u => u.UserName.Equals(user.Identity.Name)).FirstAsync();
+            thisEvent = await ctx.Events.Where(e => e.Id.Equals(this.id)).FirstAsync();
+
+            eventUser.UserId = userEvent.Id;
+            eventUser.User = userEvent;
+            eventUser.EventId = this.id;
+            eventUser.Event = thisEvent;
+
+            ctx.EventUsers.Remove(eventUser);
+            await ctx.SaveChangesAsync();
+        }
+
+        foreach (var eu in user_auth.EventUsers)
+        {
+            if (eu.UserId.Equals(userEvent.Id))
+            {
+                eventUser = eu;
+            }
+        }
+
+        await DeleteCount();
+
+        user_auth.EventUsers.Remove(eventUser);
+        isInscripted = false;
+
+        StateHasChanged();
     }
 }
