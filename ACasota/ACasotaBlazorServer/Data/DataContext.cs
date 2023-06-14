@@ -16,6 +16,8 @@ namespace ACasotaBlazorServer.Data
         public DbSet<Adoption> Adoptions { get; set; }
         public DbSet<AdoptionHouse> AdoptionHouses { get; set; }
         public DbSet<HouseType> HouseTypes { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<TransactionType> TransactionTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -60,10 +62,22 @@ namespace ACasotaBlazorServer.Data
 				.WithMany(u => u.EventUsers)
 				.HasForeignKey(u => u.UserId);
 
+            builder.Entity<Transaction>()
+                .HasOne(u => u.User)
+                .WithMany(u => u.Transactions)
+                .HasForeignKey(u => u.UserId);
+
+            builder.Entity<Transaction>()
+                .HasOne(u => u.Type)
+                .WithMany(u => u.Transactions)
+                .HasForeignKey(u => u.TypeId);
+            
             var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
+            var idRolePartner = Guid.NewGuid().ToString();
             var idUserUser = Guid.NewGuid().ToString();
             var idUserAdmin = Guid.NewGuid().ToString();
+            var idUserPartner = Guid.NewGuid().ToString();
             var idAnimalUser = Guid.NewGuid().ToString();
             var idAnimalAlone = Guid.NewGuid().ToString();
 
@@ -71,6 +85,7 @@ namespace ACasotaBlazorServer.Data
 
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleUser, Name = "User", NormalizedName = "USER" });
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleAdmin, Name = "Admin", NormalizedName = "ADMIN" });
+            builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRolePartner, Name = "Partner", NormalizedName = "PARTNER" });
 
             builder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
@@ -91,6 +106,7 @@ namespace ACasotaBlazorServer.Data
                 LockoutEnabled = false,
                 AccessFailedCount = 0
             });
+
             builder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
                 Id = idUserAdmin,
@@ -111,15 +127,42 @@ namespace ACasotaBlazorServer.Data
                 AccessFailedCount = 0
             });
 
+            builder.Entity<ApplicationUser>().HasData(new ApplicationUser
+            {
+                Id = idUserPartner,
+                FirstName = "Partner",
+                LastName = "Partner",
+                Sex = "Feminino",
+                Date_Birth = DateTime.Now,
+                Email = "partner@partner.com",
+                IsEnabled = true,
+                NormalizedEmail = "PARTNER@PARTNER.COM",
+                UserName = "partner@partner.com",
+                NormalizedUserName = "PARTNER@PARTNER.COM",
+                PasswordHash = hasher.HashPassword(null, "partnerpass"),
+                EmailConfirmed = false,
+                PhoneNumberConfirmed = false,
+                TwoFactorEnabled = false,
+                LockoutEnabled = false,
+                AccessFailedCount = 0
+            });
+
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 UserId = idUserUser,
                 RoleId = idRoleUser
             });
+
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 UserId = idUserAdmin,
                 RoleId = idRoleAdmin
+            });
+
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                UserId = idUserPartner,
+                RoleId = idRolePartner
             });
 
             builder.Entity<Animal>().HasData(new Animal
@@ -133,6 +176,18 @@ namespace ACasotaBlazorServer.Data
                 IsSterile = false,
                 IsVacinated = false,
                 UserId = idUserUser
+            });
+
+            builder.Entity<Animal>().HasData(new Animal
+            {
+                Id = idAnimalAlone,
+                Name = "Mino",
+                Age = "Junior",
+                Race = "Cat",
+                Sex = "Male",
+                Size = "Little",
+                IsSterile = false,
+                IsVacinated = false
             });
 
             builder.Entity<HouseType>().HasData(new HouseType

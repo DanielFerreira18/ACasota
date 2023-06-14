@@ -25,6 +25,9 @@ namespace ACasotaBlazorServer.Data
         public List<Adoption>? Adoptions { get; set; }
 
 		//List of Events Subscribed
-		public List<EventUser> EventUsers { get; set; }
+		public List<EventUser>? EventUsers { get; set; }
+
+        //List of Transactions made
+        public List<Transaction>? Transactions { get; set; }
 	}
 }

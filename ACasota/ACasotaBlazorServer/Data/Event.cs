@@ -12,7 +12,7 @@
 		public int State { get; set; }
 
 		//List of Users subscribed
-		public List<EventUser> EventUsers { get; set; }
+		public List<EventUser>? EventUsers { get; set; }
 
 	}
 }
