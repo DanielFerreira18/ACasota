@@ -72,7 +72,8 @@ namespace ACasotaBlazorServer.Data.Migrations
                 name: "TransactionTypes",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -93,7 +94,7 @@ namespace ACasotaBlazorServer.Data.Migrations
                     DateTransaction = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DatePayment = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsPaid = table.Column<bool>(type: "bit", nullable: false),
-                    TypeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TypeId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -116,16 +117,16 @@ namespace ACasotaBlazorServer.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Animals",
                 columns: new[] { "Id", "Age", "AnimalPicture", "CoverPicture", "IsSterile", "IsVacinated", "Name", "Race", "Sex", "Size", "UserId" },
-                values: new object[] { "3bae6cb5-766c-4c8c-9e8c-f5110983b8e1", "Junior", null, null, false, false, "Mino", "Cat", "Male", "Little", null });
+                values: new object[] { "3e50815d-6761-416b-8bea-156c276ef21f", "Junior", null, null, false, false, "Mino", "Cat", "Male", "Little", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "185d0372-aa33-4d11-8223-a88b196d6ec5", null, "User", "USER" },
-                    { "291642c1-14ed-4380-9929-19e450eecf87", null, "Admin", "ADMIN" },
-                    { "d63181d4-6424-47e6-90ba-5cef6e57399b", null, "Partner", "PARTNER" }
+                    { "9eec9bd7-1160-4a2b-b163-be7247077bb1", null, "User", "USER" },
+                    { "b13c41f8-dd3d-4329-9dca-ce8544272a19", null, "Partner", "PARTNER" },
+                    { "c3c93b7c-eb08-4037-8449-197277098eac", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -133,24 +134,33 @@ namespace ACasotaBlazorServer.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Address", "CCnumber", "City", "ConcurrencyStamp", "CoverPic", "Date_Birth", "Email", "EmailConfirmed", "FirstName", "IsEnabled", "LastName", "LockoutEnabled", "LockoutEnd", "Nif", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePic", "SecurityStamp", "Sex", "Title", "TwoFactorEnabled", "UserName", "Zip" },
                 values: new object[,]
                 {
-                    { "0fcfed8e-5158-4229-967a-cf643f9bd39e", 0, null, null, null, "3ce7ea4f-5d0b-49be-b7ed-ab1426adfb87", null, new DateTime(2023, 6, 14, 20, 42, 20, 175, DateTimeKind.Local).AddTicks(5278), "admin@admin.com", false, "Admin", true, "Admin", false, null, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAIAAYagAAAAEA6saqucMbYTtj6SdR8CaowxOK1Sd5Q3nT6ZfgLy/Ztc5jRqWliqiMyvJfCn4b0LTg==", null, false, null, "58854dfd-35f8-4afc-a031-424a1d7944cd", "Masculino", null, false, "admin@admin.com", null },
-                    { "61bebc33-64b5-40a7-a384-c406e25db265", 0, null, null, null, "7359b394-2598-446f-97a6-f85611b6ebdc", null, new DateTime(2023, 6, 14, 20, 42, 20, 260, DateTimeKind.Local).AddTicks(6374), "partner@partner.com", false, "Partner", true, "Partner", false, null, null, "PARTNER@PARTNER.COM", "PARTNER@PARTNER.COM", "AQAAAAIAAYagAAAAEJRCJfqHEjy3URLACvoG2Zs+G1Y2GANCHXVDOPhVaVqsPakShgiCNDxPgIV1zB6CAA==", null, false, null, "b116f6a4-8b54-4b69-94d3-4c1a52ec2d85", "Feminino", null, false, "partner@partner.com", null },
-                    { "f18e14ce-5605-46b4-a3ec-a239984057d7", 0, null, null, null, "f1fe0fa0-c865-4d71-99e0-66d23576baa9", null, new DateTime(2023, 6, 14, 20, 42, 20, 59, DateTimeKind.Local).AddTicks(9414), "user@user.com", false, "User", true, "User", false, null, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAIAAYagAAAAEEb7+pn7RHrgo+QUkJZTtBLI2NsXGgm8lFN3ATpT7KPCa+U6PPOENqLNGJQUy1XiPg==", null, false, null, "0af0f07e-8368-4bd6-a03d-f9fd6c807d75", "Masculino", null, false, "user@user.com", null }
+                    { "0f0df311-a368-4353-803d-e39c80d3b9de", 0, null, null, null, "c3235f43-ae9d-4c7f-86fb-ee793b40a67a", null, new DateTime(2023, 6, 15, 1, 5, 0, 286, DateTimeKind.Local).AddTicks(7218), "user@user.com", false, "User", true, "User", false, null, null, "USER@USER.COM", "USER@USER.COM", "AQAAAAIAAYagAAAAELJcfegKuslv0DdhDNb3Qi0pwhNux8+/iV6dnLsveR0goay+sAg4Bua5Xyyzu9XW7w==", null, false, null, "f2deb7a1-20ea-4c8e-8e4b-3e7e7eca9c5c", "Masculino", null, false, "user@user.com", null },
+                    { "1f016672-c1d4-4abf-a754-699e22bfe652", 0, null, null, null, "97c32893-2741-469f-a795-e592e961e693", null, new DateTime(2023, 6, 15, 1, 5, 0, 469, DateTimeKind.Local).AddTicks(9750), "partner@partner.com", false, "Partner", true, "Partner", false, null, null, "PARTNER@PARTNER.COM", "PARTNER@PARTNER.COM", "AQAAAAIAAYagAAAAEEOe2IcSYB7c3rvYONpIN8Hz8D/HDzOf0+peUAu58WhGuNg86vlff26HdwihcCl6Rw==", null, false, null, "a93aa1c8-63d1-4269-8f64-a30a367f9b2b", "Feminino", null, false, "partner@partner.com", null },
+                    { "b4d09491-e8bc-485e-99dc-690561de63b9", 0, null, null, null, "17940042-e9c3-43df-9ac2-6a098114ed31", null, new DateTime(2023, 6, 15, 1, 5, 0, 383, DateTimeKind.Local).AddTicks(1841), "admin@admin.com", false, "Admin", true, "Admin", false, null, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAIAAYagAAAAECAI/ZMd2ucAV1FBFFGAvZKx103ABvh+SJLnwZwQgCt9ILlT9tuSKjsdizCa2cMw3g==", null, false, null, "d98a9e25-ff81-4d1b-afeb-a98da04e7b4c", "Masculino", null, false, "admin@admin.com", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TransactionTypes",
+                columns: new[] { "Id", "Description", "Type" },
+                values: new object[,]
+                {
+                    { 1, "Share Payment for the Partners of the association.", "Share" },
+                    { 2, "Donation that all users can make to help the association financially.", "Donation" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Animals",
                 columns: new[] { "Id", "Age", "AnimalPicture", "CoverPicture", "IsSterile", "IsVacinated", "Name", "Race", "Sex", "Size", "UserId" },
-                values: new object[] { "0220dcee-ac73-4a8a-aea9-a764c04beea7", "Baby", null, null, false, false, "Lucas", "Cat", "Male", "Little", "f18e14ce-5605-46b4-a3ec-a239984057d7" });
+                values: new object[] { "d0344c97-bf95-4886-bf7d-45cb35989fa0", "Baby", null, null, false, false, "Lucas", "Cat", "Male", "Little", "0f0df311-a368-4353-803d-e39c80d3b9de" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "291642c1-14ed-4380-9929-19e450eecf87", "0fcfed8e-5158-4229-967a-cf643f9bd39e" },
-                    { "d63181d4-6424-47e6-90ba-5cef6e57399b", "61bebc33-64b5-40a7-a384-c406e25db265" },
-                    { "185d0372-aa33-4d11-8223-a88b196d6ec5", "f18e14ce-5605-46b4-a3ec-a239984057d7" }
+                    { "9eec9bd7-1160-4a2b-b163-be7247077bb1", "0f0df311-a368-4353-803d-e39c80d3b9de" },
+                    { "b13c41f8-dd3d-4329-9dca-ce8544272a19", "1f016672-c1d4-4abf-a754-699e22bfe652" },
+                    { "c3c93b7c-eb08-4037-8449-197277098eac", "b4d09491-e8bc-485e-99dc-690561de63b9" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -176,57 +186,57 @@ namespace ACasotaBlazorServer.Data.Migrations
             migrationBuilder.DeleteData(
                 table: "Animals",
                 keyColumn: "Id",
-                keyValue: "0220dcee-ac73-4a8a-aea9-a764c04beea7");
+                keyValue: "3e50815d-6761-416b-8bea-156c276ef21f");
 
             migrationBuilder.DeleteData(
                 table: "Animals",
                 keyColumn: "Id",
-                keyValue: "3bae6cb5-766c-4c8c-9e8c-f5110983b8e1");
+                keyValue: "d0344c97-bf95-4886-bf7d-45cb35989fa0");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUserRoles",
                 keyColumns: new[] { "RoleId", "UserId" },
-                keyValues: new object[] { "291642c1-14ed-4380-9929-19e450eecf87", "0fcfed8e-5158-4229-967a-cf643f9bd39e" });
+                keyValues: new object[] { "9eec9bd7-1160-4a2b-b163-be7247077bb1", "0f0df311-a368-4353-803d-e39c80d3b9de" });
 
             migrationBuilder.DeleteData(
                 table: "AspNetUserRoles",
                 keyColumns: new[] { "RoleId", "UserId" },
-                keyValues: new object[] { "d63181d4-6424-47e6-90ba-5cef6e57399b", "61bebc33-64b5-40a7-a384-c406e25db265" });
+                keyValues: new object[] { "b13c41f8-dd3d-4329-9dca-ce8544272a19", "1f016672-c1d4-4abf-a754-699e22bfe652" });
 
             migrationBuilder.DeleteData(
                 table: "AspNetUserRoles",
                 keyColumns: new[] { "RoleId", "UserId" },
-                keyValues: new object[] { "185d0372-aa33-4d11-8223-a88b196d6ec5", "f18e14ce-5605-46b4-a3ec-a239984057d7" });
+                keyValues: new object[] { "c3c93b7c-eb08-4037-8449-197277098eac", "b4d09491-e8bc-485e-99dc-690561de63b9" });
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "185d0372-aa33-4d11-8223-a88b196d6ec5");
+                keyValue: "9eec9bd7-1160-4a2b-b163-be7247077bb1");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "291642c1-14ed-4380-9929-19e450eecf87");
+                keyValue: "b13c41f8-dd3d-4329-9dca-ce8544272a19");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "d63181d4-6424-47e6-90ba-5cef6e57399b");
+                keyValue: "c3c93b7c-eb08-4037-8449-197277098eac");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "0fcfed8e-5158-4229-967a-cf643f9bd39e");
+                keyValue: "0f0df311-a368-4353-803d-e39c80d3b9de");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "61bebc33-64b5-40a7-a384-c406e25db265");
+                keyValue: "1f016672-c1d4-4abf-a754-699e22bfe652");
 
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "f18e14ce-5605-46b4-a3ec-a239984057d7");
+                keyValue: "b4d09491-e8bc-485e-99dc-690561de63b9");
 
             migrationBuilder.InsertData(
                 table: "Animals",

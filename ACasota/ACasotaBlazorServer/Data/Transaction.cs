@@ -12,7 +12,7 @@
         public bool IsPaid { get; set; }
 
         //FK to the type of transaction
-        public string TypeId { get; set; }
+        public int TypeId { get; set; }
         public TransactionType Type { get; set; }
     
         //FK to the User that made the transaction

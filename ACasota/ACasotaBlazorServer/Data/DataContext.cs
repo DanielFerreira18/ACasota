@@ -207,6 +207,20 @@ namespace ACasotaBlazorServer.Data
                 Id = 3,
                 Type = "Moradia, com exterior"
             });
+
+            builder.Entity<TransactionType>().HasData(new TransactionType
+            {
+                Id = 1,
+                Type = "Share",
+                Description = "Share Payment for the Partners of the association."
+            });
+
+            builder.Entity<TransactionType>().HasData(new TransactionType
+            {
+                Id = 2,
+                Type = "Donation",
+                Description = "Donation that all users can make to help the association financially."
+            });
         }
     }
 }
