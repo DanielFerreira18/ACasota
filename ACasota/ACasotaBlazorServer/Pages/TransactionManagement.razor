@@ -368,9 +368,10 @@
             {
                 var firstNameLower = u.User.FirstName.ToLower();
                 var lastNameLower = u.User.LastName.ToLower();
+                var eventNameLower = u.Name.ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower))
+                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower) || eventNameLower.Contains(searchLower))
                 {
                     users.Add(u);
                 }
