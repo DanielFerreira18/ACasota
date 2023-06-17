@@ -119,13 +119,13 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="UserSex">IBAN</label>
-                                @if (@user_auth.User.Sex == "Female")
+                                @if (@user_auth.User.Iban == "")
                                 {
-                                    <label class="form-control fw-extrabold" id="UserSex">Feminino</label>
+                                    <label class="form-control fw-extrabold" id="UserSex">IBAN não especificado</label>
                                 }
                                 else
                                 {
-                                    <label class="form-control fw-extrabold" id="UserSex">Masculino</label>
+                                    <label class="form-control fw-extrabold" id="UserSex">@user_auth.User.Iban</label>
                                 }
                             </div>
                         </div>
@@ -133,13 +133,13 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="UserCCNumber">Morada</label>
-                                @if (user_auth.User.CCnumber == "" || user_auth.User.CCnumber == null)
+                                @if (user_auth.User.Address == "" || user_auth.User.Address == null)
                                 {
-                                    <label class="form-control text-danger" id="UserCCNumber">Não tem numero de CC</label>
+                                    <label class="form-control text-danger" id="UserCCNumber">Não tem morada especificada</label>
                                 }
                                 else
                                 {
-                                    <label class="form-control" id="UserCCNumber">@user_auth.User.CCnumber</label>
+                                    <label class="form-control" id="UserCCNumber">@user_auth.User.Address</label>
                                 }
                             </div>
                         </div>
@@ -147,26 +147,26 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="UserCCNumber">Cidade</label>
-                                    @if (user_auth.User.CCnumber == "" || user_auth.User.CCnumber == null)
+                                    @if (user_auth.User.City == "" || user_auth.User.City == null)
                                     {
-                                        <label class="form-control text-danger" id="UserCCNumber">Não tem numero de CC</label>
+                                        <label class="form-control text-danger" id="UserCCNumber">Não tem cidade especificada</label>
                                     }
                                     else
                                     {
-                                        <label class="form-control" id="UserCCNumber">@user_auth.User.CCnumber</label>
+                                        <label class="form-control" id="UserCCNumber">@user_auth.User.City</label>
                                     }
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="UserNIF">Código Postal</label>
-                                    @if (user_auth.User.Nif == "" || user_auth.User.Nif == null)
+                                    @if (user_auth.User.Zip == "" || user_auth.User.Zip == null)
                                     {
-                                        <label class="form-control text-danger" id="UserNIF">Não tem NIF</label>
+                                        <label class="form-control text-danger" id="UserNIF">Não tem código postal especificado</label>
                                     }
                                     else
                                     {
-                                        <label class="form-control" id="UserNIF">@user_auth.User.Nif</label>
+                                        <label class="form-control" id="UserNIF">@user_auth.User.Zip</label>
                                     }
                                 </div>
                             </div>
@@ -182,42 +182,36 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="UserAddress">Nome da transação</label>
-                                            @if (user_auth.User.Nif == "" || user_auth.User.Nif == null)
-                                            {
-                                                <label class="form-control text-danger" id="UserAddress">Não tem morada</label>
-                                            }
-                                            else
-                                            {
-                                                <label class="form-control" id="UserAddress">@user_auth.User.Address</label>
-                                            }
+                                            <label class="form-control" id="UserAddress">@user_auth.Name</label>
+
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="DescAnimal">Descrição da transação</label>
-                                        <label class="form-control" style="height: 100px;" placeholder="Descrição..." id="DescAnimal" rows="4">@user_auth.AnimalDescription</label>
+                                        <label class="form-control" style="height: 100px;" placeholder="Descrição..." id="DescAnimal" rows="4">@user_auth.Description</label>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseType">Tipo de transação</label>
-                                            <label class="form-control" id="UserHouseType">@adoptionHouse.Type.Type</label>
+                                            <label class="form-control" id="UserHouseType">@user_auth.Type.Type</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseTipology">Montante da transação</label>
-                                            <label class="form-control" id="UserHouseTipology">@adoptionHouse.Tipology</label>
+                                            <label class="form-control" id="UserHouseTipology">@user_auth.Amount</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseType">Data da transação</label>
-                                            <label class="form-control" id="UserHouseType">@adoptionHouse.Type.Type</label>
+                                            <label class="form-control" id="UserHouseType">@user_auth.DateTransaction</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseTipology">Data do pagamento</label>
-                                            <label class="form-control" id="UserHouseTipology">@adoptionHouse.Tipology</label>
+                                            <label class="form-control" id="UserHouseTipology">@user_auth.DatePayment</label>
                                         </div>
                                     </div>
                                 </div>
@@ -225,16 +219,20 @@
                             <div class="col-md-12 mb-3">
                                 <div>
                                     <label for="UserHouseTipology">Prova de pagamento</label>
-                                    <img class="img-fluid rounded-bottom rounded-top" src="@profileUserPic" alt="Card image cap">
+                                    <img class="img-fluid rounded-bottom rounded-top" src="@proofTransactionPic" alt="Card image cap">
                                 </div>
                             </div>
                             @if (isAdmin)
                             {
-                                @if (user_auth.State == 2)
+                                @if (!user_auth.IsPaid)
                                 {
                                     <div class="form-group d-flex justify-content-center">
-                                        <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success" @onclick="AceptForm">Finalizar Transação</button>
+                                        <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success" @onclick="AceptForm">Aprovar Transação</button>
                                     </div>
+                                }
+                                else
+                                {
+                                    <span class="fw-bold text-success">Transação Aprovada</span>
                                 }
                             }
                         </div>
@@ -273,8 +271,7 @@
     [Parameter]
     public string? id { get; set; }
 
-    public Adoption user_auth { get; set; } = new Adoption();
-    public AdoptionHouse adoptionHouse { get; set; } = new AdoptionHouse();
+    public Transaction user_auth { get; set; } = new Transaction();
 
     private bool render = false;
     private bool isAdmin = false;
@@ -289,10 +286,10 @@
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
-    private string pathPicsRootAnimal = "";
+    private string pathPicsRootTransaction = "";
     private string pathPicsRootUser = "";
     private string profileUserPic = "";
-    private string profileAnimalPic = "";
+    private string proofTransactionPic = "";
     private long maxFileSize = 1024 * 1024 * 3;
 
     //Methods
@@ -307,8 +304,7 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                user_auth = await ctx.Adoptions.Where(u => u.Id.Equals(this.id)).Include(c => c.User).Include(a => a.Animal).FirstAsync();
-                adoptionHouse = await ctx.AdoptionHouses.Where(ah => ah.Id.Equals(user_auth.HouseId)).Include(c => c.Type).FirstAsync();
+                user_auth = await ctx.Transactions.Where(u => u.Id.Equals(this.id)).Include(c => c.User).Include(a => a.Type).FirstAsync();
 
                 if (user.IsInRole("Admin"))
                 {
@@ -318,7 +314,7 @@
                 render = true;
 
                 pathPicsRootUser = Path.Combine(pathPicsRoot, user_auth.User.UserName);
-                pathPicsRootAnimal = Path.Combine(pathPicsRoot, user_auth.Animal.Id);
+                pathPicsRootTransaction = Path.Combine(pathPicsRootUser, "Transactions", user_auth.Id);
 
                 if (user_auth.User.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.User.UserName, user_auth.User.ProfilePic)))
                 {
@@ -329,13 +325,13 @@
                     profileUserPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
                 }
 
-                if (user_auth.Animal.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, user_auth.Animal.Id, user_auth.Animal.AnimalPicture)))
+                if (user_auth.ProofPicture != null && File.Exists(Path.Combine(pathRoot, user_auth.User.UserName, "Transactions", user_auth.Id, user_auth.ProofPicture)))
                 {
-                    profileAnimalPic = Path.Combine(pathPicsRootAnimal, user_auth.Animal.AnimalPicture);
+                    proofTransactionPic = Path.Combine(pathPicsRootTransaction, user_auth.ProofPicture);
                 }
                 else
                 {
-                    profileAnimalPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                    proofTransactionPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
                 }
             }
         }
@@ -350,25 +346,9 @@
     {
         using (var ctx = contextDb.CreateDbContext())
         {
-            user_auth.State = 1;
+            user_auth.IsPaid = true;
 
-            user_auth.Animal.UserId = user_auth.UserId;
-
-            ctx.Animals.Update(user_auth.Animal);
-            ctx.Adoptions.Update(user_auth);
-            await ctx.SaveChangesAsync();
-        }
-
-        Navs();
-    }
-
-    public async Task RejectForm()
-    {
-        using (var ctx = contextDb.CreateDbContext())
-        {
-            user_auth.State = 0;
-
-            ctx.Adoptions.Update(user_auth);
+            ctx.Transactions.Update(user_auth);
             await ctx.SaveChangesAsync();
         }
 
