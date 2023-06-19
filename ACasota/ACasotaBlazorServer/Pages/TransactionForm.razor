@@ -119,9 +119,9 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="UserSex">IBAN</label>
-                                @if (@user_auth.User.Iban == "")
+                                @if (@user_auth.User.Iban == "" || user_auth.User.Iban == null)
                                 {
-                                    <label class="form-control fw-extrabold" id="UserSex">IBAN não especificado</label>
+                                    <label class="form-control text-danger" id="UserSex">IBAN não especificado</label>
                                 }
                                 else
                                 {
@@ -211,20 +211,64 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="UserHouseTipology">Data do pagamento</label>
-                                            <label class="form-control" id="UserHouseTipology">@user_auth.DatePayment</label>
+                                            @if (user_auth.DatePayment == null)
+                                            {
+                                                <label class="form-control text-danger" id="UserHouseTipology">Transação ainda não foi paga</label>
+                                            }
+                                            else
+                                            {
+                                                <label class="form-control" id="UserHouseTipology">@user_auth.DatePayment</label>
+                                            }
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 mb-3">
+                            @if (!user_auth.IsPaid)
+                            {
+                                @if (isOwner)
+                                {
+                                    <div class="form-group d-flex justify-content-center mb-3">
+                                        <div class="col-md-12-custom">
+                                            <div class="card card-body border-0 shadow mb-4">
+                                                <h2 class="h5 mb-4">Escolha uma prova de pagamento</h2>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="file-field">
+                                                        <div class="d-flex justify-content-xl-center ms-xl-3">
+                                                            <div class="d-flex">
+                                                                <InputFile OnChange="@LoadFilesProfilePics" accept=".png,.jpg,.jpeg" />
+                                                                <div class="d-md-block text-left">
+                                                                    <div class="fw-normal text-dark mb-1">Choose Image</div>
+                                                                    <div class="text-gray small">JPG or PNG. Max size of 3MB</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            <div class="col-md-12">
                                 <div>
                                     <label for="UserHouseTipology">Prova de pagamento</label>
-                                    <img class="img-fluid rounded-bottom rounded-top" src="@proofTransactionPic" alt="Card image cap">
                                 </div>
                             </div>
-                            @if (isAdmin)
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group d-flex justify-content-center">
+                                    @if (user_auth.DatePayment == null)
+                                    {
+                                        <span class="fw-bold text-danger">Transação ainda não foi paga</span>
+                                    }
+                                    else
+                                    {
+                                        <img class="img-fluid rounded-bottom rounded-top" src="@proofTransactionPic" alt="Card image cap">
+                                    }
+                                </div>
+                            </div>
+                            @if (!user_auth.State)
                             {
-                                @if (!user_auth.IsPaid)
+                                @if (isAdmin)
                                 {
                                     <div class="form-group d-flex justify-content-center">
                                         <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success" @onclick="AceptForm">Aprovar Transação</button>
@@ -232,8 +276,16 @@
                                 }
                                 else
                                 {
-                                    <span class="fw-bold text-success">Transação Aprovada</span>
+                                    <div class="form-group d-flex justify-content-center my-4">
+                                        <span class="fw-bold text-secondary">Transação Pendente</span>
+                                    </div>
                                 }
+                            }
+                            else
+                            {
+                                <div class="form-group d-flex justify-content-center my-4">
+                                    <span class="fw-bold text-success">Transação Aprovada</span>
+                                </div>
                             }
                         </div>
                     </div>
@@ -275,6 +327,7 @@
 
     private bool render = false;
     private bool isAdmin = false;
+    private bool isOwner = false;
 
     private bool errorHandling = true;
 
@@ -305,6 +358,11 @@
             using (var ctx = contextDb.CreateDbContext())
             {
                 user_auth = await ctx.Transactions.Where(u => u.Id.Equals(this.id)).Include(c => c.User).Include(a => a.Type).FirstAsync();
+
+                if (user_auth.User.UserName.Equals(user.Identity.Name))
+                {
+                    isOwner = true;
+                }
 
                 if (user.IsInRole("Admin"))
                 {
@@ -339,7 +397,63 @@
 
     public void Navs()
     {
-        nav.NavigateTo("/AdoptionManagement", true);
+        nav.NavigateTo("/TransactionForm/" + user_auth.Id, true);
+    }
+
+    public async Task LoadFilesProfilePics(InputFileChangeEventArgs e)
+    {
+        foreach (var extention in imageExtensions)
+        {
+            if (Path.GetExtension(e.File.Name).ToLower().Contains(extention))
+            {
+                hasExtention = true;
+                break;
+            }
+        }
+
+        if (!hasExtention)
+        {
+            return;
+        }
+
+        string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(e.File.Name));
+
+        string pathUser = Path.Combine(pathRoot, user_auth.User.UserName!, "Transactions");
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        pathUser = Path.Combine(pathUser, user_auth.Id);
+
+        if (!Directory.Exists(pathUser))
+        {
+            Directory.CreateDirectory(pathUser);
+        }
+
+        string filePath = Path.Combine(pathUser, newFileName);
+
+        proofTransactionPic = Path.Combine(pathPicsRootTransaction, newFileName);
+
+        if (user_auth.ProofPicture != null && File.Exists(Path.Combine(pathUser, user_auth.ProofPicture)))
+        {
+            File.Delete(Path.Combine(pathUser, user_auth.ProofPicture));
+        }
+
+        await using FileStream fs = new(filePath, FileMode.Create);
+        await e.File.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.ProofPicture = newFileName;
+            user_auth.DatePayment = DateTime.Now;
+
+            ctx.Transactions.Update(user_auth);
+            await ctx.SaveChangesAsync();
+        }
+
+        Navs();
     }
 
     public async Task AceptForm()
@@ -347,11 +461,12 @@
         using (var ctx = contextDb.CreateDbContext())
         {
             user_auth.IsPaid = true;
+            user_auth.State = true;
 
             ctx.Transactions.Update(user_auth);
             await ctx.SaveChangesAsync();
         }
 
-        Navs();
+        StateHasChanged();
     }
 }
