@@ -30,5 +30,7 @@ namespace ACasotaBlazorServer.Data
 
         //List of Transactions made
         public List<Transaction>? Transactions { get; set; }
-	}
+
+        public List<Report>? Reports { get; set; }
+    }
 }

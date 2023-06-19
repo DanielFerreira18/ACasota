@@ -18,6 +18,7 @@ namespace ACasotaBlazorServer.Data
         public DbSet<HouseType> HouseTypes { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionType> TransactionTypes { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -71,7 +72,12 @@ namespace ACasotaBlazorServer.Data
                 .HasOne(u => u.Type)
                 .WithMany(u => u.Transactions)
                 .HasForeignKey(u => u.TypeId);
-            
+
+            builder.Entity<Report>()
+                .HasOne(u => u.User)
+                .WithMany(u => u.Reports)
+                .HasForeignKey(u => u.UserId);
+
             var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
             var idRolePartner = Guid.NewGuid().ToString();
