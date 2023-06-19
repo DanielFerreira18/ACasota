@@ -1,24 +1,83 @@
 ﻿@page "/"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
 @inject IJSRuntime JSRuntime
+@inject UserManager<ApplicationUser> _userManager
+@inject NavigationManager nav
+@inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
+
 @attribute [Authorize]
 
 <PageTitle>Página Principal</PageTitle>
 
 <AuthorizeView>
-	<Authorized>
-		<p>Olá @context.User.Identity.Name!</p>
-        <div id="map" class="z-depth-1-half map-container" style="height: 500px"></div>
-        <label>Latitude:</label>
-        <label id="latLabel"></label>
-        <br>
-        <label>Longitude:</label>
-        <label id="lngLabel"></label>
-        <br>
-        <label>Street:</label>
-        <label id="streetLabel"></label>
-        <br>
-        <label>City:</label>
-        <label id="cityLabel"></label>
+    <Authorized>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+            <div class="d-block my-4">
+                <h2 class="h4">ACasota</h2>
+                <p class="mb-0">Bemvindo á nossa associação!!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-6 mb-3">
+                <div class="card shadow border-0 text-center p-0">
+                    <div id="map" class="z-depth-1-half map-container rounded" style="height: 548px"></div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6 mb-3">
+                <div class="card card-body border-0 shadow">
+                    <div class="col-12 col-xl-12">
+                        <h2 class="h5 mb-3">Formulário de reporte animal</h2>  
+                        <div class="form-group mb-4">
+                            <label for="especie">Descrição do Evento</label>
+                            <div class="input-group">
+                                <textarea class="form-control" style="color:black;" placeholder="Descrição..." id="textarea" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <h2 class="h5 my-4">Localização</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserFirstName">Latitude</label>
+                                    <label class="form-control" id="latLabel">Latitude da localização</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserFirstName">Longitude</label>
+                                    <label class="form-control" id="lngLabel">Longitude da localização</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserFirstName">Morada</label>
+                                    <label class="form-control" id="streetLabel">Morada completa</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserFirstName">Cidade</label>
+                                    <label class="form-control" id="cityLabel">Cidade</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-md-12">
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success">Reportar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Olá @context.User.Identity.Name!</p>
         <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
             <div class="row">
                 <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
@@ -40,10 +99,13 @@
                 </div>
             </div>
         </footer>
-	</Authorized>
+    </Authorized>
 </AuthorizeView>
 
-@code{
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)

@@ -10,6 +10,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 40.538498, lng: -7.269666 }, // Coordinates for Guarda, Portugal
         zoom: 16,
+        mapTypeId: 'hybrid',
     });
 
     // Initialize the labels
