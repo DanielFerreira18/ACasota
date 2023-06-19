@@ -54,11 +54,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="border-gray-200">ID do report</th>
-                            <th class="border-gray-200">Cidade/Rua</th>
-                            <th class="border-gray-200">Longitude/Latitude</th>
-                            <th class="border-gray-200">Data do report</th>
-                            <th class="border-gray-200">Estado do Report</th>
+                            <th class="border-gray-200">Id</th>
+                            <th class="border-gray-200">Morada</th>
+                            <th class="border-gray-200">Coordenadas</th>
+                            <th class="border-gray-200">Data</th>
+                            <th class="border-gray-200">Estado</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,24 +67,23 @@
                             <!-- Item -->
                             <tr>
                                 <td>
-                                    <a href="/EventForm/@userDb.Id" class="fw-bold">
+                                    <a href="/ReportForm/@userDb.Id" class="fw-bold">
                                         <span class="h6">@userDb.Id</span>
                                     </a>
                                 </td>
-                                <td><span class="fw-normal">@userDb.City, @userDb.Street</span></td>
-                                <td><span class="fw-normal">@userDb.Longitude, @userDb.Latitude</span></td>
+                                <td><span class="fw-normal">@userDb.Street, @userDb.City</span></td>
+                                <td><span class="fw-normal">@userDb.Latitude, @userDb.Longitude</span></td>
                                 <td><span class="fw-normal">@userDb.DateCreated</span></td>
-                                @if (userDb.State)
+                                @if (!userDb.State)
                                 {
-                                    <td><span class="fw-bold text-success">Aberto</span></td>
+                                    <td><span class="fw-bold text-secondary">Pendente</span></td>
                                 }
                                 else
                                 {
-                                    <td><span class="fw-bold text-danger">Fechado</span></td>
+                                    <td><span class="fw-bold text-success">Concluido</span></td>
                                 }
                             </tr>
                         }
-
                     </tbody>
                 </table>
             }
@@ -393,10 +392,10 @@
         {
             foreach (var u in userDB)
             {
-                var reportNameLower = u.Id.ToLower();
+                var reportDate = u.DateCreated.Date.ToShortDateString().ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (reportNameLower.Contains(searchLower))
+                if (reportDate.Contains(searchLower))
                 {
                     users.Add(u);
                 }

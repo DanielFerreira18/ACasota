@@ -49,6 +49,17 @@ function addMarker(location) {
     });
 }
 
+function removeEverything() {
+    if (marker) {
+        marker.setMap(null);
+    }
+
+    document.getElementById("latLabel").textContent = "Latitude da localização";
+    document.getElementById("lngLabel").textContent = "Longitude da localização";
+    document.getElementById("cityLabel").textContent = "Cidade";
+    document.getElementById("streetLabel").textContent = "Morada completa";
+}
+
 function getAddress(location) {
     // Create a geocoder object
     const geocoder = new google.maps.Geocoder();
@@ -82,4 +93,20 @@ function getAddress(location) {
             cityLabel.textContent = "";
         }
     });
+}
+
+function GetInfoReportLatitude() {
+    return document.getElementById("latLabel").textContent;
+}
+
+function GetInfoReportLongitude() {
+    return document.getElementById("lngLabel").textContent;
+}
+
+function GetInfoReportCity() {
+    return document.getElementById("cityLabel").textContent;
+}
+
+function GetInfoReportStreet() {
+    return document.getElementById("streetLabel").textContent;
 }

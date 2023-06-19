@@ -21,23 +21,56 @@
                 <p class="mb-0">Bemvindo á nossa associação!!</p>
             </div>
         </div>
+        <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
+        <!-- Modal Content -->
+        <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+            <div class="modal-dialog modal-success modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header mx-auto">
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="py-3 px-5 text-center">
+                            <span class="modal-icon display-1 text-white">
+                                <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
+                                </svg>
+                            </span>
+                            <h2 class="h3 modal-title mb-3 text-white">Criou um novo reporte</h2>
+                            <p class="mb-4 text-white">Aceda á página de gestão de reportes para mais informações acerca do reporte criado</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
+                        <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Concluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal Content -->
         <div class="row">
             <div class="col-12 col-xl-6 mb-3">
                 <div class="card shadow border-0 text-center p-0">
-                    <div id="map" class="z-depth-1-half map-container rounded" style="height: 548px"></div>
+                    <div id="map" class="z-depth-1-half map-container rounded" style="height: 560px"></div>
                 </div>
             </div>
             <div class="col-12 col-xl-6 mb-3">
                 <div class="card card-body border-0 shadow">
                     <div class="col-12 col-xl-12">
-                        <h2 class="h5 mb-3">Formulário de reporte animal</h2>  
-                        <div class="form-group mb-4">
+                        <h2 class="h5 mb-3">Formulário de reporte animal</h2>
+                        <div class="form-group mb-3">
                             <label for="especie">Descrição do Evento</label>
                             <div class="input-group">
-                                <textarea class="form-control" style="color:black;" placeholder="Descrição..." id="textarea" rows="4"></textarea>
+                                <textarea @bind="@reportReg.Description" class="form-control" style="color:black;" placeholder="Descrição..." id="textarea" rows="4"></textarea>
                             </div>
                         </div>
-                        <h2 class="h5 my-4">Localização</h2>
+                        <div class="form-group">
+                            <label for="UserFirstName">Espécie do Animal</label>
+                            <select @bind="@reportReg.AnimalRace" class="form-select mb-3" style="color:black;" id="country" aria-label="Default select example">
+                                <option value="">Escolha espécie do animal</option>
+                                <option value="Dog">Cão</option>
+                                <option value="Cat">Gato</option>
+                            </select>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -66,10 +99,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row my-3">
+                        <p class="text-danger" style="text-align: left;">@errors</p>
+                        <div class="row my-1">
                             <div class="col-md-12">
                                 <div class="form-group d-flex justify-content-center">
-                                    <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success">Reportar</button>
+                                    <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success" @onclick="GetInfo">Reportar</button>
                                 </div>
                             </div>
                         </div>
@@ -106,11 +140,101 @@
     [CascadingParameter]
     public Task<AuthenticationState> AuthenticationStateTask { get; set; }
 
+    private Report reportReg { get; set; } = new Report();
+    private ApplicationUser userReport = new ApplicationUser();
+
+
+    //Errors when the user doesnt input all the date when creating an event
+    public string errors { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            userReport = await ctx.Users.SingleAsync(u => u.UserName.Equals(user.Identity.Name));
+            reportReg.UserId = userReport.Id;
+        }
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await JSRuntime.InvokeVoidAsync("initMap");
         }
+    }
+
+    public async void GetInfo()
+    {
+        reportReg.Latitude = await JSRuntime.InvokeAsync<string>("GetInfoReportLatitude");
+        reportReg.Longitude = await JSRuntime.InvokeAsync<string>("GetInfoReportLongitude");
+        reportReg.City = await JSRuntime.InvokeAsync<string>("GetInfoReportCity");
+        reportReg.Street = await JSRuntime.InvokeAsync<string>("GetInfoReportStreet");
+
+        await CreateReport();
+    }
+
+    public void GetDown()
+    {
+        JSRuntime.InvokeVoidAsync("UpModal");
+    }
+
+    public void RemoveMarker()
+    {
+        JSRuntime.InvokeVoidAsync("removeEverything");
+    }
+
+    public void Navs()
+    {
+        nav.NavigateTo("/", true);
+    }
+
+    public async Task CreateReport()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (reportReg.City.Equals("Cidade"))
+        {
+            errors = "Utilize o mapa para escolher a localização do animal";
+            StateHasChanged();
+            return;
+        }
+        else if (reportReg.AnimalRace.Equals(""))
+        {
+            errors = "Escolha a espécie do animal";
+            StateHasChanged();
+            return;
+        }
+
+        reportReg.Id = Guid.NewGuid().ToString();
+        reportReg.State = false;
+        reportReg.DateCreated = DateTime.Now;
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            try
+            {
+                await ctx.Reports.AddAsync(reportReg);
+                await ctx.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+        }
+
+        errors = "";
+        reportReg.AnimalRace = "";
+        reportReg.Latitude = "";
+        reportReg.Longitude = "";
+        reportReg.Street = "";
+        reportReg.City = "";
+
+        RemoveMarker();
+        GetDown();
+        StateHasChanged();
     }
 }
