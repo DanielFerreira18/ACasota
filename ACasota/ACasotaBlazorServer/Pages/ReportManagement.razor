@@ -1,13 +1,15 @@
-﻿@page "/AdoptionManagement"
+﻿@page "/ReportManagement"
 @using System.Collections
 @using ACasotaBlazorServer.Data
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
+@inject NavigationManager nav
 @inject IDbContextFactory<DataContext> contextDb
 @inject IWebHostEnvironment enviroment
+@inject IJSRuntime JSRuntime
 @attribute [Authorize]
 
-<PageTitle>Formulários de Adoção</PageTitle>
+<PageTitle>Gestão de Reportes</PageTitle>
 
 <AuthorizeView>
     <Authorized>
@@ -21,11 +23,11 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">ACasota</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Formulários de Adoção</li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestão de Reports</li>
                     </ol>
                 </nav>
-                <h2 class="h4">Formulários de Adoção</h2>
-                <p class="mb-0">Página de gestão dos formulários de adoção.</p>
+                <h2 class="h4">Gestão de Reportes</h2>
+                <p class="mb-0">Página de gestão para todos os reports.</p>
             </div>
         </div>
         <div class="table-settings mb-4">
@@ -37,7 +39,7 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </span>
-                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Insira um nome de utilizador">
+                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Reports">
                     </div>
                 </div>
             </div>
@@ -45,44 +47,40 @@
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
             @if (usersShow.Count == 0)
             {
-                <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem formulários!!</p>
+                <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem reports disponiveis!!</p>
             }
             else
             {
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="border-gray-200">Id</th>
-                            <th class="border-gray-200">Nome do Utilizador</th>
-                            <th class="border-gray-200">Nome do Animal</th>
-                            <th class="border-gray-200">Estado</th>
+                            <th class="border-gray-200">ID do report</th>
+                            <th class="border-gray-200">Cidade/Rua</th>
+                            <th class="border-gray-200">Longitude/Latitude</th>
+                            <th class="border-gray-200">Data do report</th>
+                            <th class="border-gray-200">Estado do Report</th>
                         </tr>
                     </thead>
                     <tbody>
-
                         @foreach (var userDb in usersShow)
                         {
                             <!-- Item -->
                             <tr>
                                 <td>
-                                    <a href="/AdoptionForm/@userDb.Id" class="fw-bold">
+                                    <a href="/EventForm/@userDb.Id" class="fw-bold">
                                         <span class="h6">@userDb.Id</span>
                                     </a>
                                 </td>
-                                <td><span class="fw-normal">@userDb.User.FirstName @userDb.User.LastName</span></td>
-                                <td><span class="fw-normal">@userDb.Animal.Name</span></td>
-
-                                @if (userDb.State == 0)
+                                <td><span class="fw-normal">@userDb.City, @userDb.Street</span></td>
+                                <td><span class="fw-normal">@userDb.Longitude, @userDb.Latitude</span></td>
+                                <td><span class="fw-normal">@userDb.DateCreated</span></td>
+                                @if (userDb.State)
                                 {
-                                    <td><span class="fw-bold text-danger">Recusado</span></td>
-                                }
-                                else if (userDb.State == 1)
-                                {
-                                    <td><span class="fw-bold text-success">Aceite</span></td>
+                                    <td><span class="fw-bold text-success">Aberto</span></td>
                                 }
                                 else
                                 {
-                                    <td><span class="fw-bold text-warning">Pendente</span></td>
+                                    <td><span class="fw-bold text-danger">Fechado</span></td>
                                 }
                             </tr>
                         }
@@ -150,17 +148,44 @@
             </div>
         </footer>
     </Authorized>
+    <NotAuthorized>
+        <div class="row">
+            <div class="col-12 text-center d-flex align-items-center justify-content-center">
+                <div>
+                    <img class="img-fluid w-75" src="../../assets/img/illustrations/403.svg" alt="403 forbidden">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center d-flex align-items-center justify-content-center">
+                <div>
+                    <h1 class="mt-5">Não tem <span class="fw-bolder text-primary">Autorização</span></h1>
+                    <p class="lead my-4">Oops! Não tem autorização para ver o conteudo desta página. Se existir algum problema entra em contacto.</p>
+                    <a href="/" class="btn btn-gray-800 d-inline-flex align-items-center justify-content-center mb-4">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        Voltar para a página principal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
 </AuthorizeView>
 
 @code {
     [CascadingParameter]
     public Task<AuthenticationState> AuthenticationStateTask { get; set; }
-    public List<Adoption> usersShow { get; set; } = new List<Adoption>();
-    public List<Adoption> users { get; set; } = new List<Adoption>();
-    public List<Adoption> userDB { get; set; } = new List<Adoption>();
+    public List<Report> usersShow { get; set; } = new List<Report>();
+    public List<Report> users { get; set; } = new List<Report>();
+    public List<Report> userDB { get; set; } = new List<Report>();
 
     //Sets a list for the number of pages, set automatically
     public List<Int32> pageSelection { get; set; } = new List<Int32>();
+
+    //New event that is being created
+    private Report reportReg { get; set; } = new Report();
+
+    //Errors when the user doesnt input all the date when creating an event
+    public string errors { get; set; } = "";
 
     //Sets the number of entries per page for the table
     public int numberEntriesPerPage { get; set; } = 10;
@@ -187,8 +212,8 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                var usersCT = await ctx.Adoptions.Include(c => c.User).Include(a => a.Animal).ToArrayAsync();
-                ApplicationUser user_Adoption = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
+                var usersCT = await ctx.Reports.ToArrayAsync();
+                ApplicationUser user_Report = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
 
                 if (user.IsInRole("Admin"))
                 {
@@ -201,7 +226,7 @@
                 {
                     foreach (var userct in usersCT)
                     {
-                        if (userct.UserId.Equals(user_Adoption.Id))
+                        if (userct.UserId.Equals(user_Report.Id))
                         {
                             userDB.Add(userct);
                         }
@@ -368,16 +393,33 @@
         {
             foreach (var u in userDB)
             {
-                var firstNameLower = u.User.FirstName.ToLower();
-                var lastNameLower = u.User.LastName.ToLower();
-                var animalNameLower = u.Animal.Name.ToLower();
+                var reportNameLower = u.Id.ToLower();
                 var searchLower = searchWord.ToLower();
 
-                if (firstNameLower.Contains(searchLower) || lastNameLower.Contains(searchLower) || animalNameLower.Contains(searchLower))
+                if (reportNameLower.Contains(searchLower))
                 {
                     users.Add(u);
                 }
             }
         }
     }
+
+    public void Navs()
+    {
+        nav.NavigateTo("/Reportmanagement", true);
+    }
+
+    public void GetDown()
+    {
+        JSRuntime.InvokeVoidAsync("DownModal");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("DateTimePicker");
+        }
+    }
 }
+
