@@ -300,11 +300,21 @@
                                 {
                                     @for (int i = 0; i < 5; i++)
                                     {
+                                        {
+                                            if (animals[i].AnimalPicture != null && File.Exists(Path.Combine(pathRoot, animals[i].Id, animals[i].AnimalPicture)))
+                                            {
+                                                pathPic = Path.Combine(pathPicsRoot, animals[i].Id, animals[i].AnimalPicture);
+                                            }
+                                            else
+                                            {
+                                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                                            }
+                                        }
                                         <li class="list-group-item px-0">
                                             <div class="row align-items-center">
                                                 <div class="col-auto">
                                                     <!-- Avatar -->
-                                                    <img class="rounded avatar" alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg">
+                                                    <img class="rounded avatar" alt="Image placeholder" src="@pathPic">
                                                 </div>
                                                 <div class="col-auto ms--2">
                                                     <h4 class="h6 mb-0">@animals[i].Name</h4>
@@ -328,12 +338,23 @@
                                 }
                                 else
                                 {
-                                    @foreach (var anim in animals){
+                                    @foreach (var anim in animals)
+                                    {
+                                        {
+                                            if (anim.AnimalPicture != null && File.Exists(Path.Combine(pathRoot, anim.Id, anim.AnimalPicture)))
+                                            {
+                                                pathPic = Path.Combine(pathPicsRoot, anim.Id, anim.AnimalPicture);
+                                            }
+                                            else
+                                            {
+                                                pathPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                                            }
+                                        }
                                         <li class="list-group-item px-0">
                                             <div class="row align-items-center">
                                                 <div class="col-auto">
                                                     <!-- Avatar -->
-                                                    <img class="rounded avatar" alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg">
+                                                    <img class="rounded avatar" alt="Image placeholder" src="@pathPic">
                                                 </div>
                                                 <div class="col-auto ms--2">
                                                     <h4 class="h6 mb-0">@anim.Name</h4>
@@ -404,11 +425,18 @@
     public double amountTransaction = 0;
     public int amountAdoption = 0;
 
+    //variables for the animal pictures
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string pathPic = "";
+
     //Errors when the user doesnt input all the date when creating an event
     public string errors { get; set; } = "";
 
     protected override async Task OnInitializedAsync()
     {
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
         var authState = await AuthenticationStateTask;
         var user = authState.User;
         using (var ctx = contextDb.CreateDbContext())
