@@ -81,9 +81,11 @@ namespace ACasotaBlazorServer.Data
             var idRoleUser = Guid.NewGuid().ToString();
             var idRoleAdmin = Guid.NewGuid().ToString();
             var idRolePartner = Guid.NewGuid().ToString();
+            var idRoleAdminPartner = Guid.NewGuid().ToString();
             var idUserUser = Guid.NewGuid().ToString();
             var idUserAdmin = Guid.NewGuid().ToString();
             var idUserPartner = Guid.NewGuid().ToString();
+            var idUserAdminPartner = Guid.NewGuid().ToString();
             var idAnimalUser = Guid.NewGuid().ToString();
             var idAnimalAlone = Guid.NewGuid().ToString();
 
@@ -92,6 +94,7 @@ namespace ACasotaBlazorServer.Data
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleUser, Name = "User", NormalizedName = "USER" });
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleAdmin, Name = "Admin", NormalizedName = "ADMIN" });
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRolePartner, Name = "Partner", NormalizedName = "PARTNER" });
+            builder.Entity<IdentityRole>().HasData(new IdentityRole { Id = idRoleAdminPartner, Name = "AdminPartner", NormalizedName = "ADMINPARTNER" });
 
             builder.Entity<ApplicationUser>().HasData(new ApplicationUser
             {
@@ -153,6 +156,26 @@ namespace ACasotaBlazorServer.Data
                 AccessFailedCount = 0
             });
 
+            builder.Entity<ApplicationUser>().HasData(new ApplicationUser
+            {
+                Id = idUserAdminPartner,
+                FirstName = "AdminPartner",
+                LastName = "AdminPartner",
+                Sex = "Feminino",
+                Date_Birth = DateTime.Now,
+                Email = "adminpartner@adminpartner.com",
+                IsEnabled = true,
+                NormalizedEmail = "ADMINPARTNER@ADMINPARTNER.COM",
+                UserName = "adminpartner@adminpartner.com",
+                NormalizedUserName = "ADMINPARTNER@ADMINPARTNER.COM",
+                PasswordHash = hasher.HashPassword(null, "adminpartnerpass"),
+                EmailConfirmed = false,
+                PhoneNumberConfirmed = false,
+                TwoFactorEnabled = false,
+                LockoutEnabled = false,
+                AccessFailedCount = 0
+            });
+
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 UserId = idUserUser,
@@ -169,6 +192,12 @@ namespace ACasotaBlazorServer.Data
             {
                 UserId = idUserPartner,
                 RoleId = idRolePartner
+            });
+
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                UserId = idUserAdminPartner,
+                RoleId = idRoleAdminPartner
             });
 
             builder.Entity<Animal>().HasData(new Animal

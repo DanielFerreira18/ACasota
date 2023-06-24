@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I6MGaaOVQeVU5k9z0sexFzOTgVdOfFXecTjdgzcN9Gk=",
+  "Hash": "wXeShIoDlR2/21AURAwstVIY47hcbm/kmcwaNlWSxH4=",
   "Source": "ACasotaBlazorServer",
   "BasePath": "_content/ACasotaBlazorServer",
   "Mode": "Default",
@@ -3706,6 +3706,23 @@
       "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\Transactions\\2a44c8c0-7428-4aa5-b0b5-a5f1581890fa\\3rsuvro5.jpg"
     },
     {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\Transactions\\bf776412-2efd-4753-83ba-fe0840de7cab\\1svx30gm.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/admin@admin.com/Transactions/bf776412-2efd-4753-83ba-fe0840de7cab/1svx30gm.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\Transactions\\bf776412-2efd-4753-83ba-fe0840de7cab\\1svx30gm.png"
+    },
+    {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\v145sd5q.jpg",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
@@ -3908,6 +3925,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\users_pics\\partner@partner.com\\Transactions\\e8efdd4c-6789-463c-93ef-2408f935840a\\vnei00b5.jpg"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\a1nbigm4.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/user@user.com/a1nbigm4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\user@user.com\\a1nbigm4.png"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\o3tqom1m.jpg",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/user@user.com/o3tqom1m.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\user@user.com\\o3tqom1m.jpg"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\Transactions\\f947b648-cb09-4894-b9f2-4f7fb61b3e0a\\e22krhik.png",

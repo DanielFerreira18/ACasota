@@ -214,7 +214,7 @@
                 var usersCT = await ctx.Reports.ToArrayAsync();
                 ApplicationUser user_Report = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     foreach (var userct in usersCT)
                     {

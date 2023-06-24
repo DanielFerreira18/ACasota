@@ -361,7 +361,7 @@
                     userDB.Add(userct);
                 }
 
-                if (!user.IsInRole("Admin"))
+                if (!user.IsInRole("Admin") && !user.IsInRole("AdminPartner"))
                 {
                     isAdmin = false;
                 }

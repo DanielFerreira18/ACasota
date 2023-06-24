@@ -49,7 +49,7 @@
                                              alt="Neil Portrait">
                                         <h4 class="h3">@animal_auth.Name</h4>
 
-                                        @if (context.User.IsInRole("Admin"))
+                                        @if (context.User.IsInRole("Admin") || context.User.IsInRole("AdminPartner"))
                                         {
                                             <a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="/AnimalEdit/@animal_auth.Id">
                                                 <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
@@ -263,22 +263,15 @@
                                 <div class="col-md-6 mb-3">
                                     <div>
                                         <label for="first_name">Nome</label>
-                                        @if (animal_auth.Name == "" || animal_auth.Name == null)
-                                        {
-                                            <label class="form-control" id="Address">Não possui um nome</label>
-                                        }
-                                        else
-                                        {
-                                            <label class="form-control" id="Address">@animal_auth.Name</label>
-                                        }
+                                        <label class="form-control" id="Address">@animal_auth.Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
                                         <label for="last_name">Especie</label>
-                                        @if (animal_auth.Race == "" || animal_auth.Race == null)
+                                        @if (animal_auth.Race == "Cao")
                                         {
-                                            <label class="form-control" id="Address">Especie não especificada</label>
+                                            <label class="form-control" id="Address">Cão</label>
                                         }
                                         else
                                         {
@@ -287,19 +280,133 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row align-items-center">
+                            <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="birthday">Idade</label>
-                                    @if (animal_auth.Age == "" || animal_auth.Age == null)
+                                    <label class="form-control" id="CCNumber">@animal_auth.Age</label>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="birthday">Género</label>
+                                    <label class="form-control" id="CCNumber">@animal_auth.Sex</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="birthday">Porte</label>
+                                    <label class="form-control" id="CCNumber">@animal_auth.Size</label>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="birthday">Esta vacinado</label>
+                                    @if (animal_auth.IsVacinated)
                                     {
-                                        <label class="form-control" id="CCNumber">Idade não especificada</label>
+                                        <label class="form-control text-success" id="CCNumber">Está vacinado</label>
                                     }
                                     else
                                     {
-                                        <label class="form-control" id="CCNumber">@animal_auth.Age</label>
+                                        <label class="form-control text-danger" id="CCNumber">Não está vacinado</label>
+                                    }
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="birthday">Esta esterelizado</label>
+                                    @if (animal_auth.IsSterile)
+                                    {
+                                        <label class="form-control text-success" id="CCNumber">Está esterelizado</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control text-danger" id="CCNumber">Não está esterelizado</label>
                                     }
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            @if (animal_auth.User != null)
+                            {
+                                <div class="col-12 col-xl-12">
+                                    <div class="card card-body border-0 shadow mb-4">
+                                        <h2 class="h5 mb-4">Informação do dono</h2>
+                                        <div class="row">
+                                            <div class="col-md-3 mb-3">
+                                                <div>
+                                                    <img class="img-fluid rounded-bottom rounded-top" src="@profileUserPic" alt="Card image cap">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 mb-3">
+                                                <div class="form-group">
+                                                    <label for="UserFirstName">Primeiro Nome</label>
+                                                    <label class="form-control" id="UserFirstName">@animal_auth.User.FirstName</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="UserLastName">Apelido</label>
+                                                    <label class="form-control" id="UserLastName">@animal_auth.User.LastName</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="UserEmail">Email</label>
+                                                    <label class="form-control" id="UserEmail">@animal_auth.User.Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="UserNumber">Numero de Telemóvel</label>
+                                                    @if (animal_auth.User.PhoneNumber == "" || animal_auth.User.PhoneNumber == null)
+                                                    {
+                                                        <label class="form-control text-danger" id="UserNumber">Não tem numero de telemovel</label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="form-control" id="UserNumber">@animal_auth.User.PhoneNumber</label>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="UserCCNumber">Cartão de Cidadão</label>
+                                                    @if (animal_auth.User.CCnumber == "" || animal_auth.User.CCnumber == null)
+                                                    {
+                                                        <label class="form-control text-danger" id="UserCCNumber">Não tem numero de CC</label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="form-control" id="UserCCNumber">@animal_auth.User.CCnumber</label>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="UserNIF">NIF</label>
+                                                    @if (animal_auth.User.Nif == "" || animal_auth.User.Nif == null)
+                                                    {
+                                                        <label class="form-control text-danger" id="UserNIF">Não tem NIF</label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="form-control" id="UserNIF">@animal_auth.User.Nif</label>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="UserSex">Género</label>
+                                                    @if (@animal_auth.User.Sex == "Female")
+                                                    {
+                                                        <label class="form-control" id="UserSex">Feminino</label>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="form-control" id="UserSex">Masculino</label>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <div class="row">
                             <div class="col-md-6-custom">
@@ -460,8 +567,10 @@
 
     private string pathRoot = "";
     private string pathPicsRoot = "..\\users_pics";
+    private string pathPicsRootUser = "..\\users_pics";
     private string profilePic = "";
     private string coverPic = "";
+    private string profileUserPic = "";
     private long maxFileSize = 1024 * 1024 * 3;
 
     protected override async Task OnInitializedAsync()
@@ -487,7 +596,7 @@
 
                 pathPicsRoot = Path.Combine(pathPicsRoot, animal_auth.Id);
 
-                if (!user.IsInRole("Admin"))
+                if (!user.IsInRole("Admin") && !user.IsInRole("AdminPartner"))
                 {
                     if (animal_auth.User != null)
                     {
@@ -519,6 +628,20 @@
                 else
                 {
                     coverPic = "..\\assets\\img\\userDefault\\coverDefault.png";
+                }
+
+                if (animal_auth.User != null)
+                {
+                    pathPicsRootUser = Path.Combine(pathPicsRootUser, animal_auth.User.UserName);
+
+                    if (animal_auth.User.ProfilePic != null && File.Exists(Path.Combine(pathRoot, animal_auth.User.UserName, animal_auth.User.ProfilePic)))
+                    {
+                        profileUserPic = Path.Combine(pathPicsRootUser, animal_auth.User.ProfilePic);
+                    }
+                    else
+                    {
+                        profileUserPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                    }
                 }
             }
         }

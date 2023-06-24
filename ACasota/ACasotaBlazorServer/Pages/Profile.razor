@@ -124,7 +124,22 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                                <label for="email">IBAN</label>
+                                @if (@user_auth.Iban == "" || @user_auth.Iban == null)
+                                {
+                                    <label class="form-control" id="Email">IBAN não atribuido</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Email">@user_auth.Iban</label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
                             <div class="form-group">
                                 <label for="email">E-mail</label>
                                 @if (@user_auth.Email == "" || @user_auth.Email == null)
@@ -137,7 +152,7 @@
                                 }
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
                             <div class="form-group">
                                 <label for="phone">Numero Telémovel</label>
                                 @if (@user_auth.PhoneNumber == "" || @user_auth.PhoneNumber == null)
@@ -147,6 +162,19 @@
                                 else
                                 {
                                     <label class="form-control" id="Address">@user_auth.PhoneNumber</label>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label for="phone">Género</label>
+                                @if (@user_auth.Sex == "" || @user_auth.Sex == null)
+                                {
+                                    <label class="form-control" id="Address">Género não definido</label>
+                                }
+                                else
+                                {
+                                    <label class="form-control" id="Address">@user_auth.Sex</label>
                                 }
                             </div>
                         </div>

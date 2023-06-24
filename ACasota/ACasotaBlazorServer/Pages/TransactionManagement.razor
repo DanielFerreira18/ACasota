@@ -188,7 +188,7 @@
             {
                 var usersCT = await ctx.Transactions.Include(u => u.User).Include(t => t.Type).ToArrayAsync();
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     foreach (var userct in usersCT)
                     {

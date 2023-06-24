@@ -196,7 +196,7 @@
 
                 pathPicsRoot = Path.Combine(pathPicsRoot, animal_auth.Id);
 
-                if (!user.IsInRole("Admin"))
+                if (!user.IsInRole("Admin") && !user.IsInRole("AdminPartner"))
                 {
                     if(animal_auth.User != null)
                     {

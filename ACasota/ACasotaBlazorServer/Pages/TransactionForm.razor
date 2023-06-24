@@ -363,7 +363,7 @@
                     isOwner = true;
                 }
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     isAdmin = true;
                 }
@@ -464,6 +464,27 @@
 
             ctx.Transactions.Update(user_auth);
             await ctx.SaveChangesAsync();
+
+            if (user_auth.TypeId == 1)
+            {
+                Transaction newShare = new Transaction();
+
+                var nameOfMonth = user_auth.DateTransaction.AddMonths(1).ToString("MMMM", new System.Globalization.CultureInfo("pt-PT"));
+                nameOfMonth = Char.ToUpper(nameOfMonth[0]) + nameOfMonth.Substring(1);
+
+                newShare.DateTransaction = user_auth.DateTransaction.AddMonths(1);
+                newShare.State = false;
+                newShare.IsPaid = false;
+                newShare.Amount = "12.99";
+                newShare.Description = "Quota - Mes " + nameOfMonth;
+                newShare.Name = "Quota - Mes " + nameOfMonth;
+                newShare.Id = Guid.NewGuid().ToString();
+                newShare.TypeId = 1;
+                newShare.UserId = user_auth.UserId;
+
+                await ctx.Transactions.AddAsync(newShare);
+                await ctx.SaveChangesAsync();
+            }
         }
 
         StateHasChanged();

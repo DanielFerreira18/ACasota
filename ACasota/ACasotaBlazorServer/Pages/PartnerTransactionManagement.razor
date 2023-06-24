@@ -10,7 +10,7 @@
 
 <PageTitle>Gestão de Utilizadores</PageTitle>
 
-<AuthorizeView Roles="Partner, Admin">
+<AuthorizeView Roles="Partner, AdminPartner">
     <Authorized>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
             <div class="d-block mb-4 mb-md-0">
@@ -326,7 +326,7 @@
                 var usersCT = await ctx.Transactions.Include(u => u.User).Include(t => t.Type).OrderByDescending(u => u.DateTransaction).ToArrayAsync();
                 userPartner = await ctx.Users.Where(u => u.UserName.Equals(user.Identity.Name)).FirstAsync();
 
-                if (user.IsInRole("Partner") || user.IsInRole("Admin"))
+                if (user.IsInRole("Partner") || user.IsInRole("AdminPartner"))
                 {
                     foreach (var userct in usersCT)
                     {
@@ -580,14 +580,17 @@
 
         using (var ctx = contextDb.CreateDbContext())
         {
+            var nameMonth = DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("pt-PT"));
+            nameMonth = Char.ToUpper(nameMonth[0]) + nameMonth.Substring(1); 
+
             newShare.State = false;
             newShare.UserId = userPartner.Id;
             newShare.TypeId = 1;
             newShare.IsPaid = false;
             newShare.DateTransaction = DateTime.Now;
             newShare.Amount = "12.99";
-            newShare.Description = "Quota - Mes " + DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("pt-PT"));
-            newShare.Name = "Quota - Mes " + DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("pt-PT"));
+            newShare.Description = "Quota - Mes " + nameMonth;
+            newShare.Name = "Quota - Mes " + nameMonth;
             newShare.Id = Guid.NewGuid().ToString();
 
             await ctx.Transactions.AddAsync(newShare);

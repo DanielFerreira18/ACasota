@@ -190,7 +190,7 @@
                 var usersCT = await ctx.Adoptions.Include(c => c.User).Include(a => a.Animal).ToArrayAsync();
                 ApplicationUser user_Adoption = await ctx.Users.SingleAsync(u => u.UserName == user.Identity.Name);
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     foreach (var userct in usersCT)
                     {

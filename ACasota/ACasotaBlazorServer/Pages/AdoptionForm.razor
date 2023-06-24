@@ -397,7 +397,7 @@
                 user_auth = await ctx.Adoptions.Where(u => u.Id.Equals(this.id)).Include(c => c.User).Include(a => a.Animal).FirstAsync();
                 adoptionHouse = await ctx.AdoptionHouses.Where(ah => ah.Id.Equals(user_auth.HouseId)).Include(c => c.Type).FirstAsync();
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     isAdmin = true;
                 }

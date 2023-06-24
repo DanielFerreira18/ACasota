@@ -845,6 +845,10 @@
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\Transactions\\2a44c8c0-7428-4aa5-b0b5-a5f1581890fa\\3rsuvro5.jpg"
     },
     {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\Transactions\\bf776412-2efd-4753-83ba-fe0840de7cab\\1svx30gm.png",
+      "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\Transactions\\bf776412-2efd-4753-83ba-fe0840de7cab\\1svx30gm.png"
+    },
+    {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\ecvzlhjv.PNG",
       "PackagePath": "staticwebassets\\users_pics\\admin@admin.com\\ecvzlhjv.PNG"
     },
@@ -915,6 +919,14 @@
     {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\Transactions\\f947b648-cb09-4894-b9f2-4f7fb61b3e0a\\e22krhik.png",
       "PackagePath": "staticwebassets\\users_pics\\user@user.com\\Transactions\\f947b648-cb09-4894-b9f2-4f7fb61b3e0a\\e22krhik.png"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\a1nbigm4.png",
+      "PackagePath": "staticwebassets\\users_pics\\user@user.com\\a1nbigm4.png"
+    },
+    {
+      "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\user@user.com\\o3tqom1m.jpg",
+      "PackagePath": "staticwebassets\\users_pics\\user@user.com\\o3tqom1m.jpg"
     },
     {
       "Id": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\vendor\\bootstrap\\dist\\css\\bootstrap-grid.min.css",

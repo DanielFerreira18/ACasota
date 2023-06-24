@@ -73,8 +73,8 @@
                                                     <div class="d-flex mb-3 justify-content-center">
                                                         <select @bind="@animalReg.Race" class="form-select" style="color:black;" id="habitacao" aria-label="Default select example">
                                                             <option value="">Escolha a espécie</option>
-                                                            <option value="Dog">Cão</option>
-                                                            <option value="Cat">Gato</option>
+                                                            <option value="Cao">Cão</option>
+                                                            <option value="Gato">Gato</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -85,8 +85,8 @@
                                                     <div class="d-flex mb-3 justify-content-center">
                                                         <select @bind="@animalReg.Sex" class="form-select" style="color:black;" id="country" aria-label="Default select example">
                                                             <option value="">Escolha o género</option>
-                                                            <option value="Female">Feminino</option>
-                                                            <option value="Male">Masculino</option>
+                                                            <option value="Feminino">Feminino</option>
+                                                            <option value="Masculino">Masculino</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -99,9 +99,9 @@
                                                     <div class="d-flex mb-3 justify-content-center">
                                                         <select @bind="@animalReg.Size" class="form-select" style="color:black;" id="habitacao" aria-label="Default select example">
                                                             <option value="">Escolha o tamanho</option>
-                                                            <option value="Little">Pequeno</option>
-                                                            <option value="Medium">Médio</option>
-                                                            <option value="Big">Grande</option>
+                                                            <option value="Pequeno">Pequeno</option>
+                                                            <option value="Medio">Médio</option>
+                                                            <option value="Grande">Grande</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -112,9 +112,9 @@
                                                     <div class="d-flex mb-3 justify-content-center">
                                                         <select @bind="@animalReg.Age" class="form-select" style="color:black;" id="country" aria-label="Default select example">
                                                             <option value="">Escolha a idade</option>
-                                                            <option value="Baby">Bebe</option>
+                                                            <option value="Bebe">Bebe</option>
                                                             <option value="Junior">Junior</option>
-                                                            <option value="Adult">Adulto</option>
+                                                            <option value="Adulto">Adulto</option>
                                                             <option value="Senior">Sénior</option>
                                                         </select>
                                                     </div>
@@ -356,7 +356,7 @@
             {
                 var usersCT = await ctx.Animals.ToArrayAsync();
 
-                if (user.IsInRole("Admin"))
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
                 {
                     foreach (var userct in usersCT)
                     {

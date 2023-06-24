@@ -20,7 +20,7 @@
             <div class="d-block mb-4 mb-md-0">
                 <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                     <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
-                        @if (context.User.IsInRole("Admin"))
+                        @if (context.User.IsInRole("Admin") || context.User.IsInRole("AdminPartner"))
                         {
                             <li class="breadcrumb-item"><a href="/">Página Principal</a></li>
                             <li class="breadcrumb-item"><a href="/UserManagement">Lista de Utilizadores</a></li>
@@ -50,7 +50,7 @@
                                 <img src="@profilePic" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4 image-fit"
                                      alt="Profile Picture">
                                 <h4 class="h3">@user_auth.FirstName @user_auth.LastName</h4>
-                                @if (context.User.IsInRole("Admin"))
+                                @if (context.User.IsInRole("Admin") || context.User.IsInRole("AdminPartner"))
                                 {
                                     <input type="text" @bind="@user_auth.Title" @bind:event="oninput" class="form-control" placeholder="Introduza um titulo" id="titulo"/>
                                 }
@@ -195,7 +195,7 @@
 		{
 			using (var ctx = contextDb.CreateDbContext())
 			{
-				if (user.IsInRole("Admin"))
+				if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
 				{
 					user_auth = await ctx.Users.SingleAsync(u => u.Id.Equals(this.id));
 					this.email = user_auth.Email;
