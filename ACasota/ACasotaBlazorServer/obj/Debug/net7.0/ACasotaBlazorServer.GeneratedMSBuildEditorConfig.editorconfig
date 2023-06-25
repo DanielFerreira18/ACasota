@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Program Files (x86)/Work/Projeto/ACasota/ACasota/ACasotaBlazorServer/Pages/ReportForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0Rm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Program Files (x86)/Work/Projeto/ACasota/ACasota/ACasotaBlazorServer/Pages/ReportManagement.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0TWFuYWdlbWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

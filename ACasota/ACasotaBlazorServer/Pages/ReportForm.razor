@@ -1,0 +1,298 @@
+﻿@page "/ReportForm/{id}"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.EntityFrameworkCore;
+@inject UserManager<ApplicationUser> _userManager
+@inject NavigationManager nav
+@inject IDbContextFactory<DataContext> contextDb
+@inject IWebHostEnvironment enviroment
+@inject IJSRuntime JSRuntime
+
+@attribute [Authorize]
+
+<PageTitle>Perfil</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        @if (render)
+        {
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+                <div class="d-block mb-4 mb-md-0">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="/">ACasota</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+                        </ol>
+                    </nav>
+                    <h2 class="h4">Perfil de Utilizador</h2>
+                    <p class="mb-0">Página de especificações e caracteristicas do utilizador</p>
+                </div>
+            </div>
+            <div class="row mb-4" id="tableWidth">
+                <div class="col-12 col-xl-6">
+                    <div class="card card-body border-0 shadow mb-4">
+                        <h2 class="h5 mb-4">Informação do Utilizador</h2>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div>
+                                    <img class="img-fluid rounded-bottom rounded-top" src="@profileUserPic" alt="Card image cap">
+                                </div>
+                            </div>
+                            <div class="col-md-9 mb-3">
+                                <div class="form-group">
+                                    <label for="UserFirstName">Primeiro Nome</label>
+                                    <label class="form-control" id="UserFirstName">@user_auth.User.FirstName</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="UserLastName">Apelido</label>
+                                    <label class="form-control" id="UserLastName">@user_auth.User.LastName</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserEmail">Email</label>
+                                    <label class="form-control" id="UserEmail">@user_auth.User.Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="UserNumber">Numero de Telemóvel</label>
+                                    @if (user_auth.User.PhoneNumber == "" || user_auth.User.PhoneNumber == null)
+                                    {
+                                        <label class="form-control text-danger" id="UserNumber">Não tem numero de telemovel</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="UserNumber">@user_auth.User.PhoneNumber</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="UserCCNumber">Cartão de Cidadão</label>
+                                    @if (user_auth.User.CCnumber == "" || user_auth.User.CCnumber == null)
+                                    {
+                                        <label class="form-control text-danger" id="UserCCNumber">Não tem numero de CC</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="UserCCNumber">@user_auth.User.CCnumber</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="UserNIF">NIF</label>
+                                    @if (user_auth.User.Nif == "" || user_auth.User.Nif == null)
+                                    {
+                                        <label class="form-control text-danger" id="UserNIF">Não tem NIF</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="UserNIF">@user_auth.User.Nif</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="UserSex">Género</label>
+                                    @if (@user_auth.User.Sex == "Female")
+                                    {
+                                        <label class="form-control" id="UserSex">Feminino</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="UserSex">Masculino</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-6">
+                    <div class="card card-body border-0 shadow mb-4">
+                        <h2 class="h5 mb-4">Informação do Reporte</h2>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="ReasonAdoption">Descrição</label>
+                                <label class="form-control" style="height: 100px;" placeholder="Descrição..." id="ReasonAdoption" rows="4">@user_auth.Description</label>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="AnimalRace">Rua do reporte</label>
+                                    <label class="form-control" id="AnimalRace">@user_auth.Street</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="AnimalAge">Cidade do reporte</label>
+                                    <label class="form-control" id="AnimalAge">@user_auth.City</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="form-group">
+                                    <label for="AnimalSex">Espécie do animal</label>
+                                    @if (@user_auth.AnimalRace == "Cao")
+                                    {
+                                        <label class="form-control" id="AnimalSex">Cão</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="form-control" id="AnimalSex">Gato</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="AnimalSize">Latitude</label>
+                                    <label class="form-control" id="AnimalSize">@user_auth.Latitude</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="AnimalVac">Longitude</label>
+                                    <label class="form-control" id="AnimalVac">@user_auth.Longitude</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="AnimalSteril">Data do reporte</label>
+                                    <label class="form-control" id="AnimalSteril">@user_auth.DateCreated</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 d-flex justify-content-center my-3">
+                                @if (user_auth.State)
+                                {
+                                    <span class="fw-bold text-success">Reporte Finalizado</span>
+                                }
+                                else
+                                {
+                                    <span class="fw-bold text-warning">Reporte Pendente</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-12 mb-4">
+                    <div class="card shadow border-0 text-center p-0">
+                        <div id="map" class="z-depth-1-half map-container rounded" style="height: 560px"></div>
+                    </div>
+                </div>
+                @if (isAdmin)
+                {
+                    @if (!user_auth.State)
+                    {
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="button" id="bts" class="ms-2 btn large-form-btn btn-success" @onclick="AceptForm">Finalizar Reporte</button>
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    [Parameter]
+    public string? id { get; set; }
+
+    public Report user_auth { get; set; } = new Report();
+
+    private bool render = false;
+    private bool renderMap = false;
+    private bool isAdmin = false;
+
+    private bool errorHandling = true;
+
+    //List of extentions
+    public List<string> imageExtensions = new List<string> { ".jpg", ".jpeg", ".png" };
+
+    //Bool control extention
+    public bool hasExtention = false;
+
+    private string pathRoot = "";
+    private string pathPicsRoot = "..\\users_pics";
+    private string pathPicsRootAnimal = "";
+    private string pathPicsRootUser = "";
+    private string profileUserPic = "";
+    private string profileAnimalPic = "";
+    private long maxFileSize = 1024 * 1024 * 3;
+
+    //Methods
+    protected override async Task OnInitializedAsync()
+    {
+        pathRoot = Path.Combine(enviroment.ContentRootPath, "wwwroot", "users_pics");
+
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            using (var ctx = contextDb.CreateDbContext())
+            {
+                user_auth = await ctx.Reports.Where(u => u.Id.Equals(this.id)).Include(c => c.User).FirstAsync();
+
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
+                {
+                    isAdmin = true;
+                }
+
+                render = true;
+
+                pathPicsRootUser = Path.Combine(pathPicsRoot, user_auth.User.UserName);
+
+                if (user_auth.User.ProfilePic != null && File.Exists(Path.Combine(pathRoot, user_auth.User.UserName, user_auth.User.ProfilePic)))
+                {
+                    profileUserPic = Path.Combine(pathPicsRootUser, user_auth.User.ProfilePic);
+                }
+                else
+                {
+                    profileUserPic = "..\\assets\\img\\userDefault\\userDefault.jpg";
+                }
+            }
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initMapStaticReport", double.Parse(user_auth.Latitude), double.Parse(user_auth.Longitude));
+        }
+    }
+
+    public void Navs()
+    {
+        nav.NavigateTo("/ReportForm/" + this.id, true);
+    }
+
+    public async Task AceptForm()
+    {
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            user_auth.State = true;
+
+            ctx.Reports.Update(user_auth);
+            await ctx.SaveChangesAsync();
+
+            StateHasChanged();
+        }
+    }
+}

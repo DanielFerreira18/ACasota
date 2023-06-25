@@ -5,12 +5,18 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ACasotaBlazorServer.Services;
+using Microsoft.AspNetCore.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+builder.Services.Configure<HubOptions>(options =>
+{
+    options.MaximumReceiveMessageSize = 1024 * 1024; // 1MB or use null
+});
 
 var conS = builder.Configuration.GetConnectionString("ACasota");
 builder.Services.AddDbContextFactory<DataContext>(options => options.UseSqlServer(conS));

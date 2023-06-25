@@ -47,7 +47,7 @@
             </div>
         </div>
         <!-- End of Modal Content -->
-        <div class="row mb-4">
+        <div class="row mb-4" id="tableWidth">
             <div class="col-12 col-xl-6">
                 <div class="card shadow border-0 text-center p-0">
                     <div id="map" class="z-depth-1-half map-container rounded" style="height: 560px"></div>
@@ -67,8 +67,8 @@
                             <label for="UserFirstName">Espécie do Animal</label>
                             <select @bind="@reportReg.AnimalRace" class="form-select mb-3" style="color:black;" id="country" aria-label="Default select example">
                                 <option value="">Escolha espécie do animal</option>
-                                <option value="Dog">Cão</option>
-                                <option value="Cat">Gato</option>
+                                <option value="Cao">Cão</option>
+                                <option value="Gato">Gato</option>
                             </select>
                         </div>
                         <div class="row">
@@ -192,7 +192,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-12 col-md-8 mb-4">
                 <div class="card border-0 shadow">
                     @if (events.Count != 0)
@@ -381,32 +381,11 @@
                     }
                     else
                     {
-
+                        <p style="text-align: center; height: 100px; align-content: center; display: inline-grid;">Não existem animais disponiveis!!</p>
                     }
                 </div>
             </div>
         </div>
-        <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
-            <div class="row">
-                <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                    <p class="mb-0 text-center text-lg-start">© 2023<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">ACasota</a></p>
-                </div>
-                <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-                    <!-- List -->
-                    <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/about">Instagram</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/themes">Twitter</a>
-                        </li>
-                        <li class="list-inline-item px-0 px-sm-2">
-                            <a href="https://themesberg.com/blog">Facebook</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
     </Authorized>
 </AuthorizeView>
 

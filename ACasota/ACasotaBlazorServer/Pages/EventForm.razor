@@ -7,6 +7,7 @@
 @inject NavigationManager nav
 @inject IDbContextFactory<DataContext> contextDb
 @inject IWebHostEnvironment enviroment
+@inject IJSRuntime JSRuntime
 
 @attribute [Authorize]
 
@@ -33,7 +34,7 @@
                     <p class="mb-0">Página de especificações e caracteristicas do utilizador</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-12 col-xl-12">
                     <div class="card card-body border-0 shadow mb-4">
                         <div class="row">
@@ -132,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-12">
-                    <div class="card card-body border-0 shadow table-wrapper table-responsive">
+                    <div class="card card-body border-0 shadow table-wrapper table-responsive" id="tableWidth">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -202,27 +203,6 @@
                     </div>
                 </div>
             </div>
-            <footer class="bg-white rounded shadow p-5 mb-4 mt-4">
-                <div class="row">
-                    <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
-                        <p class="mb-0 text-center text-lg-start">© 2023<span class="current-year"></span> <a class="text-primary fw-normal" href="https://themesberg.com" target="_blank">ACasota</a></p>
-                    </div>
-                    <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-                        <!-- List -->
-                        <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-                            <li class="list-inline-item px-0 px-sm-2">
-                                <a href="https://themesberg.com/about">Instagram</a>
-                            </li>
-                            <li class="list-inline-item px-0 px-sm-2">
-                                <a href="https://themesberg.com/themes">Twitter</a>
-                            </li>
-                            <li class="list-inline-item px-0 px-sm-2">
-                                <a href="https://themesberg.com/blog">Facebook</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
         }
     </Authorized>
 </AuthorizeView>
@@ -237,6 +217,7 @@
     public Event user_auth { get; set; } = new Event();
 
     private bool render = false;
+    private bool renderInside = false;
     private bool isAdmin = false;
     private bool isInscripted = false;
 
@@ -265,7 +246,7 @@
         {
             using (var ctx = contextDb.CreateDbContext())
             {
-                user_auth = await ctx.Events.Where(u => u.Id.Equals(this.id)).FirstAsync();
+                user_auth = await ctx.Events.Where(u => u.Id.Equals(this.id)).Include(u => u.EventUsers).FirstAsync();
                 user_auth.EventUsers = await ctx.EventUsers.Where(u => u.EventId.Equals(this.id)).Include(u => u.User).Include(u => u.Event).ToListAsync();
 
                 foreach (var userEvent in user_auth.EventUsers)

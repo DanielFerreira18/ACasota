@@ -5,6 +5,17 @@ let streetLabel;
 let cityLabel;
 let marker;
 
+function initMapStaticReport(latitude, longitude) {
+    // Initialize the map
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: latitude, lng: longitude }, // Coordinates for Guarda, Portugal
+        zoom: 20,
+        mapTypeId: 'hybrid',
+    });
+
+    addMarkerStaticReport(latitude, longitude);
+}
+
 function initMap() {
     // Initialize the map
     map = new google.maps.Map(document.getElementById("map"), {
@@ -31,6 +42,22 @@ function displayCoordinates(lat, lng) {
     // Update the labels with the coordinates
     latLabel.textContent = lat.toFixed(6);
     lngLabel.textContent = lng.toFixed(6);
+}
+
+function addMarkerStaticReport(latitude, longitude) {
+    // Remove the previous marker, if exists
+    if (marker) {
+        marker.setMap(null);
+    }
+
+    // Create a marker with the specified location
+    marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map: map,
+        icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+        },
+    });
 }
 
 function addMarker(location) {

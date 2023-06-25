@@ -3632,6 +3632,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\users_pics\daniel@ferreira.com\pmylji5l.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\users_pics\partner@partner.com\Transactions\8ea92f0d-4dab-4c8d-81ad-21fba9ca5349\0t1t05yd.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ACasotaBlazorServer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ACasotaBlazorServer</BasePath>
+      <RelativePath>users_pics/partner@partner.com/Transactions/8ea92f0d-4dab-4c8d-81ad-21fba9ca5349/0t1t05yd.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\users_pics\partner@partner.com\Transactions\8ea92f0d-4dab-4c8d-81ad-21fba9ca5349\0t1t05yd.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\users_pics\partner@partner.com\Transactions\c1e6357e-6356-4641-a6bf-1382353e37d8\mtlay4ae.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ACasotaBlazorServer</SourceId>
