@@ -104,20 +104,12 @@
                             <span class="sidebar-icon">
                                 <i class="fas fa-user fa-stack-1x"></i>
                             </span>
-                            <span class="sidebar-text ms-4">Perfil</span>
+                            <span class="sidebar-text ms-4">Perfil de Utilizador</span>
                         </div>
                     </NavLink>
                     <div class="user-card mb-2">
                         <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão Animal</p>
                     </div>
-                    <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
-                        <div class="nav-link">
-                            <span class="sidebar-icon">
-                                <i class="fas fa-paw fa-stack-1x"></i>
-                            </span>
-                            <span class="sidebar-text ms-4">Os meus animais</span>
-                        </div>
-                    </NavLink>
                     <NavLink href="Animalmanagement" class="nav-item">
                         <div class="nav-link">
                             <span class="sidebar-icon">
@@ -126,15 +118,20 @@
                             <span class="sidebar-text ms-4">Lista de animais</span>
                         </div>
                     </NavLink>
-                    <div class="user-card mb-2">
-                        <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão ACasota</p>
-                    </div>
-                    <NavLink href="Usermanagement" class="nav-item">
+                    <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
+                        <div class="nav-link">
+                            <span class="sidebar-icon">
+                                <i class="fas fa-paw fa-stack-1x"></i>
+                            </span>
+                            <span class="sidebar-text ms-4">Os meus Animais</span>
+                        </div>
+                    </NavLink>
+                    <NavLink href="ReportManagement" class="nav-item">
                         <div class="nav-link">
                             <span class="sidebar-icon">
                                 <i class="fas fa-users fa-stack-1x"></i>
                             </span>
-                            <span class="sidebar-text ms-4">Gestão de Utilizadores</span>
+                            <span class="sidebar-text ms-4">Reportes de Animais</span>
                         </div>
                     </NavLink>
                     <NavLink href="AdoptionManagement" class="nav-item">
@@ -145,6 +142,9 @@
                             <span class="sidebar-text ms-4">Formulários de Adoção</span>
                         </div>
                     </NavLink>
+                    <div class="user-card mb-2">
+                        <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão ACasota</p>
+                    </div>
                     <NavLink href="EventManagement" class="nav-item">
                         <div class="nav-link">
                             <span class="sidebar-icon">
@@ -161,12 +161,12 @@
                             <span class="sidebar-text ms-4">Gestão de Transações</span>
                         </div>
                     </NavLink>
-                    <NavLink href="ReportManagement" class="nav-item">
+                    <NavLink href="Usermanagement" class="nav-item">
                         <div class="nav-link">
                             <span class="sidebar-icon">
                                 <i class="fas fa-users fa-stack-1x"></i>
                             </span>
-                            <span class="sidebar-text ms-4">Gestão de Reports</span>
+                            <span class="sidebar-text ms-4">Gestão de Utilizadores</span>
                         </div>
                     </NavLink>
                 </ul>
@@ -271,31 +271,36 @@
                                     <span class="sidebar-icon">
                                         <i class="fas fa-user fa-stack-1x"></i>
                                     </span>
-                                    <span class="sidebar-text ms-4">Perfil</span>
+                                    <span class="sidebar-text ms-4">Perfil de Utilizador</span>
                                 </div>
                             </NavLink>
                             <div class="user-card mb-2">
                                 <p style="margin-bottom: 0rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão Animal</p>
                             </div>
-                            <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
-                                <div class="nav-link">
-                                    <span class="sidebar-icon">
-                                        <i class="fas fa-paw fa-stack-1x"></i>
-                                    </span>
-                                    <span class="sidebar-text ms-4">Os meus animais</span>
-                                </div>
-                            </NavLink>
                             <NavLink href="Animalmanagement" class="nav-item">
                                 <div class="nav-link">
                                     <span class="sidebar-icon">
                                         <i class="fas fa-dog fa-stack-1x"></i>
                                     </span>
-                                    <span class="sidebar-text ms-4">Lista de animais</span>
+                                    <span class="sidebar-text ms-4">Animais ACasota</span>
                                 </div>
                             </NavLink>
-                            <div class="user-card mb-2">
-                                <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">A minha Gestão</p>
-                            </div>
+                            <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
+                                <div class="nav-link">
+                                    <span class="sidebar-icon">
+                                        <i class="fas fa-paw fa-stack-1x"></i>
+                                    </span>
+                                    <span class="sidebar-text ms-4">Os meus Animais</span>
+                                </div>
+                            </NavLink>
+                            <NavLink href="ReportManagement" class="nav-item">
+                                <div class="nav-link">
+                                    <span class="sidebar-icon">
+                                        <i class="fas fa-users fa-stack-1x"></i>
+                                    </span>
+                                    <span class="sidebar-text ms-4">Reportes de Animais</span>
+                                </div>
+                            </NavLink>
                             <NavLink href="AdoptionManagement" class="nav-item">
                                 <div class="nav-link">
                                     <span class="sidebar-icon">
@@ -304,12 +309,15 @@
                                     <span class="sidebar-text ms-4">Formulários de Adoção</span>
                                 </div>
                             </NavLink>
+                            <div class="user-card mb-2">
+                                <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">A minha Gestão</p>
+                            </div>
                             <NavLink href="EventManagement" class="nav-item">
                                 <div class="nav-link">
                                     <span class="sidebar-icon">
                                         <i class="fas fa-users fa-stack-1x"></i>
                                     </span>
-                                    <span class="sidebar-text ms-4">Gestão de Eventos</span>
+                                    <span class="sidebar-text ms-4">Eventos ACasota</span>
                                 </div>
                             </NavLink>
                             <NavLink href="TransactionManagement" class="nav-item">
@@ -317,15 +325,7 @@
                                     <span class="sidebar-icon">
                                         <i class="fas fa-users fa-stack-1x"></i>
                                     </span>
-                                    <span class="sidebar-text ms-4">Gestão de Transações</span>
-                                </div>
-                            </NavLink>
-                            <NavLink href="ReportManagement" class="nav-item">
-                                <div class="nav-link">
-                                    <span class="sidebar-icon">
-                                        <i class="fas fa-users fa-stack-1x"></i>
-                                    </span>
-                                    <span class="sidebar-text ms-4">Gestão de Reports</span>
+                                    <span class="sidebar-text ms-4">As Minhas Transações</span>
                                 </div>
                             </NavLink>
                         </ul>
@@ -430,20 +430,12 @@
                                             <span class="sidebar-icon">
                                                 <i class="fas fa-user fa-stack-1x"></i>
                                             </span>
-                                            <span class="sidebar-text ms-4">Perfil</span>
+                                            <span class="sidebar-text ms-4">Perfil de Utilizador</span>
                                         </div>
                                     </NavLink>
                                     <div class="user-card mb-2">
                                         <p style="margin-bottom: 0rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão Animal</p>
                                     </div>
-                                    <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
-                                        <div class="nav-link">
-                                            <span class="sidebar-icon">
-                                                <i class="fas fa-paw fa-stack-1x"></i>
-                                            </span>
-                                            <span class="sidebar-text ms-4">Os meus animais</span>
-                                        </div>
-                                    </NavLink>
                                     <NavLink href="Animalmanagement" class="nav-item">
                                         <div class="nav-link">
                                             <span class="sidebar-icon">
@@ -452,9 +444,22 @@
                                             <span class="sidebar-text ms-4">Lista de animais</span>
                                         </div>
                                     </NavLink>
-                                    <div class="user-card mb-2">
-                                        <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">A minha Gestão</p>
-                                    </div>
+                                    <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
+                                        <div class="nav-link">
+                                            <span class="sidebar-icon">
+                                                <i class="fas fa-paw fa-stack-1x"></i>
+                                            </span>
+                                            <span class="sidebar-text ms-4">Os meus animais</span>
+                                        </div>
+                                    </NavLink>
+                                    <NavLink href="ReportManagement" class="nav-item">
+                                        <div class="nav-link">
+                                            <span class="sidebar-icon">
+                                                <i class="fas fa-users fa-stack-1x"></i>
+                                            </span>
+                                            <span class="sidebar-text ms-4">Reportes de Animais</span>
+                                        </div>
+                                    </NavLink>
                                     <NavLink href="AdoptionManagement" class="nav-item">
                                         <div class="nav-link">
                                             <span class="sidebar-icon">
@@ -463,12 +468,23 @@
                                             <span class="sidebar-text ms-4">Formulários de Adoção</span>
                                         </div>
                                     </NavLink>
+                                    <div class="user-card mb-2">
+                                        <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">A minha Gestão</p>
+                                    </div>
+                                    <NavLink href="PartnerTransactionManagement" class="nav-item">
+                                        <div class="nav-link">
+                                            <span class="sidebar-icon">
+                                                <i class="fas fa-users fa-stack-1x"></i>
+                                            </span>
+                                            <span class="sidebar-text ms-4">Gestão de Sócio</span>
+                                        </div>
+                                    </NavLink>
                                     <NavLink href="EventManagement" class="nav-item">
                                         <div class="nav-link">
                                             <span class="sidebar-icon">
                                                 <i class="fas fa-users fa-stack-1x"></i>
                                             </span>
-                                            <span class="sidebar-text ms-4">Gestão de Eventos</span>
+                                            <span class="sidebar-text ms-4">Eventos ACasota</span>
                                         </div>
                                     </NavLink>
                                     <NavLink href="TransactionManagement" class="nav-item">
@@ -476,23 +492,7 @@
                                             <span class="sidebar-icon">
                                                 <i class="fas fa-users fa-stack-1x"></i>
                                             </span>
-                                            <span class="sidebar-text ms-4">Gestão de Transações</span>
-                                        </div>
-                                    </NavLink>
-                                    <NavLink href="ReportManagement" class="nav-item">
-                                        <div class="nav-link">
-                                            <span class="sidebar-icon">
-                                                <i class="fas fa-users fa-stack-1x"></i>
-                                            </span>
-                                            <span class="sidebar-text ms-4">Gestão de Reports</span>
-                                        </div>
-                                    </NavLink>
-                                    <NavLink href="PartnerTransactionManagement" class="nav-item">
-                                        <div class="nav-link">
-                                            <span class="sidebar-icon">
-                                                <i class="fas fa-users fa-stack-1x"></i>
-                                            </span>
-                                            <span class="sidebar-text ms-4">Gestão de Quotas</span>
+                                            <span class="sidebar-text ms-4">As minhas Transações</span>
                                         </div>
                                     </NavLink>
                                 </ul>
@@ -596,20 +596,12 @@
                                                     <span class="sidebar-icon">
                                                         <i class="fas fa-user fa-stack-1x"></i>
                                                     </span>
-                                                    <span class="sidebar-text ms-4">Perfil</span>
+                                                    <span class="sidebar-text ms-4">Perfil de Utilizador</span>
                                                 </div>
                                             </NavLink>
                                             <div class="user-card mb-2">
                                                 <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão Animal</p>
                                             </div>
-                                            <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
-                                                <div class="nav-link">
-                                                    <span class="sidebar-icon">
-                                                        <i class="fas fa-paw fa-stack-1x"></i>
-                                                    </span>
-                                                    <span class="sidebar-text ms-4">Os meus animais</span>
-                                                </div>
-                                            </NavLink>
                                             <NavLink href="Animalmanagement" class="nav-item">
                                                 <div class="nav-link">
                                                     <span class="sidebar-icon">
@@ -618,15 +610,20 @@
                                                     <span class="sidebar-text ms-4">Lista de animais</span>
                                                 </div>
                                             </NavLink>
-                                            <div class="user-card mb-2">
-                                                <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão ACasota</p>
-                                            </div>
-                                            <NavLink href="Usermanagement" class="nav-item">
+                                            <NavLink href="@($"/AnimalUser/{user_auth.Id}")" class="nav-item">
+                                                <div class="nav-link">
+                                                    <span class="sidebar-icon">
+                                                        <i class="fas fa-paw fa-stack-1x"></i>
+                                                    </span>
+                                                    <span class="sidebar-text ms-4">Os meus animais</span>
+                                                </div>
+                                            </NavLink>
+                                            <NavLink href="ReportManagement" class="nav-item">
                                                 <div class="nav-link">
                                                     <span class="sidebar-icon">
                                                         <i class="fas fa-users fa-stack-1x"></i>
                                                     </span>
-                                                    <span class="sidebar-text ms-4">Gestão de Utilizadores</span>
+                                                    <span class="sidebar-text ms-4">Reportes de Animais</span>
                                                 </div>
                                             </NavLink>
                                             <NavLink href="AdoptionManagement" class="nav-item">
@@ -635,6 +632,17 @@
                                                         <i class="fas fa-users fa-stack-1x"></i>
                                                     </span>
                                                     <span class="sidebar-text ms-4">Formulários de Adoção</span>
+                                                </div>
+                                            </NavLink>
+                                            <div class="user-card mb-2">
+                                                <p style="margin-bottom: 0rem; margin-top:1rem; text-align: center; font-size: 0.8rem; color: #6c757d;">Gestão ACasota</p>
+                                            </div>
+                                            <NavLink href="PartnerTransactionManagement" class="nav-item">
+                                                <div class="nav-link">
+                                                    <span class="sidebar-icon">
+                                                        <i class="fas fa-users fa-stack-1x"></i>
+                                                    </span>
+                                                    <span class="sidebar-text ms-4">Gestão de Quotas</span>
                                                 </div>
                                             </NavLink>
                                             <NavLink href="EventManagement" class="nav-item">
@@ -653,20 +661,12 @@
                                                     <span class="sidebar-text ms-4">Gestão de Transações</span>
                                                 </div>
                                             </NavLink>
-                                            <NavLink href="ReportManagement" class="nav-item">
+                                            <NavLink href="Usermanagement" class="nav-item">
                                                 <div class="nav-link">
                                                     <span class="sidebar-icon">
                                                         <i class="fas fa-users fa-stack-1x"></i>
                                                     </span>
-                                                    <span class="sidebar-text ms-4">Gestão de Reports</span>
-                                                </div>
-                                            </NavLink>
-                                            <NavLink href="PartnerTransactionManagement" class="nav-item">
-                                                <div class="nav-link">
-                                                    <span class="sidebar-icon">
-                                                        <i class="fas fa-users fa-stack-1x"></i>
-                                                    </span>
-                                                    <span class="sidebar-text ms-4">Gestão de Quotas</span>
+                                                    <span class="sidebar-text ms-4">Gestão de Utilizadores</span>
                                                 </div>
                                             </NavLink>
                                         </ul>
