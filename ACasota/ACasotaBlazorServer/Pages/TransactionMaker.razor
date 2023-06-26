@@ -1,0 +1,541 @@
+﻿@page "/Transaction"
+@using System.Collections
+@using ACasotaBlazorServer.Data
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<DataContext> contextDb
+@inject NavigationManager nav
+@inject IWebHostEnvironment enviroment
+@inject IJSRuntime JSRuntime
+
+@attribute [Authorize]
+
+<PageTitle>Gestão de Utilizadores</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+            <div class="d-block mb-4 mb-md-0">
+                <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+                    <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                        <li class="breadcrumb-item">
+                            <a href="/">
+                                <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="/">ACasota</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestão de Utilizadores</li>
+                    </ol>
+                </nav>
+                <h2 class="h4">Gestão de Utilizadores</h2>
+                <p class="mb-0">Página de gestão para todos os utilizadores e contas activas</p>
+            </div>
+        </div>
+        <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
+        <!-- Modal Content Donation-->
+        <div class="modal fade" id="modal-form-signup" tabindex="-1" role="dialog" aria-labelledby="modal-form-signup" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <div class="card p-3 p-lg-4">
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <h1 class="mb-0 h4">Novo Doação</h1>
+                            </div>
+                            <!-- Form -->
+                            <div class="form-group mb-4 text-center">
+                                <div class="input-group text-center" style="display: inline-block;">
+                                    <label class="h5 custom-h5">€@newTransaction.Amount</label>
+                                </div>
+                                <label for="nome">Doação de @newTransaction.Amount euros</label>
+                            </div>
+                            <div class="d-grid mb-4">
+                                <button type="button" class="btn btn-secondary" @onclick="SaveTransaction">Registar Doação</button>
+                                <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                            </div>
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <p class="text-gray">Após a criação da doação irá ser reencaminhado para a gestão das suas transações!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal Content -->
+        <!-- Modal Content -->
+        <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+            <div class="modal-dialog modal-success modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header mx-auto">
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="py-3 px-5 text-center">
+                            <span class="modal-icon display-1 text-white">
+                                <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
+                                </svg>
+                            </span>
+                            <h2 class="h3 modal-title mb-3 text-white">Uma nova transação foi criada!!</h2>
+                            <p class="mb-4 text-white">Dirija-se para a sua gestão de transações para verificar e pagar a doação.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
+                        <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal Content Donation-->
+        <button type="button" id="openSecond-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-achievement" hidden>OpenSecond</button>
+        <!-- Modal Content Partner-->
+        <div class="modal fade" id="modal-form-partner" tabindex="-1" role="dialog" aria-labelledby="modal-form-partner" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <div class="card p-3 p-lg-4">
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <h1 class="mb-0 h4">Novo Sócio</h1>
+                            </div>
+                            <!-- Form -->
+                            <div class="form-group mb-4 text-center">
+                                <div class="input-group text-center" style="display: inline-block;">
+                                    <label class="h5 custom-h5">Sócio</label>
+                                </div>
+                                <label for="nome">Irá tornar-se um sócio da nossa organização</label>
+                            </div>
+                            <div class="d-grid mb-4">
+                                <button type="button" class="btn btn-secondary" @onclick="ChangeRole">Aceitar</button>
+                                <button type="button" id="close-modal" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal" hidden>Close</button>
+                            </div>
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <p class="text-gray">Após a confirmação, irá desconectar-se, por favor entre novamente com a sua conta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal Content -->
+        <!-- Modal Content -->
+        <div class="modal fade" id="modal-achievement" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-achievement" aria-hidden="true">
+            <div class="modal-dialog modal-success modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="btn-close theme-settings-close fs-6 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-header mx-auto">
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="py-3 px-5 text-center">
+                            <span class="modal-icon display-1 text-white">
+                                <svg class="icon icon-xxl text-gray-200" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"></path>
+                                </svg>
+                            </span>
+                            <h2 class="h3 modal-title mb-3 text-white">Uma nova transação foi criada!!</h2>
+                            <p class="mb-4 text-white">Dirija-se para a sua gestão de transações para verificar e pagar a doação.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center pt-0 pb-3">
+                        <button type="button" id="bts" class="ms-2 btn large-form-btn btn-secondary" data-bs-dismiss="modal">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal Content Partner-->
+        <div class="row" id="tableWidth">
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(5)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-danger rounded me-4 me-sm-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="height: auto;" width="100" height="100" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold text-danger mb-2">€5 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 5 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(10)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold mb-2">€10 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 10 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(20)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold mb-2">€20 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 20 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(50)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-danger rounded me-4 me-sm-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="height: auto;" width="100" height="100" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold text-danger mb-2">€50 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 50 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row" id="tableWidth">
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(100)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold mb-2">€100 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 100 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(150)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold mb-2">€150 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 150 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(200)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-danger rounded me-4 me-sm-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="height: auto;" width="100" height="100" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold text-danger mb-2">€200 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 200 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3 mb-4">
+                <a data-bs-toggle="modal" data-bs-target="#modal-form-signup" @onclick="() => CreateTransaction(250)">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row d-block d-xl-flex align-items-center">
+                                <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                    <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
+                                        <svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xl-7 px-xl-0">
+                                    <div class="d-sm-block">
+                                        <h2 class="h6 text-gray-400 mb-0">Doação</h2>
+                                        <h3 class="fw-extrabold mb-2">€250 Euros</h3>
+                                    </div>
+                                    <div class="small d-flex mt-1">
+                                        <div>Doação de 250 euros</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <p class="my-4 text-justify">
+            Esta página destina-se á criação das doações, caso queiras doar dinheiro à organização poderas faze-lo dentro dos montantes demostrados.
+            Se o fizeres, estarás não so a ajudar-nos com a nossa missão, mas também a todos os animais que não têm ainda uma casa. Deverias ajuda-los pois tal como nos, merecem ser felizes e viver as suas vidas em descanso.
+        </p>
+        <div class="row text-center">
+            <p class="my-3 h5 custom-3r">
+                Ajuda os patudinhos
+            </p>
+            <span class="modal-icon">
+                <i class="fas fa-paw icon icon-xxl mb-4" style="color: #f0bc74;"></i>
+            </span>
+        </div>
+        @if (!isPartner)
+        {
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+                <div class="d-block mb-4 mb-md-0">
+                    <h2 class="h4">Gestão de Utilizadores</h2>
+                    <p class="mb-0">Página de gestão para todos os utilizadores e contas activas</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-4" id="tableWidth">
+                <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                    <a data-bs-toggle="modal" data-bs-target="#modal-form-partner">
+                        <div class="card border-0 shadow">
+                            <div class="card-body">
+                                <div class="row d-block d-xl-flex align-items-center">
+                                    <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
+                                        <div class="icon-shape icon-shape-danger rounded me-4 me-sm-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" style="height: auto;" width="100" height="100" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-7 px-xl-0">
+                                        <div class="d-sm-block">
+                                            <h2 class="h6 text-gray-400 mb-0">Sócio</h2>
+                                            <h3 class="fw-extrabold text-danger mb-2">Tornar-se Sócio</h3>
+                                        </div>
+                                        <div class="small d-flex mt-1">
+                                            <div>Torne-se sócio da nossa associação</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <div class="row">
+            <div class="col-12 text-center d-flex align-items-center justify-content-center">
+                <div>
+                    <img class="img-fluid w-75" src="../../assets/img/illustrations/403.svg" alt="403 forbidden">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center d-flex align-items-center justify-content-center">
+                <div>
+                    <h1 class="mt-5">Não tem <span class="fw-bolder text-primary">Autorização</span></h1>
+                    <p class="lead my-4">Oops! Não tem autorização para ver o conteudo desta página. Se existir algum problema entra em contacto.</p>
+                    <a href="/" class="btn btn-gray-800 d-inline-flex align-items-center justify-content-center mb-4">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        Voltar para a página principal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthenticationStateTask { get; set; }
+
+    public ApplicationUser user_auth { get; set; } = new ApplicationUser();
+    public Transaction newTransaction { get; set; } = new Transaction();
+
+    private bool isPartner = false;
+    private bool isAdmin = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            using (var ctx = contextDb.CreateDbContext())
+            {
+                user_auth = await ctx.Users.Where(u => u.UserName.Equals(user.Identity.Name)).FirstAsync();
+
+                if (user.IsInRole("Admin") || user.IsInRole("AdminPartner"))
+                {
+                    isAdmin = true;
+
+                    if (user.IsInRole("AdminPartner"))
+                    {
+                        isPartner = true;
+                    }
+                }
+                else
+                {
+                    if (user.IsInRole("Partner") || user.IsInRole("AdminPartner"))
+                    {
+                        isPartner = true;
+                    }
+                }
+            }
+        }
+    }
+
+    public void CreateTransaction(int amount)
+    {
+        newTransaction.Amount = amount + "";
+    }
+
+    public void GetDown()
+    {
+        JSRuntime.InvokeVoidAsync("DownModal");
+    }
+
+    public void Navs()
+    {
+        nav.NavigateTo("/TransactionManagement", true);
+    }
+
+    public void NavsPartner()
+    {
+        nav.NavigateTo("/Identity/Account/Logout", true);
+    }
+
+    public async Task SaveTransaction()
+    {
+        newTransaction.Id = Guid.NewGuid().ToString();
+        newTransaction.Name = "Doação de " + newTransaction.Amount + " euros.";
+        newTransaction.Description = "Doação de " + newTransaction.Amount + " euros.";
+        newTransaction.DateTransaction = DateTime.Now;
+        newTransaction.IsPaid = false;
+        newTransaction.State = false;
+        newTransaction.TypeId = 2;
+        newTransaction.UserId = user_auth.Id;
+
+        using (var ctx = contextDb.CreateDbContext())
+        {
+            await ctx.Transactions.AddAsync(newTransaction);
+            await ctx.SaveChangesAsync();
+        }
+
+        GetDown();
+        Navs();
+    }
+
+    public async Task ChangeRole()
+    {
+        using(var ctx = contextDb.CreateDbContext())
+        {
+            IdentityUserRole<string> newRoleUser = new IdentityUserRole<string>();
+
+            newRoleUser.UserId = user_auth.Id;
+
+            if (isAdmin)
+            {
+                var roleIDRemove = await ctx.Roles.Where(r => r.Name.Equals("Admin")).FirstAsync();
+                newRoleUser.RoleId = roleIDRemove.Id;
+
+                ctx.UserRoles.Remove(newRoleUser);
+                await ctx.SaveChangesAsync();
+
+                var roleIDAdd = await ctx.Roles.Where(r => r.Name.Equals("AdminPartner")).FirstAsync();
+                newRoleUser.RoleId = roleIDAdd.Id;
+            }
+            else
+            {
+                var roleIDRemove = await ctx.Roles.Where(r => r.Name.Equals("User")).FirstAsync();
+                newRoleUser.RoleId = roleIDRemove.Id;
+
+                ctx.UserRoles.Remove(newRoleUser);
+                await ctx.SaveChangesAsync();
+
+                var roleIDAdd = await ctx.Roles.Where(r => r.Name.Equals("Partner")).FirstAsync();
+                newRoleUser.RoleId = roleIDAdd.Id;
+            }
+
+
+            await ctx.UserRoles.AddAsync(newRoleUser);
+            await ctx.SaveChangesAsync();
+        }
+
+        NavsPartner();
+    }
+}

@@ -431,7 +431,7 @@
 
         foreach (var trs in transactions)
         {
-            if (trs.TypeId == 2)
+            if (trs.TypeId == 2 && trs.IsPaid)
             {
                 amountTransaction += Convert.ToDouble(trs.Amount);
             }
