@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uY7e9ON7rBwfJUiiakV3jgMa3JbFwfytCUqQhVmioY0=",
+  "Hash": "5T+keamTz68JxuuzSgIY45ISiWiFR9l2x+OjSLDdckg=",
   "Source": "ACasotaBlazorServer",
   "BasePath": "_content/ACasotaBlazorServer",
   "Mode": "Default",
@@ -2210,12 +2210,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\map-image.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\1.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat1.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/1.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Cat1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2224,15 +2224,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\1.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat1.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\2.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat2.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/2.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Cat2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2241,15 +2241,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\2.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat2.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\3.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat3.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/3.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Cat3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2258,15 +2258,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\3.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Cat3.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\4.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog1.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/4.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Dog1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2275,15 +2275,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\4.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog1.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\5.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog2.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/5.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Dog2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2292,15 +2292,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\5.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog2.png"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\6.jpg",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog3.jpeg",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "assets/img/homepage/img/portfolio/6.jpg",
+      "RelativePath": "assets/img/homepage/img/portfolio/Dog3.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2309,7 +2309,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\6.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\homepage\\img\\portfolio\\Dog3.jpeg"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\assets\\img\\homepage\\img\\team\\1.jpg",
@@ -3434,6 +3434,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\054932fb-8d1b-42f3-8153-d3bfbaa49da9\\yh3gswuf.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/054932fb-8d1b-42f3-8153-d3bfbaa49da9/yh3gswuf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\054932fb-8d1b-42f3-8153-d3bfbaa49da9\\yh3gswuf.png"
+    },
+    {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\ler3d1s1.jpg",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
@@ -3468,12 +3485,12 @@
       "OriginalItemSpec": "wwwroot\\users_pics\\05e1bad1-ef90-4f62-916a-846103f6c3d3\\zqh3xvli.PNG"
     },
     {
-      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\3351dd99-451c-4759-bab9-281ef3f0164e\\k0pdc2ts.PNG",
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\3351dd99-451c-4759-bab9-281ef3f0164e\\vyga2tgh.png",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
       "BasePath": "_content/ACasotaBlazorServer",
-      "RelativePath": "users_pics/3351dd99-451c-4759-bab9-281ef3f0164e/k0pdc2ts.PNG",
+      "RelativePath": "users_pics/3351dd99-451c-4759-bab9-281ef3f0164e/vyga2tgh.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3482,7 +3499,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\users_pics\\3351dd99-451c-4759-bab9-281ef3f0164e\\k0pdc2ts.PNG"
+      "OriginalItemSpec": "wwwroot\\users_pics\\3351dd99-451c-4759-bab9-281ef3f0164e\\vyga2tgh.png"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\4282b1d3-eb9a-477d-9d76-7347a414b508\\5ggkg1j0.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/4282b1d3-eb9a-477d-9d76-7347a414b508/5ggkg1j0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\4282b1d3-eb9a-477d-9d76-7347a414b508\\5ggkg1j0.png"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\5b2f58ae-dedd-4f00-a213-ae19a370b335\\1r2qkjac.jpg",
@@ -3551,6 +3585,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\users_pics\\67b7e4aa-e805-4548-9b18-ce67888d4138\\dn2t01nk.jpg"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\7c90572a-870a-4f2b-a7de-12fa44b0a935\\nckad0qg.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/7c90572a-870a-4f2b-a7de-12fa44b0a935/nckad0qg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\7c90572a-870a-4f2b-a7de-12fa44b0a935\\nckad0qg.png"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\4je0tvvf.png",
@@ -3791,6 +3842,23 @@
       "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\wgrsmhwy.jpg"
     },
     {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\xdhaqzj2.jpg",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/admin@admin.com/xdhaqzj2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\xdhaqzj2.jpg"
+    },
+    {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\xm0usfim.jpg",
       "SourceId": "ACasotaBlazorServer",
       "SourceType": "Discovered",
@@ -3806,6 +3874,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\xm0usfim.jpg"
+    },
+    {
+      "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\zatpfsw5.png",
+      "SourceId": "ACasotaBlazorServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\",
+      "BasePath": "_content/ACasotaBlazorServer",
+      "RelativePath": "users_pics/admin@admin.com/zatpfsw5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users_pics\\admin@admin.com\\zatpfsw5.png"
     },
     {
       "Identity": "D:\\Program Files (x86)\\Work\\Projeto\\ACasota\\ACasota\\ACasotaBlazorServer\\wwwroot\\users_pics\\admin@admin.com\\zj0t1ofl.jpg",

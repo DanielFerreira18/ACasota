@@ -23,7 +23,7 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">ACasota</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Gestão de Reports</li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestão de Reportes</li>
                     </ol>
                 </nav>
                 <h2 class="h4">Gestão de Reportes</h2>
@@ -64,11 +64,31 @@
                     <tbody>
                         @foreach (var userDb in usersShow)
                         {
+                            {
+                                newID++;
+
+                                if (newID < 10)
+                                {
+                                    writeID = "000" + newID;
+                                }
+                                else if (newID >= 10 && newID < 100)
+                                {
+                                    writeID = "00" + newID;
+                                }
+                                else if (newID >= 100 && newID < 1000)
+                                {
+                                    writeID = "0" + newID;
+                                }
+                                else
+                                {
+                                    writeID = "" + newID;
+                                }
+                            }
                             <!-- Item -->
                             <tr>
                                 <td>
                                     <a href="/ReportForm/@userDb.Id" class="fw-bold">
-                                        <span class="h6">@userDb.Id</span>
+                                        <span class="h6">@writeID</span>
                                     </a>
                                 </td>
                                 <td><span class="fw-normal">@userDb.Street, @userDb.City</span></td>
@@ -155,6 +175,9 @@
     public List<Report> usersShow { get; set; } = new List<Report>();
     public List<Report> users { get; set; } = new List<Report>();
     public List<Report> userDB { get; set; } = new List<Report>();
+
+    public int newID = 0;
+    public string writeID = "";
 
     //Sets a list for the number of pages, set automatically
     public List<Int32> pageSelection { get; set; } = new List<Int32>();

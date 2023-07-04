@@ -8,7 +8,7 @@
 @inject IJSRuntime JSRuntime
 @attribute [Authorize]
 
-<PageTitle>Formulários de Adoção</PageTitle>
+<PageTitle>Gestão de Formulários</PageTitle>
 
 <AuthorizeView>
     <Authorized>
@@ -22,10 +22,10 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">ACasota</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Formulários de Adoção</li>
+                        <li class="breadcrumb-item active" aria-current="page">Gestão de Formulários</li>
                     </ol>
                 </nav>
-                <h2 class="h4">Formulários de Adoção</h2>
+                <h2 class="h4">Gestão de Formulários</h2>
                 <p class="mb-0">Página de gestão dos formulários de adoção.</p>
             </div>
         </div>
@@ -38,7 +38,7 @@
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                             </svg>
                         </span>
-                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Insira um nome de utilizador">
+                        <input type="text" @bind="@searchWord" @oninput="@Search" class="form-control" placeholder="Procurar Formulário">
                     </div>
                 </div>
             </div>
@@ -63,11 +63,31 @@
 
                         @foreach (var userDb in usersShow)
                         {
+                            {
+                                newID++;
+
+                                if (newID < 10)
+                                {
+                                    writeID = "000" + newID;
+                                }
+                                else if (newID >= 10 && newID < 100)
+                                {
+                                    writeID = "00" + newID;
+                                }
+                                else if (newID >= 100 && newID < 1000)
+                                {
+                                    writeID = "0" + newID;
+                                }
+                                else
+                                {
+                                    writeID = "" + newID;
+                                }
+                            }
                             <!-- Item -->
                             <tr>
                                 <td>
                                     <a href="/AdoptionForm/@userDb.Id" class="fw-bold">
-                                        <span class="h6">@userDb.Id</span>
+                                        <span class="h6">@writeID</span>
                                     </a>
                                 </td>
                                 <td><span class="fw-normal">@userDb.User.FirstName @userDb.User.LastName</span></td>
@@ -138,6 +158,9 @@
     public List<Adoption> usersShow { get; set; } = new List<Adoption>();
     public List<Adoption> users { get; set; } = new List<Adoption>();
     public List<Adoption> userDB { get; set; } = new List<Adoption>();
+
+    public int newID = 0;
+    public string writeID = "";
 
     //Sets a list for the number of pages, set automatically
     public List<Int32> pageSelection { get; set; } = new List<Int32>();
